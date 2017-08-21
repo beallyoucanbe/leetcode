@@ -9,10 +9,8 @@ package ArraysTag;
  Output:
  [2,3]
  */
-
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Created by zhaosy-c on 2017/8/19.
  * 这道题的题目是找到重复的数字而已，并没有要求将数字放在正确的位置上，所以只需要去判断就可以了。
@@ -20,25 +18,32 @@ import java.util.List;
 public class FindAllDuplicatesinanArray {
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> res = new ArrayList<>();
-        int i = 0;
-        while (i < nums.length){
-            if(nums[i] != i + 1){
-                int temp = nums[i];
-                if(temp != nums[temp - 1]){
-                    nums[i] = nums[temp - 1];
-                    nums[temp - 1] = temp;
-                }
-                else
-                    i++;
-            }
+        for(int num: nums){
+            int index = Math.abs(num) - 1;
+            if(nums[index] < 0)
+                res.add(Math.abs(num));
             else
-                i++;
+                nums[index] = -nums[index];
         }
-
-        for(int j = 0; j < nums.length; j++)
-            if(nums[j] != j + 1) {
-                res.add(nums[j]);
-            }
+//        int i = 0;
+//        while (i < nums.length){
+//            if(nums[i] != i + 1){
+//                int temp = nums[i];
+//                if(temp != nums[temp - 1]){
+//                    nums[i] = nums[temp - 1];
+//                    nums[temp - 1] = temp;
+//                }
+//                else
+//                    i++;
+//            }
+//            else
+//                i++;
+//        }
+//
+//        for(int j = 0; j < nums.length; j++)
+//            if(nums[j] != j + 1) {
+//                res.add(nums[j]);
+//            }
         return res;
     }
 
