@@ -10,7 +10,7 @@ import javax.xml.transform.Templates;
 /*
  * Given a set of non-overlapping & sorted intervals, 
  * insert a new interval into the intervals (merge if necessary).
- * ¼´ºÏ²¢Çø¼ä
+ * å³åˆå¹¶åŒºé—´
  */
 class Interval {
 	int start;

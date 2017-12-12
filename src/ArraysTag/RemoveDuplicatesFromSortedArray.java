@@ -3,7 +3,7 @@ package ArraysTag;
 import java.util.Arrays;
 
 /*
- * Êı×éÊÇÒÑ¾­ÅÅºÃĞòµÄ
+ * æ•°ç»„æ˜¯å·²ç»æ’å¥½åºçš„
  */
 
 public class RemoveDuplicatesFromSortedArray {

@@ -8,8 +8,8 @@ import java.util.Arrays;
  * For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
  */
 /*
- * Ë¼Â·£¬ÓÃË«Ö¸Õë£¬Ò»¸ö¼ÇÂ¼µ±Ç°0£¬Ò»¸ö¼ÇÂ¼µ±Ç°·Ç0
- * countÓÃÀ´¼ÆÊı£¬¹²ÓĞ¶àÉÙ¸ö0
+ * æ€è·¯ï¼Œç”¨åŒæŒ‡é’ˆï¼Œä¸€ä¸ªè®°å½•å½“å‰0ï¼Œä¸€ä¸ªè®°å½•å½“å‰é0
+ * countç”¨æ¥è®¡æ•°ï¼Œå…±æœ‰å¤šå°‘ä¸ª0
  */
 
 public class MoveZeroes {

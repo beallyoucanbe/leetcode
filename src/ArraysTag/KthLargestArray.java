@@ -58,7 +58,7 @@ public class KthLargestArray {
 		int[] nums = {8, 38, 31, 4, 16, 36, 71, 55, 98, 85};
 //		for(int i = 0; i < nums.length; i++)
 //			nums[i] = (int)(Math.random() * 100);
-		System.out.println("ÅÅÐòÇ°£º" + Arrays.toString(nums));
+		System.out.println("æŽ’åºå‰ï¼š" + Arrays.toString(nums));
 		System.out.println(test.findKthLargest(nums, 3));
 		
 	}

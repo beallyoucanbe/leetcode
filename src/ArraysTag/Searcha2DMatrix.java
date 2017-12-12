@@ -14,7 +14,7 @@ public class Searcha2DMatrix {
 			 return false;
 		 int row = matrix.length;
 		 int col = matrix[0].length;
-		 int i;  //ÅÐ¶ÏtergetÔÚÄÇÒ»ÁÐ
+		 int i;  //åˆ¤æ–­tergetåœ¨é‚£ä¸€åˆ—
 		 if(target < matrix[0][0] || target > matrix[row - 1][col - 1])
 			 return false;
 		 if(target == matrix[0][0] || target == matrix[row - 1][col - 1])
@@ -22,7 +22,7 @@ public class Searcha2DMatrix {
 		 for(i = 0; i < row; i++)
 			 if(target < matrix[i][0])
 				 break;
-		 //targetÈç¹û´æÔÚ¿Ï¶¨ÔÚµÚi-1ÐÐ£¬ÓÃ¶þ·Ö·¨
+		 //targetå¦‚æžœå­˜åœ¨è‚¯å®šåœ¨ç¬¬i-1è¡Œï¼Œç”¨äºŒåˆ†æ³•
 		 return binarySearch(matrix[i - 1], target);
 	    }
 	 private boolean binarySearch(int[] nums, int target){

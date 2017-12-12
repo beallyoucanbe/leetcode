@@ -3,7 +3,7 @@ package ArraysTag;
 import java.util.Arrays;
 
 /*
- * ¿ìËÙÅÅĞò,µ±×îºóÊ£ÓàÊı×é´óĞ¡<= 10Ê±£¬²ÉÓÃÃ°ÅİÅÅĞò
+ * å¿«é€Ÿæ’åº,å½“æœ€åå‰©ä½™æ•°ç»„å¤§å°<= 10æ—¶ï¼Œé‡‡ç”¨å†’æ³¡æ’åº
  */
 
 public class QuickSort {
@@ -40,7 +40,7 @@ public class QuickSort {
 		nums[j] = temp;
 	}
 
-	// µ¥Ôª²ÉÓÃÃ°ÅİÅÅĞò
+	// å•å…ƒé‡‡ç”¨å†’æ³¡æ’åº
 	public void maoPao(int[] nums, int left, int right) {
 		for (int i = left; i < right; i++) {
 			int min = nums[i], index = i;
@@ -59,9 +59,9 @@ public class QuickSort {
 		int[] nums = new int[1000];
 		for (int i = 0; i < nums.length; i++)
 			nums[i] = (int) (Math.random() * 10000);
-		System.out.println("ÅÅĞòÇ°£º");
+		System.out.println("æ’åºå‰ï¼š");
 		System.out.println(Arrays.toString(nums));
-		System.out.println("ÅÅĞòºó£º");
+		System.out.println("æ’åºåï¼š");
 		test.quickSort(nums);
 		System.out.println(Arrays.toString(nums));
 		

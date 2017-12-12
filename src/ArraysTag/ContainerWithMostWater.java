@@ -6,7 +6,7 @@ package ArraysTag;
  * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
  */
 /*
- * Ê×ÏÈ£¬±©Á¦ËÑË÷£¬iºÍjµÄ»°Îª(j-i)*Math.min(heighti, heightj);
+ * é¦–å…ˆï¼Œæš´åŠ›æœç´¢ï¼Œiå’Œjçš„è¯ä¸º(j-i)*Math.min(heighti, heightj);
  */
 public class ContainerWithMostWater {
 	public int maxArea(int[] height) {

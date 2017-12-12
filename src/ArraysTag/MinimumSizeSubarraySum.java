@@ -1,10 +1,10 @@
 package ArraysTag;
 /*
  * Given an array of n positive integers and a positive integer s, 
- * find the minimal length of a subarray of which the sum ¡İ s. If there isn't one, return 0 instead.
+ * find the minimal length of a subarray of which the sum â‰¥ s. If there isn't one, return 0 instead.
  * For example, given the array [2,3,1,2,4,3] and s = 7,
  * the subarray [4,3] has the minimal length under the problem constraint.
- * ÏÈÕÒµ½Ò»¸öºÍ´óÓÚ¸ø¶¨ÖµµÄ×Ó¼¯£¬È»ºó¸ù¾İÕâ¸ö×Ó¼¯È¥ÌÖÂÛ
+ * å…ˆæ‰¾åˆ°ä¸€ä¸ªå’Œå¤§äºç»™å®šå€¼çš„å­é›†ï¼Œç„¶åæ ¹æ®è¿™ä¸ªå­é›†å»è®¨è®º
  */
 
 public class MinimumSizeSubarraySum {

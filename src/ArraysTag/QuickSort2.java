@@ -16,7 +16,7 @@ public class QuickSort2 {
 			if(high - low <= CUTOFF)
 				insertionSort(nums, low, high);
 			else{
-				// ¼ÌĞø·Ö¸îÈ»ºóÅÅĞò
+				// ç»§ç»­åˆ†å‰²ç„¶åæ’åº
 				int middle = (low + high) / 2;
 				if(nums[low] > nums[high])
 					swap(nums, low, high);
@@ -24,10 +24,10 @@ public class QuickSort2 {
 					swap(nums, low, middle);
 				if(nums[high] < nums[middle])
 					swap(nums, middle, high);
-				swap(nums, middle, high - 1);  //°ÑÑ¡ÔñµÄÖ§µã·ÅÔÚµ¹ÊıµÚ¶ş¸öÎ»ÖÃ
-				//Ñ¡ÔñÖ§µã
+				swap(nums, middle, high - 1);  //æŠŠé€‰æ‹©çš„æ”¯ç‚¹æ”¾åœ¨å€’æ•°ç¬¬äºŒä¸ªä½ç½®
+				//é€‰æ‹©æ”¯ç‚¹
 				int pivot = nums[high - 1];
-				//¿ª·Ö¸î
+				//å¼€åˆ†å‰²
 				int i, j;
 				for( i = low + 1, j = high - 1; ;){
 					while(nums[i] < pivot)
@@ -38,13 +38,13 @@ public class QuickSort2 {
 						break;
 					swap(nums, i, j);
 				}
-				//ÖØÖÃÖ§µã
+				//é‡ç½®æ”¯ç‚¹
 				swap(nums, i, high - 1);
-				quicksort(nums, low, i - 1);   //¶Ô×Ó·Ö¸îµİ¹éµ÷ÓÃ
-				quicksort(nums, i, high - 1);  //¶Ô×Ó·Ö¸îµİ¹éµ÷ÓÃ
+				quicksort(nums, low, i - 1);   //å¯¹å­åˆ†å‰²é€’å½’è°ƒç”¨
+				quicksort(nums, i, high - 1);  //å¯¹å­åˆ†å‰²é€’å½’è°ƒç”¨
 			}
 		}
-		//ÈçÈÎºÎ¶ÔÏóµÄ¸Ä±äÊıÖµ
+		//å¦‚ä»»ä½•å¯¹è±¡çš„æ”¹å˜æ•°å€¼
 		public static void swap(int[] nums, int i, int j){
 			int temp = 0;
 			temp = nums[i];
@@ -72,9 +72,9 @@ public class QuickSort2 {
 			String abc = "adf";
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("1", abc);
-			System.out.println("ÅÅĞòÇ°" + Arrays.toString(nums));
+			System.out.println("æ’åºå‰" + Arrays.toString(nums));
 			test.quicksort(nums);
-			System.out.println("ÅÅĞòºó" + Arrays.toString(nums));
+			System.out.println("æ’åºå" + Arrays.toString(nums));
 			
 			
 		}

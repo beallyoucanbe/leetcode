@@ -7,13 +7,13 @@ package ArraysTag;
  * the contiguous subarray [4,-1,2,1] has the largest sum = 6.
  */
 /*
- * ½â¾ö°ì·¨£¬¶¯Ì¬¹æ»®£¬×öºÃ×ªÒÆº¯Êı
- * ÓÉÓÚÔÚÊı×éÖĞÍ¬Ê±´æÔÚÕıÊıºÍ¸ºÊı£¬ËùÒÔ¿ÉÒÔÊ¹ÓÃ¸üÎªÓÅ»¯
+ * è§£å†³åŠæ³•ï¼ŒåŠ¨æ€è§„åˆ’ï¼Œåšå¥½è½¬ç§»å‡½æ•°
+ * ç”±äºåœ¨æ•°ç»„ä¸­åŒæ—¶å­˜åœ¨æ­£æ•°å’Œè´Ÿæ•°ï¼Œæ‰€ä»¥å¯ä»¥ä½¿ç”¨æ›´ä¸ºä¼˜åŒ–
  */
 
 public class MaximumSubarray {
 
-	public int maxSubArray(int[] nums) { // Ëã·¨³¬Ê±
+	public int maxSubArray(int[] nums) { // ç®—æ³•è¶…æ—¶
 		if (nums == null || nums.length == 0)
 			return Integer.MIN_VALUE;
 		int ln = nums.length;
@@ -42,7 +42,7 @@ public class MaximumSubarray {
 	 *  int maxSubArray(int A[], int n) {
     int sum = A[0] , maxSum = A[0];
     for(int i = 1; i < n; i++){
-      if(sum < 0) sum = 0;   //ÏÈÅĞ¶ÏÖ®Ç°µÄsumÄÜ·ñ±»Õâ´ÎÀûÓÃ£¨Ğ¡ÓÚ0ÔòÅ×Æú£©
+      if(sum < 0) sum = 0;   //å…ˆåˆ¤æ–­ä¹‹å‰çš„sumèƒ½å¦è¢«è¿™æ¬¡åˆ©ç”¨ï¼ˆå°äº0åˆ™æŠ›å¼ƒï¼‰
       sum += A[i];
       maxSum = max(maxSum, sum); 
     }

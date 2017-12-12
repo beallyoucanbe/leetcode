@@ -9,10 +9,10 @@ package ArraysTag;
  *A = [3,2,1,0,4], return false.
  */
 /*
- * ���ǰ���ֵ��ʵ�ԭ�����½�һ��boolean����������, ���ǣ����ַ�����Ȼ��ʱ��
- * ˼·����̰���㷨�������ĳ�㿪ʼ������ǰ��Ծ�Ķ������룬
- * ��ÿһ��������붼 < length, �򷵻�boolean��
- * ����һ�����length�� �򷵻�true
+ * 借鉴前面拆分单词的原理，新建一个boolean变量的数组, 但是，这种方法竟然超时了
+ * 思路二，贪心算法，计算从某点开始所能向前跳跃的额最大距离，
+ * 若每一点的最大距离都 < length, 则返回boolean；
+ * 若有一点大于length， 则返回true
  */
 public class JumpGame {
 
@@ -21,7 +21,7 @@ public class JumpGame {
 			return false;
 		int len = nums.length;
 		boolean[] isReach = new boolean[len];
-		isReach[0] = true; // Ԥ��������ʼλ���ڵ�һ��
+		isReach[0] = true; // 预处理，初始位置在第一点
 		for (int i = 0; i < len; i++) {
 			if (!isReach[i])
 				continue;

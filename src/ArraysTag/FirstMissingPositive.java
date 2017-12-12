@@ -13,10 +13,10 @@ import LinkedList.SwapNodes;
  * Your algorithm should run in O(n) time and uses constant space.
  */
 /*
- * ��FindtheDuplicateNumber��Ŀ������ˣ�������������һ���ģ�
- * ֻ���������ҵ����ظ����Ǹ��� ���������ҵ�ȱʧ���Ǹ��������ǵ�һ���������Ƕ�������Բ���ʹ���������
- * ����������Ŀռ䣬���ǿ�����ԭ���������Ͻ��в��������ƶ�Ԫ�ء�
- * o��n��ʱ�临�ӶȲ�����ֻ����һ�Σ�ֻҪ�ڳ�����Χ�ڶ��ǿ��Ե�
+ * 把FindtheDuplicateNumber题目理解好了，这道题跟上面是一样的，
+ * 只是上面是找到多重复的那个， 而这里是找到缺失的那个，而且是第一个，可以是多个，所以不能使用异或运算
+ * 不开辟另外的空间，但是可以在原来的数组上进行操作，如移动元素。
+ * o（n）时间复杂度不代表只遍历一次，只要在常数范围内都是可以的
  */
 
 public class FirstMissingPositive {

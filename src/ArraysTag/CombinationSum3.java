@@ -8,7 +8,7 @@ import java.util.List;
  * Find all possible combinations of k numbers that add up to a number n, 
  * given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
  * Ensure that numbers within the set are sorted in ascending order.
- * 审题：每一个组合都是一个集合，故所有的数字不能重复
+ * 瀹￠锛氭瘡涓�涓粍鍚堥兘鏄竴涓泦鍚堬紝鏁呮墍鏈夌殑鏁板瓧涓嶈兘閲嶅
  */
 public class CombinationSum3 {
 

@@ -2,8 +2,8 @@ package ArraysTag;
 
 import java.util.Arrays;
 /*
- * Á·Ï°¹é²¢ÅÅĞò
- * ¹é²¢ÅÅĞò£¨Merge Sort£©ÊÇ·ÖÖÎ·¨£¨Divided and Conquer£©µÄÒ»ÖÖ¾ßÌåÓ¦ÓÃ
+ * ç»ƒä¹ å½’å¹¶æ’åº
+ * å½’å¹¶æ’åºï¼ˆMerge Sortï¼‰æ˜¯åˆ†æ²»æ³•ï¼ˆDivided and Conquerï¼‰çš„ä¸€ç§å…·ä½“åº”ç”¨
  */
 
 public class MergeSort {
@@ -16,11 +16,11 @@ public class MergeSort {
 		int mid = left + (right - left) / 2;
 		if(left < right){
 			
-			//×ó°ë²¿·ÖÅÅĞò
+			//å·¦åŠéƒ¨åˆ†æ’åº
 			sort(nums, left, mid);
-			//ÓÒ°ë²¿·ÖÅÅĞò
+			//å³åŠéƒ¨åˆ†æ’åº
 			sort(nums, mid + 1, right);
-			//×óÓÒºÏ²¢
+			//å·¦å³åˆå¹¶
 			merge(nums, left, mid, right);
 		}
 	}
@@ -34,15 +34,15 @@ public class MergeSort {
 			else
 				temp[k++] = nums[j++];
 		}
-		//Èç¹ûÇ°°ë²¿·Ö»¹ÓĞÔªËØÊ£Óà
+		//å¦‚æœå‰åŠéƒ¨åˆ†è¿˜æœ‰å…ƒç´ å‰©ä½™
 		while(i <= mid){
 			temp[k++] = nums[i++];
 		}
-		//Èç¹ûºó°ë²¿·Ö»¹ÓĞÔªËØÊ£Óà
+		//å¦‚æœååŠéƒ¨åˆ†è¿˜æœ‰å…ƒç´ å‰©ä½™
 		while(j <= right){
 			temp[k++] = nums[j++];
 		}
-		//×îºó°ÑÁÙÊ±Êı×éÖĞµÄÔªËØ¸´ÖÆµ½Ô­Êı×éµÄ¶ÔÓ¦Î»ÖÃ
+		//æœ€åæŠŠä¸´æ—¶æ•°ç»„ä¸­çš„å…ƒç´ å¤åˆ¶åˆ°åŸæ•°ç»„çš„å¯¹åº”ä½ç½®
 		for (int k2 = 0; k2 < temp.length; k2++) {  
             nums[k2 + left] = temp[k2];  
         }  	

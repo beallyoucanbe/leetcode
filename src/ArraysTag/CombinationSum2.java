@@ -10,14 +10,14 @@ import java.util.Set;
  * Given a collection of candidate numbers (C) and a target number (T), 
  * find all unique combinations in C where the candidate numbers sums to T.
  * Each number in C may only be used once in the combination. 
- * Òª×¢ÒâµÄÊÇ£¬candidateÖĞµÄÔªËØ¿ÉÄÜÓĞÖØ¸´µÄ£¬Èç{1,1,2,3}£¬¿¼ÂÇÈçºÎÒª±£Ö¤Î¨Ò»ĞÔ¡£
- * ÔÚ1ÖĞµÄ¼¯ºÏÊÇÓÃµÄsetÀ´´æ´¢£¬Ã¿¸öÔªËØ¶¼ÊÇÎ¨Ò»µÄ£¬¹Ê²»´æÔÚ½á¹û¼¯ÖØ¸´µÄÇé¿ö£¬
- * µ«´ËÊ±ÊÇÓÃ¼¯ºÏ£¬»áÓĞÖØ¸´µÄÔªËØ
- * ÏÈ¿¼ÂÇ
+ * è¦æ³¨æ„çš„æ˜¯ï¼Œcandidateä¸­çš„å…ƒç´ å¯èƒ½æœ‰é‡å¤çš„ï¼Œå¦‚{1,1,2,3}ï¼Œè€ƒè™‘å¦‚ä½•è¦ä¿è¯å”¯ä¸€æ€§ã€‚
+ * åœ¨1ä¸­çš„é›†åˆæ˜¯ç”¨çš„setæ¥å­˜å‚¨ï¼Œæ¯ä¸ªå…ƒç´ éƒ½æ˜¯å”¯ä¸€çš„ï¼Œæ•…ä¸å­˜åœ¨ç»“æœé›†é‡å¤çš„æƒ…å†µï¼Œ
+ * ä½†æ­¤æ—¶æ˜¯ç”¨é›†åˆï¼Œä¼šæœ‰é‡å¤çš„å…ƒç´ 
+ * å…ˆè€ƒè™‘
  * 
- * set×÷Îª¼¯ºÏÀ´ÅĞ¶ÏsetÄÚµÄÔªËØÏàÍ¬Ê±ÊÇ°´ÕÕÊ²Ã´Î¶±ê×¼µÄ  (hashcode)
- * ÈçintÊÇÖµ£¬
- * ÄÇÃ´List<Integer>ÊÇÄÚ´æµØÖ·»¹ÊÇ½ö½öÊÇListÖĞµÄÔªËØ
+ * setä½œä¸ºé›†åˆæ¥åˆ¤æ–­setå†…çš„å…ƒç´ ç›¸åŒæ—¶æ˜¯æŒ‰ç…§ä»€ä¹ˆå‘³æ ‡å‡†çš„  (hashcode)
+ * å¦‚intæ˜¯å€¼ï¼Œ
+ * é‚£ä¹ˆList<Integer>æ˜¯å†…å­˜åœ°å€è¿˜æ˜¯ä»…ä»…æ˜¯Listä¸­çš„å…ƒç´ 
  */
 
 public class CombinationSum2 {
@@ -51,7 +51,7 @@ public class CombinationSum2 {
 				return;
 			path.add(candidates[i]);
 			combinationSum2(candidates, target - candidates[i], i, path, res);
-			path.remove(path.size() - 1);  //ÔÚÕâÀïÒªÉ¾³ıµôÂ·¾¶pathÖĞµÄ×îºóÒ»¸öÔªËØ
+			path.remove(path.size() - 1);  //åœ¨è¿™é‡Œè¦åˆ é™¤æ‰è·¯å¾„pathä¸­çš„æœ€åä¸€ä¸ªå…ƒç´ 
 		}
 	}
 

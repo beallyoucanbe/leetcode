@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- * ÅĞ¶ÏÊı×éÊÇ·ñÓĞÖØ¸´µÄÔªËØ£¬¿ÉÒÔÓÃ¹şÏ£±í
+ * åˆ¤æ–­æ•°ç»„æ˜¯å¦æœ‰é‡å¤çš„å…ƒç´ ï¼Œå¯ä»¥ç”¨å“ˆå¸Œè¡¨
  */
 
 public class ContainDuplicate {

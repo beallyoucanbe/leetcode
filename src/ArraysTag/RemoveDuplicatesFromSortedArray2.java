@@ -3,18 +3,18 @@ package ArraysTag;
 import java.util.Arrays;
 
 /*
- * Õâ´ÎÃ¿¸öÔªËØ×î¶à¿ÉÒÔ³öÏÖÁ½´Î£¬¼´ÔÊÐí1,1,2,2,µÄÐÎÊ½
- * Ôö¼ÓÒ»¸ö±êÖ¾Î»flagÀ´±íÊ¾ÔªËØÊÇ·ñÖØ¸´
+ * è¿™æ¬¡æ¯ä¸ªå…ƒç´ æœ€å¤šå¯ä»¥å‡ºçŽ°ä¸¤æ¬¡ï¼Œå³å…è®¸1,1,2,2,çš„å½¢å¼
+ * å¢žåŠ ä¸€ä¸ªæ ‡å¿—ä½flagæ¥è¡¨ç¤ºå…ƒç´ æ˜¯å¦é‡å¤
  * 
  * if()
- * if() Óï¾äµÄÌØµãºÍ
+ * if() è¯­å¥çš„ç‰¹ç‚¹å’Œ
  * 
  * if()
  * else if()
  * else if()
- * µÄÇø±ð
- * Èç¹ûÖ»ÏëÈÃÃ¿´ÎÑ¡ÔñÖ»½øÈëÒ»¸öÑ¡ÔñÓï¾ä¾Í¸ÃÓÃÏÂÃæµÄ
- * ÉÏÃæµÄµ±µÚÒ»¸öifÖ´ÐÐÍêÖ®ºó¼ÌÐøÅÐ¶ÏÏÂÃæµÄ¶îifÓï¾äÊÇ·ñ·ûºÏÌõ¼þ£¬Èç¹û·ûºÏÔò¼ÌÐø½øÈëifÓï¾ä¼ÌÐøÖ´ÐÐ
+ * çš„åŒºåˆ«
+ * å¦‚æžœåªæƒ³è®©æ¯æ¬¡é€‰æ‹©åªè¿›å…¥ä¸€ä¸ªé€‰æ‹©è¯­å¥å°±è¯¥ç”¨ä¸‹é¢çš„
+ * ä¸Šé¢çš„å½“ç¬¬ä¸€ä¸ªifæ‰§è¡Œå®Œä¹‹åŽç»§ç»­åˆ¤æ–­ä¸‹é¢çš„é¢ifè¯­å¥æ˜¯å¦ç¬¦åˆæ¡ä»¶ï¼Œå¦‚æžœç¬¦åˆåˆ™ç»§ç»­è¿›å…¥ifè¯­å¥ç»§ç»­æ‰§è¡Œ
  */
 public class RemoveDuplicatesFromSortedArray2 {
 

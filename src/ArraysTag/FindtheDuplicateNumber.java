@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class FindtheDuplicateNumber {
 
-	public int findDuplicate(int[] nums) { // ÕâÖÖ·½·¨´íÎó£¬Ò»Ğ©Êı×Ö¿ÏÄÜ²»´æÔÚ£¬¶øÖØ¸´µÄÊı×Ö¿ÉÄÜÖØ¸´¶à´Î
+	public int findDuplicate(int[] nums) { // è¿™ç§æ–¹æ³•é”™è¯¯ï¼Œä¸€äº›æ•°å­—è‚¯èƒ½ä¸å­˜åœ¨ï¼Œè€Œé‡å¤çš„æ•°å­—å¯èƒ½é‡å¤å¤šæ¬¡
 		if (nums == null || nums.length == 0)
 			return -1;
 		int ln = nums.length;
@@ -23,7 +23,7 @@ public class FindtheDuplicateNumber {
 		return res;
 	}
 
-	public int findDuplicate2(int[] nums) { // ¿ÉÒÔ¿¼ÂÇÓÃ¹şÏ£±í£¬µ«ÊÇ»áÒıÈë¶îÍâµÄ´æ´¢¿Õ¼ä
+	public int findDuplicate2(int[] nums) { // å¯ä»¥è€ƒè™‘ç”¨å“ˆå¸Œè¡¨ï¼Œä½†æ˜¯ä¼šå¼•å…¥é¢å¤–çš„å­˜å‚¨ç©ºé—´
 		if (nums == null || nums.length == 0)
 			return -1;
 		Set<Integer> set = new HashSet<Integer>();
@@ -35,10 +35,10 @@ public class FindtheDuplicateNumber {
 		return -1;
 	}
 
-	public int findDuplicate3(int[] nums){  // ²»ĞèÒªÓÃ¶îÍâµÄ¿Õ¼ä£¬¶ş·Ö·¨£¬Ã¿´ÎËõĞ¡Ò»°ëµÄ·¶Î§
+	public int findDuplicate3(int[] nums){  // ä¸éœ€è¦ç”¨é¢å¤–çš„ç©ºé—´ï¼ŒäºŒåˆ†æ³•ï¼Œæ¯æ¬¡ç¼©å°ä¸€åŠçš„èŒƒå›´
 		if (nums == null || nums.length == 0)
 			return -1;
-		int ln = nums.length;  // Êı×é³¤¶È
+		int ln = nums.length;  // æ•°ç»„é•¿åº¦
 		int left = 1, right = ln - 1;
 		int mid = 0;
 		while(left <= right){
@@ -65,19 +65,19 @@ public class FindtheDuplicateNumber {
     public int findDuplicate(int[] nums) {
         int min = 0, max = nums.length - 1;
         while(min <= max){
-            // ÕÒµ½ÖĞ¼äÄÇ¸öÊı
+            // æ‰¾åˆ°ä¸­é—´é‚£ä¸ªæ•°
             int mid = min + (max - min) / 2;
             int cnt = 0;
-            // ¼ÆËã×ÜÊı×éÖĞÓĞ¶àÉÙ¸öÊıĞ¡ÓÚµÈÓÚÖĞ¼äÊı
+            // è®¡ç®—æ€»æ•°ç»„ä¸­æœ‰å¤šå°‘ä¸ªæ•°å°äºç­‰äºä¸­é—´æ•°
             for(int i = 0; i < nums.length; i++){
                 if(nums[i] <= mid){
                     cnt++;
                 }
             }
-            // Èç¹ûĞ¡ÓÚµÈÓÚÖĞ¼äÊıµÄÊıÁ¿´óÓÚÖĞ¼äÊı£¬ËµÃ÷Ç°°ë²¿·Ö±ØÓĞÖØ¸´
+            // å¦‚æœå°äºç­‰äºä¸­é—´æ•°çš„æ•°é‡å¤§äºä¸­é—´æ•°ï¼Œè¯´æ˜å‰åŠéƒ¨åˆ†å¿…æœ‰é‡å¤
             if(cnt > mid){
                 max = mid - 1;
-            // ·ñÔòºó°ë²¿·Ö±ØÓĞÖØ¸´
+            // å¦åˆ™ååŠéƒ¨åˆ†å¿…æœ‰é‡å¤
             } else {
                 min = mid + 1;
             }

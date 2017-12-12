@@ -3,7 +3,7 @@ package ArraysTag;
 import java.util.Arrays;
 
 /*
- * É¾³ıÊıÁĞÖĞµÄÄ³¸öÔªËØvalue,²¢·µ»ØĞÂÊı×éµÄ³¤¶È
+ * åˆ é™¤æ•°åˆ—ä¸­çš„æŸä¸ªå…ƒç´ value,å¹¶è¿”å›æ–°æ•°ç»„çš„é•¿åº¦
  */
 public class RemoveElement {
 

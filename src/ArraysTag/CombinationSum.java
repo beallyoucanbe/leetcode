@@ -9,8 +9,8 @@ import java.util.List;
  * Given a set of candidate numbers (C) and a target number (T), 
  * find all unique combinations in C where the candidate numbers sums to T.
  * The same repeated number may be chosen from C unlimited number of times. 
- * ÔªËØÔÚ¼¯ºÏÖĞµÄË³ĞòÊÇµİÔöµÄ
- * DFS·½·¨
+ * å…ƒç´ åœ¨é›†åˆä¸­çš„é¡ºåºæ˜¯é€’å¢çš„
+ * DFSæ–¹æ³•
  * 
  */
 
@@ -22,7 +22,7 @@ public class CombinationSum {
 		if(candidates == null || candidates.length == 0) 
 			return res;
 		List<Integer> path = new ArrayList<Integer>();
-		Arrays.sort(candidates); //¶ÔÊı×é½øĞĞÅÅĞò
+		Arrays.sort(candidates); //å¯¹æ•°ç»„è¿›è¡Œæ’åº
 		
 		combinationSum(candidates, target, 0, path, res);
 		
@@ -31,14 +31,14 @@ public class CombinationSum {
 	
 	public void combinationSum(int[] candidates, int target, int j, List<Integer> path, List<List<Integer>> res){
 		if(target == 0){
-			ArrayList<Integer> temp = new ArrayList<Integer>(path);//ĞÂ½¨ÔìÒ»¸öList£¬ÓÃµ±Ç°µÄlist¸³Öµ£¬
+			ArrayList<Integer> temp = new ArrayList<Integer>(path);//æ–°å»ºé€ ä¸€ä¸ªListï¼Œç”¨å½“å‰çš„listèµ‹å€¼ï¼Œ
 			res.add(temp);
-			return;       //  ×ĞÏ¸ÏëÏëÕâÀïµÄÁ½¸öreturnµÄ×÷ÓÃ£¬µ±Óöµ½²»Âú×ãÌõ¼şµÄÖµÊ±£¬¼°Ê±Ìø³öµ±Ç°µÄÑ­»·£¬»ØËİµ½Ç°Ò»²ãµÄÏÂÒ»¸öÑ­»·
+			return;       //  ä»”ç»†æƒ³æƒ³è¿™é‡Œçš„ä¸¤ä¸ªreturnçš„ä½œç”¨ï¼Œå½“é‡åˆ°ä¸æ»¡è¶³æ¡ä»¶çš„å€¼æ—¶ï¼ŒåŠæ—¶è·³å‡ºå½“å‰çš„å¾ªç¯ï¼Œå›æº¯åˆ°å‰ä¸€å±‚çš„ä¸‹ä¸€ä¸ªå¾ªç¯
 		}
 		
 		for(int i = j; i < candidates.length; i++){
 			if(target < candidates[i])
-				return;  //×ĞÏ¸ÏëÏëÕâÀïµÄÁ½¸öreturnµÄ×÷ÓÃ£¬µ±Óöµ½²»Âú×ãÌõ¼şµÄÖµÊ±£¬¼°Ê±Ìø³öµ±Ç°µÄÑ­»·£¬»ØËİµ½Ç°Ò»²ãµÄÏÂÒ»¸öÑ­»·
+				return;  //ä»”ç»†æƒ³æƒ³è¿™é‡Œçš„ä¸¤ä¸ªreturnçš„ä½œç”¨ï¼Œå½“é‡åˆ°ä¸æ»¡è¶³æ¡ä»¶çš„å€¼æ—¶ï¼ŒåŠæ—¶è·³å‡ºå½“å‰çš„å¾ªç¯ï¼Œå›æº¯åˆ°å‰ä¸€å±‚çš„ä¸‹ä¸€ä¸ªå¾ªç¯
 			path.add(candidates[i]);
 			combinationSum(candidates, target - candidates[i], i, path, res);
 			path.remove(path.size() - 1);
