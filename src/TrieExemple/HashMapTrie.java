@@ -3,7 +3,7 @@ package TrieExemple;
 import java.util.HashMap;
 
 /*
- * 这里节点用hash表来存储
+ * 杩欓噷鑺傜偣鐢╤ash琛ㄦ潵瀛樺偍
  * 
  */
 
@@ -85,7 +85,7 @@ public class HashMapTrie {
 		test.insert("balls");
 		test.insert("sense");
 
-		// 测试方法
+		// 娴嬭瘯鏂规硶
 		System.out.println(test.search("balls"));
 		System.out.println(test.search("ba"));
 	

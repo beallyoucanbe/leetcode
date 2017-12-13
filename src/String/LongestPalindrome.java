@@ -1,12 +1,12 @@
 package String;
 
 /*
- * Ñ°ÕÒ¸ø¶¨×Ö·û´®µÄ×î³¤»ØÎÄ×Ö·û´®
+ * å¯»æ‰¾ç»™å®šå­—ç¬¦ä¸²çš„æœ€é•¿å›æ–‡å­—ç¬¦ä¸²
  */
 
 public class LongestPalindrome {
 
-	// ·½·¨Ò»£º±©Á¦·¨¡£ÕÒµ½Ä¸´®µÄÃ¿Ò»¸ö×Ó´®£¬ È»ºóÅĞ¶ÏÊÇ·ñÎª»ØÎÄ´®
+	// æ–¹æ³•ä¸€ï¼šæš´åŠ›æ³•ã€‚æ‰¾åˆ°æ¯ä¸²çš„æ¯ä¸€ä¸ªå­ä¸²ï¼Œ ç„¶ååˆ¤æ–­æ˜¯å¦ä¸ºå›æ–‡ä¸²
 	public String longestPalindromeString(String s) {
 		if (s == null || s.length() == 0)
 			return "";
@@ -26,7 +26,7 @@ public class LongestPalindrome {
 		return longestString;
 	}
 
-	private boolean isPalindrome(String s) { // ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ·ñÎª»ØÎÄ´®
+	private boolean isPalindrome(String s) { // åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦ä¸ºå›æ–‡ä¸²
 		if (s == null || s.length() == 0)
 			return false;
 		int n = s.length();
@@ -38,7 +38,7 @@ public class LongestPalindrome {
 		return true;
 	}
 
-	// ·½·¨¶ş£º ¶¯Ì¬¹æ»®·¨£¬
+	// æ–¹æ³•äºŒï¼š åŠ¨æ€è§„åˆ’æ³•ï¼Œ
 	public String longestPalindromeString2(String s) {
 		if (s == null || s.length() == 0)
 			return "";
@@ -47,7 +47,7 @@ public class LongestPalindrome {
 		int maxLen = 1;
 		boolean[][] table = new boolean[n][n];
 		for (int i = 0; i < n; i++) {
-			table[i][i] = true; // Êı¾İÔ¤´¦Àí£¬µ¥×ÖÄ¸Îª»ØÎÄ×Ö·û´®
+			table[i][i] = true; // æ•°æ®é¢„å¤„ç†ï¼Œå•å­—æ¯ä¸ºå›æ–‡å­—ç¬¦ä¸²
 		}
 		for (int i = 0; i < n - 1; i++) {
 			if (s.charAt(i) == s.charAt(i + 1)) {
@@ -68,7 +68,7 @@ public class LongestPalindrome {
 		return s.substring(longestBegin, longestBegin + maxLen); 
 	}
 
-	//·½·¨Èı£º ÖĞĞÄÀ©Õ¹·¨
+	//æ–¹æ³•ä¸‰ï¼š ä¸­å¿ƒæ‰©å±•æ³•
 	private String centerArround(String s, int a, int b){
 		int n = s.length();
 		while(a >= 0 && b <n){
@@ -86,7 +86,7 @@ public class LongestPalindrome {
 			return "";
 		int n = s.length();
 		int maxLen = 1;
-		String longestString = s.substring(0, 1); //ÖÁÉÙÒªÓĞÒ»¸ö×Ö·û
+		String longestString = s.substring(0, 1); //è‡³å°‘è¦æœ‰ä¸€ä¸ªå­—ç¬¦
 		for(int i = 0; i < n; i++){
 			String s1 = centerArround(s, i, i);
 			if(s1.length() > maxLen){

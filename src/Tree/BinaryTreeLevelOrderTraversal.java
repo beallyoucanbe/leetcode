@@ -8,8 +8,8 @@ import java.util.Queue;
 /*
  * Given a binary tree, return the level order traversal of its nodes' values.
  * (ie, from left to right, level by level).
- * ¼´Ğ´³ö¶ş²æÊ÷µÄ·Ö²ã±éÀúËã·¨
- * ÒªÓÃÑ­»·£¬¶ø·Çµİ¹é£¬Í¬Ê±Ó¦ÓÃ¶ÓÁĞµÄÊı¾İ½á¹¹
+ * å³å†™å‡ºäºŒå‰æ ‘çš„åˆ†å±‚éå†ç®—æ³•
+ * è¦ç”¨å¾ªç¯ï¼Œè€Œéé€’å½’ï¼ŒåŒæ—¶åº”ç”¨é˜Ÿåˆ—çš„æ•°æ®ç»“æ„
  */
 
 public class BinaryTreeLevelOrderTraversal {

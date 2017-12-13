@@ -9,26 +9,26 @@ import java.util.Queue;
 import Tree.TreeNode;
 
 /*
- * ��Ϊһ����������
+ * 作为一个方法返回
  * int leftdepth = root.left == null ? Integer.MAX_VALUE
 					: minDepth(root.left);
-	���������仰��������˼
-	���ĳһ���ڵ�ֻ��һ����ڵ�����ҽڵ㣬��ô����������ɴ��ڵĽڵ�������
-	���ֻд�� leftdepth = minDepth(root.left);
-	������ڵ�Ϊnull�������᷵��0������ȵĶ�����һ��Ҫ��Ҷ�ӣ�
-	��ʱ�ͻ����
-	�����һ������ֻ��һ�����ӣ���������ɴ��ڵĺ��ӽڵ��������ʱ��Ҫ������һ������ΪMAX
+	理解这两句话代表的意思
+	如果某一个节点只有一个左节点或是右节点，那么他的深度则由存在的节点所决定
+	如果只写成 leftdepth = minDepth(root.left);
+	由于左节点为null，方法会返回0，而深度的定义是一定要到叶子，
+	此时就会出错
+	即如果一个子树只有一个孩子，则其深度由存在的孩子节点决定，这时就要把另外一边设置为MAX
  */
 
 /*
- * ����һ�ַ���Ϊ�������
- * ���������ԭ�������������ҵ���һ��Ҷ�ӽڵ�ʱ�Ĳ�����Ϊ��С���
- * ��������һ������һ�����к�һ��int ��������¼ÿһ���Ľڵ�������仯
+ * 另外一种方法为广度优先
+ * 按广度优先原则逐层遍历，当找到第一个叶子节点时的层数即为最小深度
+ * 可以像本例一样，用一个队列和一个int 变量来记录每一级的节点数及其变化
  */
 
 public class MinimumDepthOfBinaryTree2 {
 
-	//�ݹ�ķ���
+	//递归的方法
 	public int minDepth(TreeNode root) {
 		if (root == null)
 			return 0;
@@ -42,13 +42,13 @@ public class MinimumDepthOfBinaryTree2 {
 			return Math.min(leftdepth, rightdepth) + 1;
 		}
 	}
-	//����BFS������ȵķ���
+	//采用BFS广度优先的方法
 	public int minDepthBFS(TreeNode root) {
 		if(root == null)
 			return 0;
 		int depth = 1;
-		int currentlevel = 1; //���嵱ǰ��Ľڵ���
-		int nextlevel = 0; //������һ��Ľڵ���
+		int currentlevel = 1; //定义当前层的节点数
+		int nextlevel = 0; //定义下一层的节点数
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.add(root);
 		while(!queue.isEmpty()){

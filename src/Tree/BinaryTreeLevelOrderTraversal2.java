@@ -10,8 +10,8 @@ import java.util.Stack;
  * (ie, from left to right, level by level from leaf to root).
  */
 /*
- * �������ͨ�İ������ֻ��һ���仯������Ҫ�������˳���Ǵӵײ㵽���������������ֻ���ȰѰ�������Ľ���洢��һ�����ݽṹ�У���ջ�У�
- * �Ϳ����ڱ�����֮�������
+ * 这里跟普通的按层遍历只有一处变化，这里要求输出的顺序是从底层到根部的输出，这样只需先把按层遍历的结果存储在一种数据结构中，如栈中，
+ * 就可以在遍历完之后再输出
  */
 
 public class BinaryTreeLevelOrderTraversal2 {

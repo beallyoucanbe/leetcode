@@ -6,16 +6,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 /*
- * 此时要求把所有满足条件的组合，这时，用一个List[] 来代替boolean[]
- * 练习如定义以及使用list[], 最后考虑能否使用List<List<String>>;
- * 先把
+ * 姝ゆ椂瑕佹眰鎶婃墍鏈夋弧瓒虫潯浠剁殑缁勫悎锛岃繖鏃讹紝鐢ㄤ竴涓狶ist[] 鏉ヤ唬鏇縝oolean[]
+ * 缁冧範濡傚畾涔変互鍙婁娇鐢╨ist[], 鏈�鍚庤�冭檻鑳藉惁浣跨敤List<List<String>>;
+ * 鍏堟妸
  */
 
 public class WordBreak3 {
 
 	public List<String> wordBreak(String s, Set<String> wordDict) {
 
-		List<String>[] re = new ArrayList[s.length() + 1]; // 如何使用list[],
+		List<String>[] re = new ArrayList[s.length() + 1]; // 濡備綍浣跨敤list[],
 		re[0] = new ArrayList<String>();
 
 		for (int i = 0; i < s.length(); i++) {

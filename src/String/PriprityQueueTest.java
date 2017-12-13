@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * priorityQueue默认实现一个最小堆，如果要实现一个最大对，简单的做法好是在定义传入一个Comparator实现
+ * priorityQueue榛樿瀹炵幇涓�涓渶灏忓爢锛屽鏋滆瀹炵幇涓�涓渶澶у锛岀畝鍗曠殑鍋氭硶濂芥槸鍦ㄥ畾涔変紶鍏ヤ竴涓狢omparator瀹炵幇
  * @author shuoyi.zhao
  *
  */

@@ -1,10 +1,10 @@
 package DepthFirstSearch;
 /*
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
- * ÔÚµİ¹éµÄ¹ı³ÌÖĞ£¬ÈçºÎ¿ØÖÆºÃ±äÁ¿µÄ×÷ÓÃÓò¡£
- * ±ÈÈçËµ±¾¹ı³ÌÖĞµÄroot,
- * ÔÚµİ¹éµÄ¹ı³ÌÖĞ»á²úÉúnew TreeNode,
- * ÒıÓÃÀàĞÍºÍ»ù±¾Êı¾İÀàĞÍµÄÊ¹ÓÃ·½·¨
+ * åœ¨é€’å½’çš„è¿‡ç¨‹ä¸­ï¼Œå¦‚ä½•æ§åˆ¶å¥½å˜é‡çš„ä½œç”¨åŸŸã€‚
+ * æ¯”å¦‚è¯´æœ¬è¿‡ç¨‹ä¸­çš„root,
+ * åœ¨é€’å½’çš„è¿‡ç¨‹ä¸­ä¼šäº§ç”Ÿnew TreeNode,
+ * å¼•ç”¨ç±»å‹å’ŒåŸºæœ¬æ•°æ®ç±»å‹çš„ä½¿ç”¨æ–¹æ³•
  */
 
 import java.util.ArrayList;

@@ -1,17 +1,17 @@
 package DepthFirstSearch;
 /*
- * Âí×ßÈÕÎÊÌâ
- * ÓÃÒ»¸ö¶şÎ¬Êı×éÀ´±£´æ¿ÉÒÔÑ¡ÔñµÄ·½Ïò
- * ÔÚÃ¿Ò»´Îback²Ù×÷Ê±£¬¶¼Òª°Ñµ±Ç°µÄ²½—°Ä¨È¥
+ * é©¬èµ°æ—¥é—®é¢˜
+ * ç”¨ä¸€ä¸ªäºŒç»´æ•°ç»„æ¥ä¿å­˜å¯ä»¥é€‰æ‹©çš„æ–¹å‘
+ * åœ¨æ¯ä¸€æ¬¡backæ“ä½œæ—¶ï¼Œéƒ½è¦æŠŠå½“å‰çš„æ­¥æ£¸æŠ¹å»
  */
 
 public class Horse {
 
-	private static final int N = 5; // ÓÃÀ´¼ÇÂ¼ÆåÅÌ¸ñÊı
-	int[][] a = new int[N][N]; //ÓÃÀ´¼ÇÂ¼Ã¿Ò»²½µÄÎ»ÖÃ£¬µ±Îª0µÄÊ±ºò±íÊ¾µ±Ç°Î»ÖÃÃ»×ß×ß¹ı
-	int solution = 0; // ÓÃÀ´¼ÇÂ¼½âµÄ¸öÊı
-	int k = 0; //ÓÃÀ´¼ÇÂ¼µ±Ç°µÄ²½Êı£¬¼´µ±Ç°ÊÇµÚ¼¸²½
-	int[][] direction = {{-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}, {-1, -2}, {-2, -1}}; // ÓÃÀ´¼ÇÂ¼Ã¿´Î¿ÉÒÔ×ßµÄ°Ë¸ö·½Ïò
+	private static final int N = 5; // ç”¨æ¥è®°å½•æ£‹ç›˜æ ¼æ•°
+	int[][] a = new int[N][N]; //ç”¨æ¥è®°å½•æ¯ä¸€æ­¥çš„ä½ç½®ï¼Œå½“ä¸º0çš„æ—¶å€™è¡¨ç¤ºå½“å‰ä½ç½®æ²¡èµ°èµ°è¿‡
+	int solution = 0; // ç”¨æ¥è®°å½•è§£çš„ä¸ªæ•°
+	int k = 0; //ç”¨æ¥è®°å½•å½“å‰çš„æ­¥æ•°ï¼Œå³å½“å‰æ˜¯ç¬¬å‡ æ­¥
+	int[][] direction = {{-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}, {-1, -2}, {-2, -1}}; // ç”¨æ¥è®°å½•æ¯æ¬¡å¯ä»¥èµ°çš„å…«ä¸ªæ–¹å‘
 	
 	private boolean isOK(int row, int col){
 		if(row < 0 || row >= N || col < 0 || col >= N || a[row][col] != 0)
@@ -20,7 +20,7 @@ public class Horse {
 	}
 	
 	private void display(){
-		System.out.println("µÚ" + ++solution + "ÖÖ½â£º");
+		System.out.println("ç¬¬" + ++solution + "ç§è§£ï¼š");
 		for(int i = 0; i < N; i++){
 			for(int j = 0; j < N; j++){
 				System.out.print(a[i][j] + " ");
@@ -36,7 +36,7 @@ public class Horse {
 			int newrow = row + direction[i][0];
 			int newcol = col + direction[i][1];
 			if (isOK(newrow, newcol)) {
-				if (k != N * N - 1) {  //ÔÚÕÒµ½×îºóÒ»¸öµãÖ®Ç°ÒÑ¾­×ß¹ıÁËN * N ¸öµã
+				if (k != N * N - 1) {  //åœ¨æ‰¾åˆ°æœ€åä¸€ä¸ªç‚¹ä¹‹å‰å·²ç»èµ°è¿‡äº†N * N ä¸ªç‚¹
 					a[newrow][newcol] = ++k;
 					//forward
 					dfsFunction(newrow, newcol);

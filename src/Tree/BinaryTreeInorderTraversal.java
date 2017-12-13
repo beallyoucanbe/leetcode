@@ -5,7 +5,7 @@ import java.util.List;
 
 /*
  * Given a binary tree, return the inorder traversal of its nodes' values.
- * Ê÷µÄÖĞĞò±éÀú
+ * æ ‘çš„ä¸­åºéå†
  */
 public class BinaryTreeInorderTraversal {
 	public List<Integer> inorderTraversal(TreeNode root) {

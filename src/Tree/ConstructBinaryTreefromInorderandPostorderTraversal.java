@@ -11,7 +11,7 @@ public class ConstructBinaryTreefromInorderandPostorderTraversal {
 		if (postorder == null || postorder.length == 0 || inorder == null
 				|| inorder.length == 0)
 			return null;
-		// ½¨Á¢¸ù½Úµã
+		// å»ºç«‹æ ¹èŠ‚ç‚¹
 		//TreeNode root = dfs(postorder, 0, inorder, inorder.length - 1, inorder.length);  ;
 
 		return null;

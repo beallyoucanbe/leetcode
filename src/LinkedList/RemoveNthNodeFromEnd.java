@@ -2,8 +2,8 @@ package LinkedList;
 
 /*
  * 
- * 遍历一次即可找到答案的方法
- * 利用双指针，两个指针距离为n,当前面指针指向尾部时，前一个指针指向Nth from the end
+ * 閬嶅巻涓�娆″嵆鍙壘鍒扮瓟妗堢殑鏂规硶
+ * 鍒╃敤鍙屾寚閽堬紝涓や釜鎸囬拡璺濈涓簄,褰撳墠闈㈡寚閽堟寚鍚戝熬閮ㄦ椂锛屽墠涓�涓寚閽堟寚鍚慛th from the end
  */
 
 public class RemoveNthNodeFromEnd {

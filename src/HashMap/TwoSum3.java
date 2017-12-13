@@ -22,11 +22,11 @@ public class TwoSum3 {
 		else
 			map.put(num, 1);
 	}
-	//这里要考虑到重复的额情况，即一个数可以出现多次
+	//杩欓噷瑕佽�冭檻鍒伴噸澶嶇殑棰濇儏鍐碉紝鍗充竴涓暟鍙互鍑虹幇澶氭
 	public boolean isFind(int target){
 		for(Integer num: map.keySet()){
 			int another = target - num;
-			if(another == num && map.get(num) > 1) //出现相同的结果，此时要保证这个数至少出现两次
+			if(another == num && map.get(num) > 1) //鍑虹幇鐩稿悓鐨勭粨鏋滐紝姝ゆ椂瑕佷繚璇佽繖涓暟鑷冲皯鍑虹幇涓ゆ
 				return true;
 			if(another != num && map.containsKey(another))
 				return true;

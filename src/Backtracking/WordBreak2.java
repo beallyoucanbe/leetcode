@@ -3,11 +3,11 @@ package Backtracking;
 import java.util.HashSet;
 import java.util.Set;
 /*
- * ÕâÀï¸ø³öµÄÊÇ±ğÈËµÄËã·¨£¬·Ç³£µÄ¾«¼ò£¬Ò²²ÉÓÃÁËµİ¹é£¬
- * ÆäÖĞµÚ¶ş¸ö·½·¨Ó¦ÓÃÁË¶¯Ì¬¹æ»®£¬Ê¹ºóÒ»´ÎÉ¨ÃèÄÜ¹»ÀûÓÃÇ°ÃæÉ¨ÃèµÄ½á¹û£¬
- * Òò´Ë½¨Á¢ÁËÅĞ¶ÏÊı×éboolean t[]
- * t[i] = true.±íÊ¾´Ó0µ½µ±Ç°Î»ÖÃi, ´æÔÚÒ»¸ö»ò¼¸¸öµ¥´Ê Ê¹ word1 + word2 = wordi
- * ¼´F[0, end] = F[0, i] + F[i, j] + F[j, end];
+ * è¿™é‡Œç»™å‡ºçš„æ˜¯åˆ«äººçš„ç®—æ³•ï¼Œéå¸¸çš„ç²¾ç®€ï¼Œä¹Ÿé‡‡ç”¨äº†é€’å½’ï¼Œ
+ * å…¶ä¸­ç¬¬äºŒä¸ªæ–¹æ³•åº”ç”¨äº†åŠ¨æ€è§„åˆ’ï¼Œä½¿åä¸€æ¬¡æ‰«æèƒ½å¤Ÿåˆ©ç”¨å‰é¢æ‰«æçš„ç»“æœï¼Œ
+ * å› æ­¤å»ºç«‹äº†åˆ¤æ–­æ•°ç»„boolean t[]
+ * t[i] = true.è¡¨ç¤ºä»0åˆ°å½“å‰ä½ç½®i, å­˜åœ¨ä¸€ä¸ªæˆ–å‡ ä¸ªå•è¯ ä½¿ word1 + word2 = wordi
+ * å³F[0, end] = F[0, i] + F[i, j] + F[j, end];
  */
 
 public class WordBreak2 {
@@ -32,14 +32,14 @@ public class WordBreak2 {
 		 }
 		 return false;
 	 }
-	 //Ó¦ÓÃ¶¯Ì¬¹æ»®µÄË¼Ïë
+	 //åº”ç”¨åŠ¨æ€è§„åˆ’çš„æ€æƒ³
 	 public boolean wordBreak2(String s, Set<String> wordDict) {
 		 boolean[] t = new boolean[s.length() + 1];
-		 t[0] = true; // Éè¶¨Æğµã
+		 t[0] = true; // è®¾å®šèµ·ç‚¹
 		 for(int i = 0; i < s.length(); i++){
 			 if(!t[i])
-				 continue; //µ±Ç°ÖµÎªfalse,ËµÃ÷´Ó0µ½´ËÎ»ÖÃ²»´æÔÚÇ°×ºµÄµ¥´Ê
-			 for(String word: wordDict){ //¶ÔÃ¿Ò»¸ö¿ÉÄÜµÄÆğµãËÑË÷ËùÓĞµÄµ¥´Ê
+				 continue; //å½“å‰å€¼ä¸ºfalse,è¯´æ˜ä»0åˆ°æ­¤ä½ç½®ä¸å­˜åœ¨å‰ç¼€çš„å•è¯
+			 for(String word: wordDict){ //å¯¹æ¯ä¸€ä¸ªå¯èƒ½çš„èµ·ç‚¹æœç´¢æ‰€æœ‰çš„å•è¯
 				 int len = word.length();
 				 int end = i + len;
 				 

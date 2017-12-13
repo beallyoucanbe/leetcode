@@ -15,7 +15,7 @@ public class MinimumWindowSubstring {
 	public String minWindow(String s, String t) {
 
 		HashMap<Character, Integer> dict = new HashMap<Character, Integer>();
-		// Êı¾İÔ¤´¦Àí
+		// æ•°æ®é¢„å¤„ç†
 		for (int i = 0; i < t.length(); i++) {
 			if (dict.containsKey(t.charAt(i)))
 				dict.put(t.charAt(i), dict.get(t.charAt(i)) + 1);
@@ -44,7 +44,7 @@ public class MinimumWindowSubstring {
 										// T.length(), in other words, found all
 										// characters.
 				char sc = s.charAt(start);
-				//Á½ÖÖ·½Ê½À´ÅĞ¶Ï£¬Ò»ÖÖ£¬µ±Ç°×Ö·ûÔÚtÖĞ²»´æÔÚ£¬»òÕßÊÇ´æÔÚµ«ÊÇfoundÖĞÒÑ¾­ÓĞ¶àÓàµÄ×Ö·û
+				//ä¸¤ç§æ–¹å¼æ¥åˆ¤æ–­ï¼Œä¸€ç§ï¼Œå½“å‰å­—ç¬¦åœ¨tä¸­ä¸å­˜åœ¨ï¼Œæˆ–è€…æ˜¯å­˜åœ¨ä½†æ˜¯foundä¸­å·²ç»æœ‰å¤šä½™çš„å­—ç¬¦
 				while (!found.containsKey(sc) || found.get(sc) > dict.get(sc)) {
 					if (found.containsKey(sc) && found.get(sc) > dict.get(sc))
 						found.put(sc, found.get(sc) - 1);

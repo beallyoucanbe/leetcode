@@ -43,7 +43,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return Math.max(curLen, maxLen);
 
 	}
-	//¹Ù·½¸ø³öµÄ´ğ°¸£¬¼òµ¥µ½ÁË¼«ÖÂ£¬1ÓÃbooleanÊı×é´úÌæmap£¬2£¬ Ê¡È¥curLen±äÁ¿
+	//å®˜æ–¹ç»™å‡ºçš„ç­”æ¡ˆï¼Œç®€å•åˆ°äº†æè‡´ï¼Œ1ç”¨booleanæ•°ç»„ä»£æ›¿mapï¼Œ2ï¼Œ çœå»curLenå˜é‡
 	public int lengthOfLongestSubstring2(String s) {
 		if (s == null || s.length() == 0)
 			return 0;

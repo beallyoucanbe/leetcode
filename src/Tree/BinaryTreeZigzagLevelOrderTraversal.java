@@ -9,7 +9,7 @@ import java.util.List;
  * (ie, from left to right, then right to left for the next level and alternate between).
  */
 /*
- * ·½·¨£ºÏÈ°´ÕÕ²ãĞò±éÀúÒ»±ß£¬°ÑÖµ´æ´¢ÔÚÊı¾İ½á¹¹ÖĞ£¬×îºóÍ³Ò»¿ØÖÆÊä³ö
+ * æ–¹æ³•ï¼šå…ˆæŒ‰ç…§å±‚åºéå†ä¸€è¾¹ï¼ŒæŠŠå€¼å­˜å‚¨åœ¨æ•°æ®ç»“æ„ä¸­ï¼Œæœ€åç»Ÿä¸€æ§åˆ¶è¾“å‡º
  */
 
 public class BinaryTreeZigzagLevelOrderTraversal {
@@ -40,7 +40,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 		}
 		return res;
 	}
-	private void reverseValue(List<Integer> list){  //¸Ä·½·¨ÓÃÀ´½«Á´±íÖĞµÄÖµÇ°ºó½»»»
+	private void reverseValue(List<Integer> list){  //æ”¹æ–¹æ³•ç”¨æ¥å°†é“¾è¡¨ä¸­çš„å€¼å‰åäº¤æ¢
 		if(list == null || list.size() <= 1)
 			return;
 		int i = 0, j = list.size() - 1;

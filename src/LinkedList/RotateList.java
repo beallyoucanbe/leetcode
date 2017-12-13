@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 
 /*
- * »¹ÓĞÒ»ÖÖ·½·¨¾ÍÊÇÏÈ°Ñµ¥Á´±íµÄÊÕÎ²Ïà½Ó¹¹³ÉÒ»¸ö»·£¬È»ºóÔÙÕÒµ½ºÏÊÊµÄÎ»ÖÃ¶Ï¿ª»·¼´¿É
+ * è¿˜æœ‰ä¸€ç§æ–¹æ³•å°±æ˜¯å…ˆæŠŠå•é“¾è¡¨çš„æ”¶å°¾ç›¸æ¥æ„æˆä¸€ä¸ªç¯ï¼Œç„¶åå†æ‰¾åˆ°åˆé€‚çš„ä½ç½®æ–­å¼€ç¯å³å¯
  */
 
 public class RotateList {
@@ -42,7 +42,7 @@ public class RotateList {
 		if (head == null || head.next == null || k == 0)
 			return head;
 		int length = 1;
-		ListNode tail = head;   //ÕÒµ½Á´±íµÄ½Úµã¸ñÊıÒÔ¼°Î²½Úµã
+		ListNode tail = head;   //æ‰¾åˆ°é“¾è¡¨çš„èŠ‚ç‚¹æ ¼æ•°ä»¥åŠå°¾èŠ‚ç‚¹
 		while (tail.next != null) {
 			tail = tail.next;
 			length++;
@@ -50,7 +50,7 @@ public class RotateList {
 		k = k % length;
 		if(k == 0)
 			return head;
-		tail.next = head;  //¹¹³ÉÒ»¸ö»·
+		tail.next = head;  //æ„æˆä¸€ä¸ªç¯
 		
 		int step = length - k - 1;
 		ListNode res = head;

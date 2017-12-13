@@ -10,7 +10,7 @@ import java.util.List;
  * and is empty operations are valid.
  */
 /*
- * ÔÚjavaÖĞ£¬Queue×÷Îª¹«¹²½Ó¿Ú£¬ÒÑ¾­±»LinkedListÊµÏÖ£¬ËùÒÔ£¬Ò»¸öLinkList¶ÔÏó¿ÉÒÔ×÷ÎªÒ»¸öQueueÀ´ÓÃ¡£
+ * åœ¨javaä¸­ï¼ŒQueueä½œä¸ºå…¬å…±æ¥å£ï¼Œå·²ç»è¢«LinkedListå®ç°ï¼Œæ‰€ä»¥ï¼Œä¸€ä¸ªLinkListå¯¹è±¡å¯ä»¥ä½œä¸ºä¸€ä¸ªQueueæ¥ç”¨ã€‚
  */
 
 class Queue{

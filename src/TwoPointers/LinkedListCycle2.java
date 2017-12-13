@@ -11,11 +11,11 @@ public class LinkedListCycle2 {
 		if (head == null || head.next == null)
 			return null;
 		ListNode slow = head, fast = head;
-		//Ö»ĞèÅĞ¶Ï¿ìÖ¸ÕëÊÇ·ñÎª¿Õ¼´¿É
+		//åªéœ€åˆ¤æ–­å¿«æŒ‡é’ˆæ˜¯å¦ä¸ºç©ºå³å¯
 		while (fast.next !=null && fast.next.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
-			if (slow == fast){ // node1 µ±Ç°Î»ÖÃÎªÏàÓöµØµã
+			if (slow == fast){ // node1 å½“å‰ä½ç½®ä¸ºç›¸é‡åœ°ç‚¹
 				fast = head;
 				while(slow != fast){
 					slow = slow.next;

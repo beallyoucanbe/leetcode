@@ -20,19 +20,19 @@ public class MiGong
  
 class GameFrame extends JFrame implements KeyListener,ActionListener,Runnable   
 {   
-  int maze[][];                       //ƒ¦´æÃÔŒm    
-  Point mouse=new Point();            //ÀÏÊóµÄÎ»ÖÃ    
+  int maze[][];                       //å„²å­˜è¿·å®®    
+  Point mouse=new Point();            //è€é¼ çš„ä½ç½®    
      
-  jpMainPanel mp=new jpMainPanel();   //Ö÷Òª®‹Ãæ(ÃÔŒm)    
-  //²Ù×÷°´âo    
-  JButton jbOnCtrl=new JButton("ÊÖ„Ó²Ù×÷");   
-  JButton jbAuto=new JButton("×Ô„Ó²Ù×÷");   
+  jpMainPanel mp=new jpMainPanel();   //ä¸»è¦ç•«é¢(è¿·å®®)    
+  //æ“ä½œæŒ‰éˆ•    
+  JButton jbOnCtrl=new JButton("æ‰‹å‹•æ“ä½œ");   
+  JButton jbAuto=new JButton("è‡ªå‹•æ“ä½œ");   
      
   public GameFrame()   
   {   
-      super("ÀÏÊó×ßÃÔŒm");   
+      super("è€é¼ èµ°è¿·å®®");   
          
-      /*ÔO¶¨GUI *****   */   
+      /*è¨­å®šGUI *****   */   
       JPanel jpCtrlBar=new JPanel();   
       jpCtrlBar.setLayout(new FlowLayout());   
       jpCtrlBar.add(jbOnCtrl);   
@@ -40,15 +40,15 @@ class GameFrame extends JFrame implements KeyListener,ActionListener,Runnable
       getContentPane().setLayout(new BorderLayout());   
       getContentPane().add(mp, BorderLayout.CENTER);   
       getContentPane().add(jpCtrlBar, BorderLayout.SOUTH);   
-      //ÔO¶¨×ÖĞÍ    
-      Font f=new Font("¼šÃ÷ów",Font.PLAIN,24);   
+      //è¨­å®šå­—å‹    
+      Font f=new Font("ç´°æ˜é«”",Font.PLAIN,24);   
       mp.setFont(f);   
       jbOnCtrl.setFont(f);   
       jbAuto.setFont(f);   
       /*  *****   *****   */   
          
          
-      //ÔO¶¨ÊÂ¼ş    
+      //è¨­å®šäº‹ä»¶    
       this.addWindowListener(   
           new WindowAdapter(){   
               public void windowClosing(WindowEvent evt) {   
@@ -61,30 +61,30 @@ class GameFrame extends JFrame implements KeyListener,ActionListener,Runnable
       jbAuto.addActionListener(this);   
          
          
-      //³õÊ¼»¯    
+      //åˆå§‹åŒ–    
       initGame();   
   }   
      
-  //³õÊ¼»¯    
+  //åˆå§‹åŒ–    
   public void initGame()   
   {   
-      //È¡µÃÃÔŒm    
+      //å–å¾—è¿·å®®    
       getMaze();   
          
-      //ÔO¶¨Ö÷®‹Ãæ    
+      //è¨­å®šä¸»ç•«é¢    
       mp.setMaze(maze);   
       mp.setMouse(mouse);   
-      //ÀLÑu®‹Ãæ    
+      //ç¹ªè£½ç•«é¢    
       mp.repaint();   
   }   
      
-  //È¡µÃÃÔŒm    
+  //å–å¾—è¿·å®®    
   public void getMaze()   
   {   
       String s[]=new String[20];   
       int line_num=0;   
          
-      //×ÔÓ²µúÖĞ×xÈ¡ÃÔŒm™n    
+      //è‡ªç¡¬ç¢Ÿä¸­è®€å–è¿·å®®æª”    
       try{   
           BufferedReader br=new BufferedReader(new FileReader("maze.txt"));   
           for (int i=0;i<s.length;i++){   
@@ -94,29 +94,29 @@ class GameFrame extends JFrame implements KeyListener,ActionListener,Runnable
           }   
       }catch (Exception e){}   
          
-      //È¡µÃÃÔŒm³ß´ç            
+      //å–å¾—è¿·å®®å°ºå¯¸            
       maze=new int[line_num+2][s[0].length()+2];   
          
-      //ÔO¶¨ÃÔŒm    
+      //è¨­å®šè¿·å®®    
       for (int i=0; i<maze.length; i++)   
           for (int j=0; j<maze[0].length; j++)   
           {   
-              if (i==0 || i==line_num+1) maze[i][j]=1;            //ÉÏ&ÏÂß…½ç    
-              else if (j==0 || j==s[0].length()+1) maze[i][j]=1;  //×ó&ÓÒß…½ç    
-              else if (s[i-1].charAt(j-1)=='£ª') maze[i][j]=1; // ±Ú    
-              else if (s[i-1].charAt(j-1)=='£Ó'){                  //Æğüc    
+              if (i==0 || i==line_num+1) maze[i][j]=1;            //ä¸Š&ä¸‹é‚Šç•Œ    
+              else if (j==0 || j==s[0].length()+1) maze[i][j]=1;  //å·¦&å³é‚Šç•Œ    
+              else if (s[i-1].charAt(j-1)=='ï¼Š') maze[i][j]=1; //ç‰†å£    
+              else if (s[i-1].charAt(j-1)=='ï¼³'){                  //èµ·é»    
                   mouse.setLocation(j,i);   
                   maze[i][j]=10;   
               }   
-              else if (s[i-1].charAt(j-1)=='£Å') maze[i][j]=11;    //½Küc    
-              else maze[i][j]=0;                                  //µÀÂ·    
+              else if (s[i-1].charAt(j-1)=='ï¼¥') maze[i][j]=11;    //çµ‚é»    
+              else maze[i][j]=0;                                  //é“è·¯    
           }   
   }   
      
   //Interface ActionListener    
   public void actionPerformed(ActionEvent e)   
   {   
-      //×Ô„Ó×ßÃÔŒm‡Ó    ^^    
+      //è‡ªå‹•èµ°è¿·å®®å›‰    ^^    
       if (e.getSource()==jbAuto){   
           jbOnCtrl.setEnabled(false);   
           jbAuto.setEnabled(false);   
@@ -134,48 +134,48 @@ class GameFrame extends JFrame implements KeyListener,ActionListener,Runnable
      
   public boolean findExit()   
   {   
-      //×ßµ½½Küc    
+      //èµ°åˆ°çµ‚é»    
       if (maze[mouse.y][mouse.x]==11){   
-          JOptionPane.showMessageDialog((Component)null," ^-^ ß@˜Ó¾Í¿ÉÒÔ×ßµ½À²£¡","ß[‘ò½KÁË",JOptionPane.DEFAULT_OPTION);   
+          JOptionPane.showMessageDialog((Component)null," ^-^ é€™æ¨£å°±å¯ä»¥èµ°åˆ°å•¦ï¼","éŠæˆ²çµ‚äº†",JOptionPane.DEFAULT_OPTION);   
           return true;   
       }   
          
-      maze[mouse.y][mouse.x]=50;      //˜ËÊ¾éÒÑ×ßß^    
+      maze[mouse.y][mouse.x]=50;      //æ¨™ç¤ºç‚ºå·²èµ°é    
          
-      //ÑÓßt    
+      //å»¶é²    
       try{   
           Thread.sleep(200);   
       }   
       catch (Exception e){}   
          
-      //ÉÏ    
+      //ä¸Š    
       if (step(0,-1))   
           if (findExit()==true)   
               return true;   
           else mouse.y++;   
          
-      //ÏÂ    
+      //ä¸‹    
       if (step(0,1))   
           if (findExit()==true)   
               return true;   
           else mouse.y--;   
          
-      //×ó    
+      //å·¦    
       if (step(-1,0))   
           if (findExit()==true)   
               return true;   
           else mouse.x++;   
          
          
-      //ÓÒ    
+      //å³    
       if (step(1,0))   
           if (findExit()==true)   
               return true;   
           else mouse.x--;   
          
          
-      //ÕÒ²»µ½³ö¿Ú    
-      maze[mouse.y][mouse.x]=51;          //˜ËÊ¾é´ËÂ·²»Í¨    
+      //æ‰¾ä¸åˆ°å‡ºå£    
+      maze[mouse.y][mouse.x]=51;          //æ¨™ç¤ºç‚ºæ­¤è·¯ä¸é€š    
       return false;   
   }   
      
@@ -205,11 +205,11 @@ class GameFrame extends JFrame implements KeyListener,ActionListener,Runnable
       else if (e.getKeyCode()==e.VK_UP)   
           step(0,-1);   
          
-      //×ßµ½½KücÀ²    
+      //èµ°åˆ°çµ‚é»å•¦    
       if (maze[mouse.y][mouse.x]==11){   
           jbOnCtrl.setEnabled(false);   
           jbAuto.setEnabled(false);   
-          JOptionPane.showMessageDialog((Component)null," *^^* ×ßµ½½Küc‡Ó£¡","ß[‘ò½KÁË",JOptionPane.DEFAULT_OPTION);   
+          JOptionPane.showMessageDialog((Component)null," *^^* èµ°åˆ°çµ‚é»å›‰ï¼","éŠæˆ²çµ‚äº†",JOptionPane.DEFAULT_OPTION);   
       }   
   }   
   public void keyReleased(KeyEvent e){}   
@@ -221,48 +221,48 @@ class jpMainPanel extends JPanel
   int maze[][];   
   Point mouse;   
      
-  //×ŒÖ÷®‹ÃæÀLˆD³ÌÊ½È¡µÃÃÔŒmÅäÖÃ    
+  //è®“ä¸»ç•«é¢ç¹ªåœ–ç¨‹å¼å–å¾—è¿·å®®é…ç½®    
   public void setMaze(int arry[][])   
   {   
       this.maze=arry;   
   }   
      
-  //×ŒÖ÷®‹ÃæÀLˆD³ÌÊ½È¡µÃÀÏÊóÎ»ÖÃ    
+  //è®“ä¸»ç•«é¢ç¹ªåœ–ç¨‹å¼å–å¾—è€é¼ ä½ç½®    
   public void setMouse(Point arg)   
   {   
       mouse=arg;   
   }   
      
-  //Ö÷®‹ÃæÀLˆD³ÌÊ½    
+  //ä¸»ç•«é¢ç¹ªåœ–ç¨‹å¼    
   public void paintComponent(Graphics g)   
   {   
       super.paintComponent(g);   
          
       int stuff=100;   
-      //®‹³öÃÔŒm    
+      //ç•«å‡ºè¿·å®®    
       for (int i=1;i<maze.length-1;i++)   
           for (int j=1;j<maze[i].length-1;j++){   
               if (maze[i][j]==1){   
-                  // ±Ú    
-                  g.drawString("£ª",j*20+stuff,i*20+stuff);   
+                  //ç‰†å£    
+                  g.drawString("ï¼Š",j*20+stuff,i*20+stuff);   
               }   
               else if (maze[i][j]==0){   
-                  //µÀÂ·    
+                  //é“è·¯    
               }   
               else if (maze[i][j]==10){   
-                  //Æğüc    
+                  //èµ·é»    
               }   
               else if (maze[i][j]==11){   
-                  //½Küc    
+                  //çµ‚é»    
                   g.setColor(new Color(255,0,0));   
-                  g.drawString("½K",j*20+stuff,i*20+stuff);   
+                  g.drawString("çµ‚",j*20+stuff,i*20+stuff);   
                   g.setColor(new Color(0,0,0));   
               }   
               else{}   
           }   
          
-      //®‹³öÀÏÊóÎ»ÖÃ    
-      g.drawString("£À",mouse.x*20+stuff,mouse.y*20+stuff);   
+      //ç•«å‡ºè€é¼ ä½ç½®    
+      g.drawString("ï¼ ",mouse.x*20+stuff,mouse.y*20+stuff);   
   }   
 }   
  

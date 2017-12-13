@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /*
  *  Given n, generate all structurally unique BST's (binary search trees) that store values 1...n.
- *  ÄÑµãÊÇÒª´æ´¢²¢Êä³öËùÓĞµÄ¶ş²æÊ÷
+ *  éš¾ç‚¹æ˜¯è¦å­˜å‚¨å¹¶è¾“å‡ºæ‰€æœ‰çš„äºŒå‰æ ‘
  */
 
 public class UniqueBinarySearchTrees2 {

@@ -12,7 +12,7 @@ import java.util.Set;
  * Return true because "leetcode" can be segmented as "leet code". 
  */
 /*
- * 好吧，自己写的程序右TLE
+ * 濂藉惂锛岃嚜宸卞啓鐨勭▼搴忓彸TLE
  */
 public class WordBreak {
 

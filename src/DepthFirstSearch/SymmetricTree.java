@@ -4,12 +4,12 @@ import Tree.TreeNode;
 
 /*
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
- * ���ж�һ���������Ƿ�Ϊ�Գ���
- * ���ԴӼ����Ƕ�������
- * 1��ʹ�õݹ������⣬���ж������ӽ���Ƿ���ȣ����Ⱦͷ���false��
- *    ��Ⱦͽ����ӽ��������������ӽ�������ӽ����бȽϲ�����
- *    ͬʱ�����ӽ��������������ӽ������������бȽϣ�ֻ������ͬʱΪ���ǲŷ���true�����򷵻�false�� 
- * 2�� �Գ������������һ���ǶԳƵ�
+ * 来判断一个二叉树是否为对称树
+ * 可以从几个角度来考虑
+ * 1，使用递归进行求解，先判断左右子结点是否相等，不等就返回false，
+ *    相等就将左子结点的左子树与右子结果的右子结点进行比较操作，
+ *    同时将左子结点的左子树与右子结点的左子树进行比较，只有两个同时为真是才返回true，否则返回false。 
+ * 2， 对称树的中序遍历一定是对称的
  */
 public class SymmetricTree {
 

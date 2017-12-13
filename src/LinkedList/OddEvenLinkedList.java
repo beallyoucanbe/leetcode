@@ -10,7 +10,7 @@ import java.util.Arrays;
  * Example:Given 1->2->3->4->5->NULL,  return 1->3->5->2->4->NULL.
  */
 /*
- * Ñ§Ï°·Ö¸îµ¥Á´±íµÄ·½·¨£¬ÆæÅ¼·Ö¸î³ÉÎªÁ½¸öµ¥Á´±í
+ * å­¦ä¹ åˆ†å‰²å•é“¾è¡¨çš„æ–¹æ³•ï¼Œå¥‡å¶åˆ†å‰²æˆä¸ºä¸¤ä¸ªå•é“¾è¡¨
  */
 
 public class OddEvenLinkedList {
@@ -21,8 +21,8 @@ public class OddEvenLinkedList {
 			return head;
 		ListNode oddhead = head, oddtail = oddhead, evenhead = head.next, eventail = evenhead;
 		head = head.next.next;
-		boolean flag = true; // ±êÖ¾Î»£¬ÓÃÀ´ÅĞ¶ÏÊÇÆæÊı»¹ÊÇÅ¼Êı
-		while (head != null) { // ÕâÖÖ·½·¨ÊÇ°Ñ
+		boolean flag = true; // æ ‡å¿—ä½ï¼Œç”¨æ¥åˆ¤æ–­æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°
+		while (head != null) { // è¿™ç§æ–¹æ³•æ˜¯æŠŠ
 			if (flag) {
 				oddtail.next = head;
 				oddtail = oddtail.next;
@@ -44,7 +44,7 @@ public class OddEvenLinkedList {
 		if(head == null || head.next == null)
 			return head;
 		ListNode odd = head, even = head.next, evenhead = head.next;
-		while(even != null && even.next != null){  // ÎªÊ²Ã´ÒªÁ½ÖØ·Ç¿ÕµÄ±£Ö¤
+		while(even != null && even.next != null){  // ä¸ºä»€ä¹ˆè¦ä¸¤é‡éç©ºçš„ä¿è¯
 			odd.next = even.next;
 			odd = even.next;
 			even.next = odd.next;

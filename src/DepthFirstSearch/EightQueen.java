@@ -1,24 +1,24 @@
 package DepthFirstSearch;
 /*
- * DFS�����һ��������
- * 1 find, �����ĵ�ǰ�㣬��������������ҵ�OK�Ľڵ㣬����һ��ͨ��������֦��ֻ����OK�ģ�
- * 2 forWord�� ���ڵ�ǰ���ҵ�OK�Ľڵ㣬���ҵ�ǰ�㲻�����һ�㣬��OK�Ľڵ�ŵ� ��������һ�㣬���� find
- * 3 done,(right), �ڵ�ǰ���ҵ�OK�Ľڵ㣬���ҵ�ǰ�������һ�㣬��ӡ����� ���뵱ǰ�����һ�㣬����find��
- * 4 back �ڵ�ǰ��û���ҵ���OK�Ľڵ㣬������һ�㵱ǰ�ڵ����һ���ֵܽڵ㣬����find
+ * DFS问题的一般解决步棸
+ * 1 find, 在树的当前层，横向遍历，尝试找到OK的节点，（这一步通常叫做剪枝，只留下OK的）
+ * 2 forWord， 若在当前层找到OK的节点，并且当前层不是最后一层，把OK的节点放到 ，进入下一层，跳到 find
+ * 3 done,(right), 在当前层找到OK的节点，并且当前层是最后一层，打印结果； 进入当前层的下一点，跳到find；
+ * 4 back 在当前层没有找到的OK的节点，返回上一层当前节点的下一个兄弟节点，跳到find
  */
 
 /*
- * �����ÿһ�ν����õ�һ�����飬���ҵ�һ���ʱ����û����ͼȥ���棬����ֱ�Ӱ����������Ļ
- * ������Ѱ������һ���ʱ���µĽ���ͻ��ԭ���ĸ����ǵ�
+ * 在这里，每一次结果会得到一个数组，当找到一组解时，并没有试图去保存，而是直接把它输出到屏幕
+ * 当继续寻找另外一组解时，新的结果就会把原来的给覆盖掉
  */
 
 public class EightQueen {
-	private  static final int N = 8; //��������
-	int[] a = new int[N];  //��ʾ���̣���Ϊͬһ��ֻ�ܷ�һ���ʺ󣬹���һά����Ϳ��Ա�ʾ�������a[2] = 2,�ͱ�ʾ�ڵ����е�2�з�һ���ʺ�
-	                       //��������ᱻ��ʼ��Ϊ0�� ��Ҫ��1-9������ʾ
+	private  static final int N = 8; //棋盘行数
+	int[] a = new int[N];  //表示棋盘，因为同一行只能放一个皇后，故用一维数组就可以表示结果，如a[2] = 2,就表示在第三行第2列放一个皇后
+	                       //由于数组会被初始化为0， 故要用1-9列来表示
 	int solution = 0;
 	
-	//�ж���row�У�col���Ƿ���Է��ûʺ�
+	//判断在row行，col列是否可以放置皇后
 	private boolean isOK(int row, int col){ 
 		for(int i = 0; i < row; i++){
 			if(a[i] == col || (Math.abs(a[i] - col) == row - i))
@@ -28,7 +28,7 @@ public class EightQueen {
 	}
 	
 	private void display(){
-		System.out.println("��" + ++solution + "�ֽ�");
+		System.out.println("第" + ++solution + "种解");
 		for(int i = 0; i < N; i++){
 			for(int j = 0; j < N; j++){
 				if(a[i] == j)

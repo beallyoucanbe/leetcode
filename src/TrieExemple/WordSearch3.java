@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Set;
 
 /*
- * 这里采用搜索树，字典树的数据结构
- * 先用给出的字符串来建造搜索树，然后再在给定的字符矩阵中用前缀的方式来寻找
+ * 杩欓噷閲囩敤鎼滅储鏍戯紝瀛楀吀鏍戠殑鏁版嵁缁撴瀯
+ * 鍏堢敤缁欏嚭鐨勫瓧绗︿覆鏉ュ缓閫犳悳绱㈡爲锛岀劧鍚庡啀鍦ㄧ粰瀹氱殑瀛楃鐭╅樀涓敤鍓嶇紑鐨勬柟寮忔潵瀵绘壘
  */
 public class WordSearch3 {
 	public List<String> findWord(char[][] board, String[] words) {

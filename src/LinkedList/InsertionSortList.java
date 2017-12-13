@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 /*
  * Sort a linked list using insertion sort.
- * ÓÃ²åÈëÅÅĞòµÄ·½Ê½
- * ÆäÊµ·½·¨±ÈÊı×é»¹ÊÇÒª¼òµ¥Ò»Ğ©£¬ÓÉÓÚÊÇÁ´±í£¬ËùÒÔÊ¡È¥ÁËºÜ¶à½»»»µÄ¹¤×÷£¬Ö»ĞèÒªÕÒµ½ÕıÈ·µÄÎ»ÖÃ£¬È»ºó°Ñµ±Ç°½Úµã²åÈëµ½ÕıÈ·µÄÎ»ÖÃ¼´¿É
+ * ç”¨æ’å…¥æ’åºçš„æ–¹å¼
+ * å…¶å®æ–¹æ³•æ¯”æ•°ç»„è¿˜æ˜¯è¦ç®€å•ä¸€äº›ï¼Œç”±äºæ˜¯é“¾è¡¨ï¼Œæ‰€ä»¥çœå»äº†å¾ˆå¤šäº¤æ¢çš„å·¥ä½œï¼Œåªéœ€è¦æ‰¾åˆ°æ­£ç¡®çš„ä½ç½®ï¼Œç„¶åæŠŠå½“å‰èŠ‚ç‚¹æ’å…¥åˆ°æ­£ç¡®çš„ä½ç½®å³å¯
  */
 public class InsertionSortList {
 
-	// Êı×éµÄ²åÈëÅÅĞò·½·¨
+	// æ•°ç»„çš„æ’å…¥æ’åºæ–¹æ³•
 	public void insertionSort(int[] nums) {
 		if (nums == null || nums.length <= 1)
 			return;
@@ -29,7 +29,7 @@ public class InsertionSortList {
 
 		if (head == null || head.next == null)
 			return head;
-		ListNode newhead = new ListNode(Integer.MIN_VALUE); // ĞÂ½¨Ò»¸ö±íÍ·£¬·ÅÈë×îĞ¡Öµ£¬±ãÓÚÒÔºóµÄ²Ù×÷
+		ListNode newhead = new ListNode(Integer.MIN_VALUE); // æ–°å»ºä¸€ä¸ªè¡¨å¤´ï¼Œæ”¾å…¥æœ€å°å€¼ï¼Œä¾¿äºä»¥åçš„æ“ä½œ
 		while (head != null) {
 			ListNode temp = head;
 			head = head.next;

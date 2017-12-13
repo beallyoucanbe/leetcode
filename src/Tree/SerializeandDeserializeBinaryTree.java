@@ -10,7 +10,7 @@ import java.util.LinkedList;
  *  and this string can be deserialized to the original tree structure.
  */
 /*
- * ·½·¨Ò»£º¾ÍÓÃÌâÄ¿ÖĞ¾­³£¸ø³öµÄ·½·¨£¬²ãĞò±éÀú¼´¿É£¬¿ÕµÄµØ·½ÓÃnull»òÊÇ*·ûºÅÀ´´úÌæ
+ * æ–¹æ³•ä¸€ï¼šå°±ç”¨é¢˜ç›®ä¸­ç»å¸¸ç»™å‡ºçš„æ–¹æ³•ï¼Œå±‚åºéå†å³å¯ï¼Œç©ºçš„åœ°æ–¹ç”¨nullæˆ–æ˜¯*ç¬¦å·æ¥ä»£æ›¿
  */
 public class SerializeandDeserializeBinaryTree {
 	// Encodes a tree to a single string.
@@ -24,7 +24,7 @@ public class SerializeandDeserializeBinaryTree {
 			int queueLength = queue.size();
 			for (int i = 0; i < queueLength; i++) {
 				TreeNode node = queue.remove();
-				if (node == null)   //ÒªÖªµÀÂú¶ş²æÊ÷µÚk²ã ÓĞ2^(k-1)¸öÔªËØ£¬¶øÕâÀïµ±³öÏÖÒ»¸önullÖ®ºó£¬ºóÃæ¾Í²»»áÔÙÓĞ×Ó½ÚµãÁË
+				if (node == null)   //è¦çŸ¥é“æ»¡äºŒå‰æ ‘ç¬¬kå±‚ æœ‰2^(k-1)ä¸ªå…ƒç´ ï¼Œè€Œè¿™é‡Œå½“å‡ºç°ä¸€ä¸ªnullä¹‹åï¼Œåé¢å°±ä¸ä¼šå†æœ‰å­èŠ‚ç‚¹äº†
 					resStr.append("null,");
 				else {
 					resStr.append(node.val + ",");
@@ -42,7 +42,7 @@ public class SerializeandDeserializeBinaryTree {
 		if(data == null || data.length() == 0)
 			return null;
 		String[] vals = data.split(",");
-		int[] nums = new int[vals.length]; //Êı×éÓÃÀ´¼ÇÂ¼µÚi¸öÔªËØÖ®Ç°µÄnullµÄ¸öÊı
+		int[] nums = new int[vals.length]; //æ•°ç»„ç”¨æ¥è®°å½•ç¬¬iä¸ªå…ƒç´ ä¹‹å‰çš„nullçš„ä¸ªæ•°
 		TreeNode[] nodes = new TreeNode[vals.length];
 		
 		for(int i = 0; i < vals.length; i++){

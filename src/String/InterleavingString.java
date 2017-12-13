@@ -8,7 +8,7 @@ import java.util.Arrays;
  * For example, Given: s1 = "aabcc", s2 = "dbbca",
  * 
  * When s3 = "aadbbcbcac", return true. When s3 = "aadbbbaccc", return false.
- * ¶şÎ¬¶¯Ì¬¹æ»®
+ * äºŒç»´åŠ¨æ€è§„åˆ’
  * 
  * @author shuoyi.zhao
  *

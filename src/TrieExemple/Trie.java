@@ -13,10 +13,10 @@ public class Trie {
 			return;
 		Node current = root;
 		for (char c : word.toCharArray()) {
-			if (current.subNode(c) != null) { // 原来的Trie中存在同样的前缀
+			if (current.subNode(c) != null) { // 鍘熸潵鐨凾rie涓瓨鍦ㄥ悓鏍风殑鍓嶇紑
 				current = current.subNode(c);
 			} else {
-				Node temp = new Node(c); // 原来的Trie中不存在同样的前缀
+				Node temp = new Node(c); // 鍘熸潵鐨凾rie涓笉瀛樺湪鍚屾牱鐨勫墠缂�
 				current.childList.add(temp);
 				current = current.subNode(c);
 			}
@@ -66,7 +66,7 @@ public class Trie {
 		test.insert("balls");
 		test.insert("sense");
 
-		// 测试方法
+		// 娴嬭瘯鏂规硶
 		System.out.println(test.search("balls"));
 		System.out.println(test.search("ba"));
 		test.deleteWord("balls");

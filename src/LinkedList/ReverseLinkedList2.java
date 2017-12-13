@@ -1,9 +1,9 @@
 package LinkedList;
 
 /*
- * ¸ø³ömºÍn£¬°ÑÔÚmºÍnÖ®¼äµÄ²¿·ÖĞı×ª£¬ÆäËû²¿·Ö²»±ä
- * ¹Ø¼ü£¬¼ÇÂ¼m¸ö½ÚµãºÍm-1¸ö½Úµã£¬n¸ö½ÚµãºÍn-1¸ö½Úµã
- * ÓÉÓÚÒª¿¼ÂÇµ½ m = 1,µÄÇé¿ö£¬ÔÚ¿¼ÂÇÁ´±íµÄÊ±ºòÒ»¶¨Òª×¢ÒâÍ·½áµãµÄÎÊÌâ
+ * ç»™å‡ºmå’Œnï¼ŒæŠŠåœ¨må’Œnä¹‹é—´çš„éƒ¨åˆ†æ—‹è½¬ï¼Œå…¶ä»–éƒ¨åˆ†ä¸å˜
+ * å…³é”®ï¼Œè®°å½•mä¸ªèŠ‚ç‚¹å’Œm-1ä¸ªèŠ‚ç‚¹ï¼Œnä¸ªèŠ‚ç‚¹å’Œn-1ä¸ªèŠ‚ç‚¹
+ * ç”±äºè¦è€ƒè™‘åˆ° m = 1,çš„æƒ…å†µï¼Œåœ¨è€ƒè™‘é“¾è¡¨çš„æ—¶å€™ä¸€å®šè¦æ³¨æ„å¤´ç»“ç‚¹çš„é—®é¢˜
  */
 
 public class ReverseLinkedList2 {
@@ -12,14 +12,14 @@ public class ReverseLinkedList2 {
 			return head;
 		ListNode dummyhead = new ListNode(0);
 		dummyhead.next = head;
-		ListNode before = dummyhead;  //ÓÃÒ»¸ö±äÁ¿À´±íÊ¾µÚm-1¸ö½Úµã¡£
+		ListNode before = dummyhead;  //ç”¨ä¸€ä¸ªå˜é‡æ¥è¡¨ç¤ºç¬¬m-1ä¸ªèŠ‚ç‚¹ã€‚
 		for(int i = 0; i < m - 1; i++){
 			before = before.next;
 			if(before == null)
 				return head;
 		}
 		
-		ListNode mNode = before.next;  //start±íÊ¾µÚm¸ö½Úµã£¬±£Áô¼ÇÂ¼¸Ã½Úµã£¬ÒÔ±ãºÍºóÃæµÄÁ´±íÏàÁ¬½Ó
+		ListNode mNode = before.next;  //startè¡¨ç¤ºç¬¬mä¸ªèŠ‚ç‚¹ï¼Œä¿ç•™è®°å½•è¯¥èŠ‚ç‚¹ï¼Œä»¥ä¾¿å’Œåé¢çš„é“¾è¡¨ç›¸è¿æ¥
 		
 		ListNode newhead = mNode; 
 		ListNode next = mNode.next;
@@ -31,7 +31,7 @@ public class ReverseLinkedList2 {
 			newhead = next;
 			next = temp;
 		}
-		//Ñ­»·½áÊøÖ®ºó£¬nextnode¼´ÎªÏÂÒ»¸ö½Úµã
+		//å¾ªç¯ç»“æŸä¹‹åï¼Œnextnodeå³ä¸ºä¸‹ä¸€ä¸ªèŠ‚ç‚¹
 		
 		before.next = newhead;
 		mNode.next = next;

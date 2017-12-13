@@ -3,12 +3,12 @@ package TwoPointers;
 import java.util.Vector;
 
 /*
- * Given a singly linked list, determine if it is a palindrome(»ØÎÄ).
+ * Given a singly linked list, determine if it is a palindrome(å›æ–‡).
  * Could you do it in O(n) time and O(1) space?
  */
 /*
- * ·½·¨Ò»£¬°ÑÄÚÈİÈ¡³öÀ´×°ÔÚÒ»¸ö¶¯Ì¬Êı×éÀï£¬»òÊÇÕ»Àï Ê±¼ä¸´ÔÓ¶ÈO£¨n£©£¬ ¿Õ¼ä¸´ÔÓ¶Èo(n)
- * ·½·¨¶ş£¬ ÕÒµ½Á´±íµÄÖĞµã£¬È»ºó°ÑºóÃæÒ»°ëÁ´±í·´×ª£¬
+ * æ–¹æ³•ä¸€ï¼ŒæŠŠå†…å®¹å–å‡ºæ¥è£…åœ¨ä¸€ä¸ªåŠ¨æ€æ•°ç»„é‡Œï¼Œæˆ–æ˜¯æ ˆé‡Œ æ—¶é—´å¤æ‚åº¦Oï¼ˆnï¼‰ï¼Œ ç©ºé—´å¤æ‚åº¦o(n)
+ * æ–¹æ³•äºŒï¼Œ æ‰¾åˆ°é“¾è¡¨çš„ä¸­ç‚¹ï¼Œç„¶åæŠŠåé¢ä¸€åŠé“¾è¡¨åè½¬ï¼Œ
  */
 public class PalindromeLinkedList {
 	 public boolean isPalindrome(ListNode head) {
@@ -27,7 +27,7 @@ public class PalindromeLinkedList {
 	        }
 	        return true;   
 	    }
-	 // µÚ¶şÖÖ·½·¨£¬²»Ê¹ÓÃ¶îÍâµÄ¿Õ¼ä£¬ÏÈ·Ö¸î£¬ÔÚ·­×ª¼´¿É£¬×îºóÒ»Ò»±È½Ï
+	 // ç¬¬äºŒç§æ–¹æ³•ï¼Œä¸ä½¿ç”¨é¢å¤–çš„ç©ºé—´ï¼Œå…ˆåˆ†å‰²ï¼Œåœ¨ç¿»è½¬å³å¯ï¼Œæœ€åä¸€ä¸€æ¯”è¾ƒ
 	 public boolean isPalindrome2(ListNode head) {
 	        if(head == null || head.next == null)
 	        	return true;

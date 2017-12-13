@@ -11,7 +11,7 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
 		if (preorder == null || preorder.length == 0 || inorder == null
 				|| inorder.length == 0)
 			return null;
-		// ½¨Á¢¸ù½Úµã
+		// å»ºç«‹æ ¹èŠ‚ç‚¹
 		TreeNode root = dfs(preorder, 0, inorder, inorder.length - 1, inorder.length);  ;
 
 		return root;
@@ -19,19 +19,19 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
 
 	private TreeNode dfs(int[] preorder, int start, int[] inorder, int end,
 			int length) {
-		// ²ÎÊıÒâÒå£ºstart£¬×ÓÊ÷µÄÆğÊ¼Î»ÖÃ£¬
-		// end£ºÖĞĞò±éÀú½áÊøÎ»ÖÃ£¬length£¬ ×ÓÊ÷½ÚµãÊı
+		// å‚æ•°æ„ä¹‰ï¼šstartï¼Œå­æ ‘çš„èµ·å§‹ä½ç½®ï¼Œ
+		// endï¼šä¸­åºéå†ç»“æŸä½ç½®ï¼Œlengthï¼Œ å­æ ‘èŠ‚ç‚¹æ•°
 		if(length <= 0)
 			return null;
 		int value = preorder[start];
 		TreeNode root = new TreeNode(value);
 		
-		// µİ¹éÖÕÖ¹Ìõ¼ş£º×ÓÊ÷Ö»ÓĞÒ»¸ö½Úµã
+		// é€’å½’ç»ˆæ­¢æ¡ä»¶ï¼šå­æ ‘åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹
 		if (length == 1)
 			return root;
 		
 
-		// ·Ö²ğ×ÓÊ÷µÄ×ó×ÓÊ÷ºÍÓÒ×ÓÊ÷
+		// åˆ†æ‹†å­æ ‘çš„å·¦å­æ ‘å’Œå³å­æ ‘
 		int i = 0;
 		while (i < length) {
 			if (value == inorder[end - i]) {
@@ -39,9 +39,9 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
 			}
 			i++;
 		}
-		// ½¨Á¢×ÓÊ÷µÄ×ó×ÓÊ÷
+		// å»ºç«‹å­æ ‘çš„å·¦å­æ ‘
 		root.left = dfs(preorder, start + 1, inorder, end - i - 1, length - i - 1);
-		// ½¨Á¢×ÓÊ÷µÄÓÒ×ÓÊ÷
+		// å»ºç«‹å­æ ‘çš„å³å­æ ‘
 		root.right = dfs(preorder, end - i + 1, inorder, end, i);
 		//root.right = dfs(preorder, start + length - i, inorder, end, i);
 

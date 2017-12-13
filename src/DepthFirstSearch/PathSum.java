@@ -5,7 +5,7 @@ import Tree.TreeNode;
  * Given a binary tree and a sum, determine
  *  if the tree has a root-to-leaf path 
  *  such that adding up all the values along the path equals the given sum.
- * 在递归中如何在递归过程中从底层直接返回
+ * 鍦ㄩ�掑綊涓浣曞湪閫掑綊杩囩▼涓粠搴曞眰鐩存帴杩斿洖
  */
 
 public class PathSum {

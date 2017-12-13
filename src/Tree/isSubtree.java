@@ -1,7 +1,7 @@
 package Tree;
 /**
  * Arrays
- * ·½·¨ÅÐ¶ÏÒ»¿ÃÊ÷ÊÇ·ñÊÇÁíÍâÒ»¿ÃÊ÷µÄ×ÓÊ÷
+ * æ–¹æ³•åˆ¤æ–­ä¸€æ£µæ ‘æ˜¯å¦æ˜¯å¦å¤–ä¸€æ£µæ ‘çš„å­æ ‘
  * @author shuoyi.zhao
  *
  */

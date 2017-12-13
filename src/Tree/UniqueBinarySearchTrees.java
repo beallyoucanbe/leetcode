@@ -2,7 +2,7 @@ package Tree;
 
 /*
  * Given n, how many structurally unique BST's (binary search trees) that store values 1...n?
- * ´Ó1µ½nÓĞ¶àÉÙ²»Í¬µÄ¶ş²æËÑË÷Ê÷
+ * ä»1åˆ°næœ‰å¤šå°‘ä¸åŒçš„äºŒå‰æœç´¢æ ‘
  */
 public class UniqueBinarySearchTrees {
 

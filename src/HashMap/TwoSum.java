@@ -19,7 +19,7 @@ public class TwoSum {
 		for(int i = 0; i < nums.length; i++){
 			map.put(nums[i], i);
 		}
-		//根据hashmap处理冲突的原理，在出现两个相同的值时，第二个会插在第一个前面，即取到的是第二个的index
+		//鏍规嵁hashmap澶勭悊鍐茬獊鐨勫師鐞嗭紝鍦ㄥ嚭鐜颁袱涓浉鍚岀殑鍊兼椂锛岀浜屼釜浼氭彃鍦ㄧ涓�涓墠闈紝鍗冲彇鍒扮殑鏄浜屼釜鐨刬ndex
 		for(int i = 0; i < nums.length; i++){
 			int another = target - nums[i];
 			if(map.containsKey(another) && map.get(another) != i){

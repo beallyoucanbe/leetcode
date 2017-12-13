@@ -2,15 +2,15 @@ package String;
 
 /*
  * Write a function to find the longest common prefix string amongst an array of strings.
- * Ñ°ÕÒ×Ö·û´®Êı×éµÄ×î³¤¹«¹²Ç°×º
- * Ë¼Ïë£ºÏÈÕÒµ½Ç°Á½¸ö×Ö·û´®µÄ¹«¹²Ç°×º£¬¶øÕû¸öÊı×éµÄ¹«¹²Ç°×ºÒ»¶¨ÊÇËûµÄÇ°×º
+ * å¯»æ‰¾å­—ç¬¦ä¸²æ•°ç»„çš„æœ€é•¿å…¬å…±å‰ç¼€
+ * æ€æƒ³ï¼šå…ˆæ‰¾åˆ°å‰ä¸¤ä¸ªå­—ç¬¦ä¸²çš„å…¬å…±å‰ç¼€ï¼Œè€Œæ•´ä¸ªæ•°ç»„çš„å…¬å…±å‰ç¼€ä¸€å®šæ˜¯ä»–çš„å‰ç¼€
  */
 
 public class LongestCommonPrefix {
 
 	public String longestCommonPrefix(String[] strs) {
 
-		// Ô¤´¦Àí£¬Ã»ÓĞÔªËØ»òÊÇÖ»ÓĞÒ»¸öÔªËØ
+		// é¢„å¤„ç†ï¼Œæ²¡æœ‰å…ƒç´ æˆ–æ˜¯åªæœ‰ä¸€ä¸ªå…ƒç´ 
 		if(strs == null || strs.length == 0)
 			return "";
 		int len = strs.length;
@@ -23,7 +23,7 @@ public class LongestCommonPrefix {
 		return res;
 	}
 
-	//Á½¸ö×Ö·û´®µÄ¹«¹²Ç°×º
+	//ä¸¤ä¸ªå­—ç¬¦ä¸²çš„å…¬å…±å‰ç¼€
 	private String longestCommonPrefix(String str1, String str2){
 		if(str1 == null || str2 == null)
 			return null;

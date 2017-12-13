@@ -2,13 +2,13 @@ package DepthFirstSearch;
 
 import Tree.TreeNode;
 /*
- * �տ�ʼд�ĳ���û�п���������һ��Ҫ����ĳ���ڵ���������ӽڵ�ȵ�ǰ�ڵ�С��
- * �������ӽڵ�ȵ�ǰ�ڵ��
+ * 刚开始写的程序没有考虑完整，一定要满足某个节点的所有左子节点比当前节点小，
+ * 所有右子节点比当前节点大。
  */
 
 public class ValidBinarySearchTree {
 
-	//��Ч�ķ���
+	//无效的方法
 //	 public boolean isValidBST(TreeNode root) {
 //	
 //		 if(root == null)

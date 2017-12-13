@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 /*
  * Sort a linked list in O(n log n) time using constant space complexity.
- * Ê±¼ä¸´ÔÓ¶ÈÎªnlog(n)µÄÅÅÐòËã·¨Ê×ÏÈÏëµ½Îª¹é²¢ÅÅÐòºÍ¿ìËÙÅÅÐò£¬¶øÆäËûÈçÃ°ÅÝ£¬Ñ¡Ôñ¾ùÎªn^2.
- * ÕâÀïÑ¡ÓÃÊý×éµÄ¹é²¢ÅÅÐòÀ´ÊµÏÖÁ´±íµÄ¹é²¢ÅÅÐò£¬
- * ÓÐÒ»¸öÎÊÌâ¼´ÎªÈçºÎÕÒµ½Á´±íµÄÖÐ¼ä½Úµã½«Á´±í·ÖÎªÁ½¶Î£¬×î¿ìµÄ·½·¨ÊÇÑ¡ÓÃfast-low·½·¨£¬Ò»¸öÖ¸ÕëÃ¿´Î×ßÒ»²½£¬Ò»¸öÖ¸ÕëÃ¿´Î×ßÁ½²½
- * µ±¿ìÖ¸ÕëÎªnullÊ±£¬ ÂýÖ¸Õë¼´ÎªÁ´±íµÄÖÐ¼äÎ»ÖÃ
+ * æ—¶é—´å¤æ‚åº¦ä¸ºnlog(n)çš„æŽ’åºç®—æ³•é¦–å…ˆæƒ³åˆ°ä¸ºå½’å¹¶æŽ’åºå’Œå¿«é€ŸæŽ’åºï¼Œè€Œå…¶ä»–å¦‚å†’æ³¡ï¼Œé€‰æ‹©å‡ä¸ºn^2.
+ * è¿™é‡Œé€‰ç”¨æ•°ç»„çš„å½’å¹¶æŽ’åºæ¥å®žçŽ°é“¾è¡¨çš„å½’å¹¶æŽ’åºï¼Œ
+ * æœ‰ä¸€ä¸ªé—®é¢˜å³ä¸ºå¦‚ä½•æ‰¾åˆ°é“¾è¡¨çš„ä¸­é—´èŠ‚ç‚¹å°†é“¾è¡¨åˆ†ä¸ºä¸¤æ®µï¼Œæœ€å¿«çš„æ–¹æ³•æ˜¯é€‰ç”¨fast-lowæ–¹æ³•ï¼Œä¸€ä¸ªæŒ‡é’ˆæ¯æ¬¡èµ°ä¸€æ­¥ï¼Œä¸€ä¸ªæŒ‡é’ˆæ¯æ¬¡èµ°ä¸¤æ­¥
+ * å½“å¿«æŒ‡é’ˆä¸ºnullæ—¶ï¼Œ æ…¢æŒ‡é’ˆå³ä¸ºé“¾è¡¨çš„ä¸­é—´ä½ç½®
  */
 public class SortList {
 
@@ -19,9 +19,9 @@ public class SortList {
 	}
 
 	public ListNode mergeSort(ListNode head) {
-		if (head == null || head.next == null)   //Èç¹ûÖ»ÓÐÒ»¸öÔªËØ»òÎª¿Õ£¬ÔòÖ±½Ó·µ»Ø
+		if (head == null || head.next == null)   //å¦‚æžœåªæœ‰ä¸€ä¸ªå…ƒç´ æˆ–ä¸ºç©ºï¼Œåˆ™ç›´æŽ¥è¿”å›ž
 			return head;
-		ListNode slow = head, fast = head, pre = null;  // Í¨¹ý¿ìÂýÖ¸Õë°Ñµ¥Á´±í·ÖÎª×óÓÒÁ½¸öµ¥Á´±í
+		ListNode slow = head, fast = head, pre = null;  // é€šè¿‡å¿«æ…¢æŒ‡é’ˆæŠŠå•é“¾è¡¨åˆ†ä¸ºå·¦å³ä¸¤ä¸ªå•é“¾è¡¨
 		while (fast != null && fast.next != null) {
 			pre = slow;
 			slow = slow.next;
@@ -35,7 +35,7 @@ public class SortList {
 	}
 
 	private ListNode merge(ListNode left, ListNode right) {
-		ListNode head = new ListNode(0); // ½¨Á¢Ò»¸öÁÙÊ±Í·½Úµã£¬×îºóÒª¼ÇµÃÉ¾³ý
+		ListNode head = new ListNode(0); // å»ºç«‹ä¸€ä¸ªä¸´æ—¶å¤´èŠ‚ç‚¹ï¼Œæœ€åŽè¦è®°å¾—åˆ é™¤
 		ListNode tail = head;
 		while (left != null && right != null) {
 			if (left.val > right.val) {

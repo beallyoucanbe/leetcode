@@ -26,7 +26,7 @@ public class BinaryTreePaths {
 	public List<String> binaryTreePaths(TreeNode root) {
 
 		List<String> result = new ArrayList<String>();
-		List<Integer> path = new ArrayList<Integer>(); //ÓÃÀ´¼ÇÂ¼ÔÚÂ·¾¶ÉÏµÄÊı×Ö
+		List<Integer> path = new ArrayList<Integer>(); //ç”¨æ¥è®°å½•åœ¨è·¯å¾„ä¸Šçš„æ•°å­—
 		treePath(root, path, result);
 		return result;
 	}

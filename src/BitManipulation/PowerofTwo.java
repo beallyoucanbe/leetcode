@@ -2,7 +2,7 @@ package BitManipulation;
 
 /*
  * Given an integer, write a function to determine if it is a power of two.
- * Èç¹û´ÓÕûÊıÖ±½Ó¶Ô2È¡ÓàºÜÈİÒ×£¬µ«ÊÇÈçºÎ´Ó¶ş½øÖÆbit²Ù×÷À´ÅĞ¶Ï,1Ò²ÊÇ2µÄÁã´ÎÃİ
+ * å¦‚æœä»æ•´æ•°ç›´æ¥å¯¹2å–ä½™å¾ˆå®¹æ˜“ï¼Œä½†æ˜¯å¦‚ä½•ä»äºŒè¿›åˆ¶bitæ“ä½œæ¥åˆ¤æ–­,1ä¹Ÿæ˜¯2çš„é›¶æ¬¡å¹‚
  */
 
 public class PowerofTwo {

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-//ÓÉÓÚÖ»ÄÜÊÇÒ»Ò»Æ¥Åä£¬ËùÒÔÒªÍ¬Ê±Éè¼ÆÒ»¸öhashmap ºÍÒ»¸ösetÀ´¼ì²â,ÁíÍâÒ»¸ösetµÄ×÷ÓÃ£¬Ò»Ò»¶ÔÓ¦£¬²»ÄÜ²»ÄÜ³öÏÖa-dog£¬ b-dogµÄÇé¿ö
+//ç”±äºåªèƒ½æ˜¯ä¸€ä¸€åŒ¹é…ï¼Œæ‰€ä»¥è¦åŒæ—¶è®¾è®¡ä¸€ä¸ªhashmap å’Œä¸€ä¸ªsetæ¥æ£€æµ‹,å¦å¤–ä¸€ä¸ªsetçš„ä½œç”¨ï¼Œä¸€ä¸€å¯¹åº”ï¼Œä¸èƒ½ä¸èƒ½å‡ºç°a-dogï¼Œ b-dogçš„æƒ…å†µ
 public class WordPattern {
 
 	public boolean WordPattern(String pattern, String str){
@@ -34,7 +34,7 @@ public class WordPattern {
 			return false;
 		for (int i = 0; i < chars.length; i++) {
 			if (map.containsKey(chars[i])) {
-				if (!map.get(chars[i]).equals( strs[i]))   //×Ö·û´®µÄÏàµÈÒ»¶¨²»ÒªÓÃ==£¬ÒªÓÃequals					
+				if (!map.get(chars[i]).equals( strs[i]))   //å­—ç¬¦ä¸²çš„ç›¸ç­‰ä¸€å®šä¸è¦ç”¨==ï¼Œè¦ç”¨equals					
 					return false;			
 			} else {
 				if (set.contains(strs[i])) 	

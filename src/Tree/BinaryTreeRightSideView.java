@@ -9,7 +9,7 @@ import java.util.List;
  * return the values of the nodes you can see ordered from top to bottom.
  */
 /*
- * ·½·¨£¬ ²ã´Î±éÀú£¬ ²¢°ÑÃ¿Ò»²ãµÄ×îºóÒ»¸öÔªËØ¼ÓÈë½á¹û¼¯ÖĞ
+ * æ–¹æ³•ï¼Œ å±‚æ¬¡éå†ï¼Œ å¹¶æŠŠæ¯ä¸€å±‚çš„æœ€åä¸€ä¸ªå…ƒç´ åŠ å…¥ç»“æœé›†ä¸­
  */
 
 public class BinaryTreeRightSideView {

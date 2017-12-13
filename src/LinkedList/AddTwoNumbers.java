@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)  Output: 7 -> 0 -> 8
  */
 /*
- * 该题目本质上就是对两个大数进行加法，根据题目要求，各位均在头结点
+ * 璇ラ鐩湰璐ㄤ笂灏辨槸瀵逛袱涓ぇ鏁拌繘琛屽姞娉曪紝鏍规嵁棰樼洰瑕佹眰锛屽悇浣嶅潎鍦ㄥご缁撶偣
  */
 public class AddTwoNumbers {
 
@@ -22,7 +22,7 @@ public class AddTwoNumbers {
 		ListNode p = l1, q = l2;
 		ListNode sum = new ListNode(0);
 		ListNode sumtail = sum;
-		int carry = 0; // 加法中的进位
+		int carry = 0; // 鍔犳硶涓殑杩涗綅
 
 		while (p != null && q != null) {
 			int a = p.val, b = q.val;

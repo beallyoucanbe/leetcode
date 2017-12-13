@@ -3,10 +3,10 @@ package Backtracking;
 import java.util.Arrays;
 
 /*
- * µ¥´ÊËÑË÷£¬Ã¿¸ö½ÚµãµÄ4¸ö·½Ïò¾ù¿ÉÒÔËÑË÷£¬¿ÉÒÔÓÃÒ»¸öÊı×éÀ´¿ØÖÆ·½Ïò
- * ±¾Ëã·¨³¬Ê±¡£Time Limited Exceeded
- * µ«ÖÁÉÙÊµÏÖÁË¹¦ÄÜ
- * »ØËİ£¬Éî¶ÈÓÅÏÈ
+ * å•è¯æœç´¢ï¼Œæ¯ä¸ªèŠ‚ç‚¹çš„4ä¸ªæ–¹å‘å‡å¯ä»¥æœç´¢ï¼Œå¯ä»¥ç”¨ä¸€ä¸ªæ•°ç»„æ¥æ§åˆ¶æ–¹å‘
+ * æœ¬ç®—æ³•è¶…æ—¶ã€‚Time Limited Exceeded
+ * ä½†è‡³å°‘å®ç°äº†åŠŸèƒ½
+ * å›æº¯ï¼Œæ·±åº¦ä¼˜å…ˆ
  */
 
 public class WordSearch2 {
@@ -36,7 +36,7 @@ public class WordSearch2 {
 			return false;
 		if (board[i][j] == word.charAt(count)) {
 			char temp = word.charAt(count);
-			board[i][j] = '#';  //²»ÓÃÁíÍâ¿ª±Ù¿Õ¼äÎ¬»¤Ò»¸öbooleanÀàĞÍÊı×é
+			board[i][j] = '#';  //ä¸ç”¨å¦å¤–å¼€è¾Ÿç©ºé—´ç»´æŠ¤ä¸€ä¸ªbooleanç±»å‹æ•°ç»„
 			if (count == word.length() - 1)
 				return true;	
 			for (int k = 0; k < 4; k++) {
@@ -69,10 +69,10 @@ public class WordSearch2 {
 		String word2 = "ASADEE";
 		String word3 = "ABCB";
 		if (test.exist(board, word1))
-			System.out.println("word1 Îªtrue");
+			System.out.println("word1 ä¸ºtrue");
 		if (test.exist(board, word2))
-			System.out.println("word2 Îªtrue");
+			System.out.println("word2 ä¸ºtrue");
 		if (test.exist(board, word3))
-			System.out.println("word3 Îªtrue");
+			System.out.println("word3 ä¸ºtrue");
 	}
 }

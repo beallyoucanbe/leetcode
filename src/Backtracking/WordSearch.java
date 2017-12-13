@@ -6,9 +6,9 @@ import java.util.Arrays;
  * The word can be constructed from letters of sequentially adjacent cell, 
  * where "adjacent" cells are those horizontally or vertically neighboring. 
  * The same letter cell may not be used more than once.
- * 单词搜索，每个节点的4个方向均可以搜索，可以用一个数组来控制方向
- * 本算法超时。Time Limited Exceeded
- * 但至少实现了功能
+ * 鍗曡瘝鎼滅储锛屾瘡涓妭鐐圭殑4涓柟鍚戝潎鍙互鎼滅储锛屽彲浠ョ敤涓�涓暟缁勬潵鎺у埗鏂瑰悜
+ * 鏈畻娉曡秴鏃躲�俆ime Limited Exceeded
+ * 浣嗚嚦灏戝疄鐜颁簡鍔熻兘
  */
 
 public class WordSearch {
@@ -70,10 +70,10 @@ public class WordSearch {
 		String word2 = "SEE";
 		String word3 = "ABCB";
 		if (test.exist(board, word1))
-			System.out.println("word1 为true");
+			System.out.println("word1 涓簍rue");
 		if (test.exist(board, word2))
-			System.out.println("word2 为true");
+			System.out.println("word2 涓簍rue");
 		if (test.exist(board, word3))
-			System.out.println("word3 为true");
+			System.out.println("word3 涓簍rue");
 	}
 }

@@ -1,10 +1,10 @@
 package LinkedList;
 
 /*
- * ÕâÊ±ÒªÉ¾³ıµôËùÓĞÖØ¸´³öÏÖ¹ıµÄÔªËØ£¬Ö»±£ÁôÖ»³öÏÖ¹ıÒ»´ÎµÄÔªËØ
- * ¿´ÁËÌâÄ¿ÖªµÀ£¬ÌâÄ¿ÒªÇóÁ´±íÎªÉıĞòÅÅÁĞµÄ£¬¹ÊÖ»ĞèÒª¿¼ÂÇÏàÁÚµÄ¼¸¸öÔªËØ¼´¿É¡£
- * 1 ÔÚÁ´±íÌâÖĞ£¬Áé»îµØÔËÓÃĞéÄâ±íÍ·»á¼õÉÙºÜ¶à¹¤×÷Á¿ 
- * 2 Á´±íÌâÍùÍùÔÚÊÕÎ²´¦Òª¶àÅĞ¶ÏÒ»ÏÂ£¬·ÀÖ¹corner case
+ * è¿™æ—¶è¦åˆ é™¤æ‰æ‰€æœ‰é‡å¤å‡ºç°è¿‡çš„å…ƒç´ ï¼Œåªä¿ç•™åªå‡ºç°è¿‡ä¸€æ¬¡çš„å…ƒç´ 
+ * çœ‹äº†é¢˜ç›®çŸ¥é“ï¼Œé¢˜ç›®è¦æ±‚é“¾è¡¨ä¸ºå‡åºæ’åˆ—çš„ï¼Œæ•…åªéœ€è¦è€ƒè™‘ç›¸é‚»çš„å‡ ä¸ªå…ƒç´ å³å¯ã€‚
+ * 1 åœ¨é“¾è¡¨é¢˜ä¸­ï¼Œçµæ´»åœ°è¿ç”¨è™šæ‹Ÿè¡¨å¤´ä¼šå‡å°‘å¾ˆå¤šå·¥ä½œé‡ 
+ * 2 é“¾è¡¨é¢˜å¾€å¾€åœ¨æ”¶å°¾å¤„è¦å¤šåˆ¤æ–­ä¸€ä¸‹ï¼Œé˜²æ­¢corner case
  */
 
 public class RemoveDuplicates2 {
@@ -12,7 +12,7 @@ public class RemoveDuplicates2 {
 	public ListNode deleteDuplicates(ListNode head) {
 		if (head == null || head.next == null)
 			return head;
-		//¹¹ÔìÒ»¸öĞÂµÄĞéÄâÍ·½áµã£¬¡£´¦Àí·½±ã£¬·ÀÖ¹»áÓĞÉ¾³ıµÚÒ»¸ö¼´±íÍ·µÄ¿ÉÄÜ
+		//æ„é€ ä¸€ä¸ªæ–°çš„è™šæ‹Ÿå¤´ç»“ç‚¹ï¼Œã€‚å¤„ç†æ–¹ä¾¿ï¼Œé˜²æ­¢ä¼šæœ‰åˆ é™¤ç¬¬ä¸€ä¸ªå³è¡¨å¤´çš„å¯èƒ½
 		ListNode newhead = new ListNode(Integer.MIN_VALUE);
 		newhead.next = head;
 
@@ -20,12 +20,12 @@ public class RemoveDuplicates2 {
 		ListNode cur = pre.next;
 		ListNode next = cur.next;
 		
-		boolean flag = false; //±êÖ¾Î»,ÅĞ¶ÏÊÇ·ñÓĞÖØ¸´
+		boolean flag = false; //æ ‡å¿—ä½,åˆ¤æ–­æ˜¯å¦æœ‰é‡å¤
 		while(next != null){		
 			if(cur.val != next.val){
-				if(flag){ //Èç¹ûÓĞÖØ¸´µÄ£¬¾ÍÌø¹ı
+				if(flag){ //å¦‚æœæœ‰é‡å¤çš„ï¼Œå°±è·³è¿‡
 					pre.next = next;
-					flag = false; //»Ø¸´flag
+					flag = false; //å›å¤flag
 				}else
 					pre = cur;
 				cur = next;
@@ -36,7 +36,7 @@ public class RemoveDuplicates2 {
 				next = next.next;
 			}
 		}
-		//É¨Î²¹¤×÷£¬Õë¶ÔÀıÈç{1£¬ 1}µÄÇé¿öÔÙÅĞ¶ÏÒ»´Î
+		//æ‰«å°¾å·¥ä½œï¼Œé’ˆå¯¹ä¾‹å¦‚{1ï¼Œ 1}çš„æƒ…å†µå†åˆ¤æ–­ä¸€æ¬¡
 //		if(flag)
 //			pre.next = next;
 		return newhead.next;

@@ -1,21 +1,21 @@
 package LinkedList;
 /*
- * ɾ������������ֵΪval�Ľڵ�
- * ������ָ��
+ * 删除链表中所有值为val的节点
+ * 用两个指针
  */
 
 /*
- * 1. ������������ɾ����ǰ�ڵ�ʱ����Ҫ֪����ǰ�ڵ�ĸ��ڵ㡣
-2. ���ڷ�ͷ�ڵ㣬ɾ�������ܷ��㣬����ͷ�ڵ���Ҫ����Ĳ�����
-Ϊ���ڱ����Ĺ����У�����ɾ��������һ���Ժͱ�������ͷ�ڵ�ͷ�ͷ�ڵ㣬�����ַ��������������鷳��
-�ٿ���Ϊ�������ø���ͷ�ڵ㣨����ԭ������ǰ����ͷ�ڵ㣩�������Ծ��и���ͷ�ڵ��������
-�ڱ���ʱ�Ͳ���������ͷ�ڵ�ͷ�ͷ�ڵ�����⡣
+ * 1. 对于链表，在删除当前节点时，需要知道当前节点的父节点。
+2. 对于非头节点，删除操作很方便，对于头节点需要额外的操作，
+为了在遍历的过程中，保持删除操作的一致性和避免区分头节点和非头节点，有两种方法来避免这种麻烦：
+①可以为链表设置辅助头节点（即在原来链表前插入头节点），这样对具有辅助头节点的链表，
+在遍历时就不存在区分头节点和非头节点的问题。
 The key to solve this problem is using a helper node to track the head of the list.
-�ڴ�ͷ�ڵ����һ���ڵ㿪ʼ��������ɾ����������ɺ��ٴ���ͷ�ڵ㡣
+②从头节点的下一个节点开始遍历查找删除，遍历完成后再处理头节点。
  */
 
 /*
- * ������ֻ��һ��{3}��val = 3ʱ����һ�������ᱨ�����������������У�˼��Ϊʲô��
+ * 当输入只有一个{3}，val = 3时，第一个方法会报错，二三会正常运行，思考为什么。
  */
 public class RemoveLinkedListElements {
 
@@ -23,7 +23,7 @@ public class RemoveLinkedListElements {
 		if (head == null)
 			return head;
 		while (head.val == val)
-			head = head.next;     //����ֿ�ָ��Ŀ���
+			head = head.next;     //会出现空指针的可能
 		ListNode cur = head;
 		ListNode next = head.next;  
 		while (next != null) {

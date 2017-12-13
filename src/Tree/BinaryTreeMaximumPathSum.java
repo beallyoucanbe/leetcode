@@ -7,8 +7,8 @@ package Tree;
  */
 
 /*
- * ´ÓÊ÷µÄµ×²ã¿ªÊ¼¼ÆËã£¬ĞèÒª¼ÆËãÃ¿¸ö½ÚµãÏàÓ¦µÄ×î´óÖµ£¬
- * µİ¹éµÄ±í´ïÊ½¼´ÎªMath.max(root, root + left, root + right);
+ * ä»æ ‘çš„åº•å±‚å¼€å§‹è®¡ç®—ï¼Œéœ€è¦è®¡ç®—æ¯ä¸ªèŠ‚ç‚¹ç›¸åº”çš„æœ€å¤§å€¼ï¼Œ
+ * é€’å½’çš„è¡¨è¾¾å¼å³ä¸ºMath.max(root, root + left, root + right);
  */
 public class BinaryTreeMaximumPathSum {
 	int max = Integer.MIN_VALUE;
@@ -24,10 +24,10 @@ public class BinaryTreeMaximumPathSum {
 	public int maxSum(TreeNode root){
 		if(root == null)
 			return 0;
-		 int leftVal = maxSum(root.left);  //µİ¹éÇó×óÖ§Â·µÄ×î´óºÍ
-		 int rightVal = maxSum(root.right); //µİ¹éÇóÓÒÖ§Â·µÄ×î´óºÍ
-		 //Èç¹ûµ±Ç°¾Ö²¿½â£¨root, root + left, root+ right, root + left + right£©
-		 //ÊÇ×îÓÅ½â£¬Ôò¸üĞÂ×îÖÕ½á¹û
+		 int leftVal = maxSum(root.left);  //é€’å½’æ±‚å·¦æ”¯è·¯çš„æœ€å¤§å’Œ
+		 int rightVal = maxSum(root.right); //é€’å½’æ±‚å³æ”¯è·¯çš„æœ€å¤§å’Œ
+		 //å¦‚æœå½“å‰å±€éƒ¨è§£ï¼ˆroot, root + left, root+ right, root + left + rightï¼‰
+		 //æ˜¯æœ€ä¼˜è§£ï¼Œåˆ™æ›´æ–°æœ€ç»ˆç»“æœ
 		 int curMax = root.val;
 		 if(leftVal > 0)
 			 curMax += leftVal;
@@ -36,7 +36,7 @@ public class BinaryTreeMaximumPathSum {
 		 if(curMax > max)
 			 max = curMax;
 		 
-		 //·µ»Ø´ÓÒ¶×Ó½Úµãµ½rootµÄ×î´óÂ·¾¶ºÍ£¨root, root + left, root + right£©;
+		 //è¿”å›ä»å¶å­èŠ‚ç‚¹åˆ°rootçš„æœ€å¤§è·¯å¾„å’Œï¼ˆroot, root + left, root + rightï¼‰;
 		 return Math.max(root.val, Math.max(root.val + leftVal, root.val + rightVal));
 	}
 	public static void main(String[] args) {

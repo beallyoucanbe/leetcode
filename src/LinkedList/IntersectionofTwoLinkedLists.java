@@ -1,7 +1,7 @@
 package LinkedList;
 /*
  * Write a program to find the node at which the intersection of two singly linked lists begins.
- * ÓÃÅĞ¶ÏÓĞ»·Á´±íµÄ·½·¨È¥½â¾ö£¬ÏÈ°ÑÆäÖĞÒ»¸öÁ´±í½Óµ½ÁíÒ»¸öÁ´±íµÄ½áÎ²´¦£¬È»ºóÅĞ¶ÏÕâ¸öÁ´±íµÄ»·µÄÆğÊ¼Î»ÖÃ
+ * ç”¨åˆ¤æ–­æœ‰ç¯é“¾è¡¨çš„æ–¹æ³•å»è§£å†³ï¼Œå…ˆæŠŠå…¶ä¸­ä¸€ä¸ªé“¾è¡¨æ¥åˆ°å¦ä¸€ä¸ªé“¾è¡¨çš„ç»“å°¾å¤„ï¼Œç„¶ååˆ¤æ–­è¿™ä¸ªé“¾è¡¨çš„ç¯çš„èµ·å§‹ä½ç½®
  */
 public class IntersectionofTwoLinkedLists {
 
@@ -9,21 +9,21 @@ public class IntersectionofTwoLinkedLists {
 		if(headA == null || headB == null)
 			return null;
 		ListNode tailA = headA;
-		while(tailA.next != null)   //ÕÒµ½Á´±íAµÄÎ²½Úµã
+		while(tailA.next != null)   //æ‰¾åˆ°é“¾è¡¨Açš„å°¾èŠ‚ç‚¹
 			tailA = tailA.next;
 		//System.out.println(tailA);
-		tailA.next = headB;  // °ÑÁ´±íB½Óµ½AµÄºóÃæ , ¹¹³ÉÒ»¸öÓĞ»·Á´±í
+		tailA.next = headB;  // æŠŠé“¾è¡¨Bæ¥åˆ°Açš„åé¢ , æ„æˆä¸€ä¸ªæœ‰ç¯é“¾è¡¨
 		
-		ListNode slow = headA, fast = headA;  //¹¹ÔìÁ½¸ö¿ìÂıÖ¸Õë, ÅĞ¶ÏÊÇ·ñ»áÓĞ½¹µã
+		ListNode slow = headA, fast = headA;  //æ„é€ ä¸¤ä¸ªå¿«æ…¢æŒ‡é’ˆ, åˆ¤æ–­æ˜¯å¦ä¼šæœ‰ç„¦ç‚¹
 		do{
 			if(fast.next == null || fast.next.next == null){
-				//System.out.println("Ã»ÓĞ½»µã");
+				//System.out.println("æ²¡æœ‰äº¤ç‚¹");
 				tailA.next = null;
 				return null;
 			}
 			slow = slow.next;
 			fast = fast.next.next;
-		}while(slow != fast); ///¿ìÂıÖ¸Õë»áÏàÓö£¬È»ºó½«¿ìÖ¸ÕëÒÆ¶¯µ½AµÄ±íÍ·		
+		}while(slow != fast); ///å¿«æ…¢æŒ‡é’ˆä¼šç›¸é‡ï¼Œç„¶åå°†å¿«æŒ‡é’ˆç§»åŠ¨åˆ°Açš„è¡¨å¤´		
 		fast = headA;
 		while(slow != fast){
 			slow = slow.next;

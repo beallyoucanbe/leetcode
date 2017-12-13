@@ -5,15 +5,15 @@ import java.util.ArrayList;
 /*
  * Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
  * According to the definition of LCA on Wikipedia:
- *  ¡°The lowest common ancestor is defined between two nodes v and w as the lowest node in T 
- *  that has both v and w as descendants (where we allow a node to be a descendant of itself).¡±
+ *  â€œThe lowest common ancestor is defined between two nodes v and w as the lowest node in T 
+ *  that has both v and w as descendants (where we allow a node to be a descendant of itself).â€
  */
 /*
- * ×î¼òµ¥µÄ·½·¨£¬ÓÉÓÚÊÇ¶ş²æËÑË÷Ê÷£¬ÀûÓÃ¶ş²æËÑË÷Ê÷µÄÌØµã£¬Èç¹ûp£¬q¾ù´óÓÚrootÔò¹«¹²½ÚµãÔÚrootµÄÓÖ×ÓÊ÷£¬Èç¹û¾ùĞ¡ÓÚroot
- * Ôò¿Ï¶¨ÔÚ×ó×ÓÊ÷£¬Èç¹ûÒ»´óÒ»Ğ¡£¬Ôòroot¼´ÎªËùÇó£¬ÀûÓÃÕâ¸öĞÔÖÊµİ¹é
+ * æœ€ç®€å•çš„æ–¹æ³•ï¼Œç”±äºæ˜¯äºŒå‰æœç´¢æ ‘ï¼Œåˆ©ç”¨äºŒå‰æœç´¢æ ‘çš„ç‰¹ç‚¹ï¼Œå¦‚æœpï¼Œqå‡å¤§äºrootåˆ™å…¬å…±èŠ‚ç‚¹åœ¨rootçš„åˆå­æ ‘ï¼Œå¦‚æœå‡å°äºroot
+ * åˆ™è‚¯å®šåœ¨å·¦å­æ ‘ï¼Œå¦‚æœä¸€å¤§ä¸€å°ï¼Œåˆ™rootå³ä¸ºæ‰€æ±‚ï¼Œåˆ©ç”¨è¿™ä¸ªæ€§è´¨é€’å½’
  */
 /*
- * ·½·¨¶ş£ºÍ¨¹ıÉî¶ÈÓÅÏÈËÑË÷·Ö±ğÕÒµ½´Órootµ½Ä¿±ê½ÚµãµÄÒ»ÌõÁ´Â·£¬È»ºó·ÖÎöÕâÁ½ÌõÁ´Â·µÄ×îºóÒ»¸ö¹«¹²½Úµã¡£
+ * æ–¹æ³•äºŒï¼šé€šè¿‡æ·±åº¦ä¼˜å…ˆæœç´¢åˆ†åˆ«æ‰¾åˆ°ä»rootåˆ°ç›®æ ‡èŠ‚ç‚¹çš„ä¸€æ¡é“¾è·¯ï¼Œç„¶ååˆ†æè¿™ä¸¤æ¡é“¾è·¯çš„æœ€åä¸€ä¸ªå…¬å…±èŠ‚ç‚¹ã€‚
  */
 public class LowestCommonAncestoofaBinarySearchTree {
 
@@ -26,8 +26,8 @@ public class LowestCommonAncestoofaBinarySearchTree {
 			return lowestCommonAncestor(root.right, p, q);
 		else return root;
 	}
-	//×îÖØÒªµÄÊÇÈçºÎÕÒµ½ÒÔºóÁ¢¿Ì´Óµİ¹éµ×²ãÖ±½Ó½áÊø³ÌĞò²¢·µ»Ø£¬¿ÉÒÔ½è¼ø·µ»ØÖµÎªbooleanµÄ·½·¨
-	//ÓÉÓÚÊÇ¶ş²æËÑË÷Ê÷£¬ËùÒÔ¿ÉÒÔÔÚÃ¿Ò»²½¶¼ÅĞ¶ÏÂ·¾¶µÄ×ß·¨,¶ş²æËÑË÷Ê÷£¬¿ÉÒÔ¸ù¾İÖµµÄÌØµãÈ¥ÅĞ¶Ï
+	//æœ€é‡è¦çš„æ˜¯å¦‚ä½•æ‰¾åˆ°ä»¥åç«‹åˆ»ä»é€’å½’åº•å±‚ç›´æ¥ç»“æŸç¨‹åºå¹¶è¿”å›ï¼Œå¯ä»¥å€Ÿé‰´è¿”å›å€¼ä¸ºbooleançš„æ–¹æ³•
+	//ç”±äºæ˜¯äºŒå‰æœç´¢æ ‘ï¼Œæ‰€ä»¥å¯ä»¥åœ¨æ¯ä¸€æ­¥éƒ½åˆ¤æ–­è·¯å¾„çš„èµ°æ³•,äºŒå‰æœç´¢æ ‘ï¼Œå¯ä»¥æ ¹æ®å€¼çš„ç‰¹ç‚¹å»åˆ¤æ–­
 	public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
 		if (root == null || p == null || q == null)
 			return null;
@@ -86,8 +86,8 @@ public class LowestCommonAncestoofaBinarySearchTree {
 			return;
 		traPath.add(root);
 		if (root == node) {
-			return;  //ÕÒµ½´íÎóµÄÔ­Òò£¬Èç¹ûÕÒµ½ÁËnode£¬returnÖ»ÊÇ·µ»Øµ±Ç°µİ¹éµÄ·½·¨£¬·µ»Øºó»¹»á¼ÌĞøÖ´ĞĞ
-			         //ºóÃæµÄÓï¾ä£¬¶ø²¢·ÇÍ£Ö¹Õû¸öµÄµİ¹é³ÌĞò
+			return;  //æ‰¾åˆ°é”™è¯¯çš„åŸå› ï¼Œå¦‚æœæ‰¾åˆ°äº†nodeï¼Œreturnåªæ˜¯è¿”å›å½“å‰é€’å½’çš„æ–¹æ³•ï¼Œè¿”å›åè¿˜ä¼šç»§ç»­æ‰§è¡Œ
+			         //åé¢çš„è¯­å¥ï¼Œè€Œå¹¶éåœæ­¢æ•´ä¸ªçš„é€’å½’ç¨‹åº
 		}
 		findTraPath(root.left, node, traPath);
 		findTraPath(root.right, node, traPath);

@@ -6,7 +6,7 @@ package HashMap;
  * You may assume that each input would have exactly one solution.
  * Input: numbers={2, 7, 11, 15}, target=9
  * Output: index1=1, index2=2
- * ÊÇÖ®Ç° two sum µÄ fllow up question, µ«ÊÇÕâ´ÎÊÇgiven an array is already sorted in ascending order. Ïë³¢ÊÔ O(log n)µÄÊ±¼ä×ö³öÀ´¡£µ«Ê¼ÖÕ×ö²»³öÀ´¡£ÓĞ´óÉñÓĞÏë·¨Âğ£¿
+ * æ˜¯ä¹‹å‰ two sum çš„ fllow up question, ä½†æ˜¯è¿™æ¬¡æ˜¯given an array is already sorted in ascending order. æƒ³å°è¯• O(log n)çš„æ—¶é—´åšå‡ºæ¥ã€‚ä½†å§‹ç»ˆåšä¸å‡ºæ¥ã€‚æœ‰å¤§ç¥æœ‰æƒ³æ³•å—ï¼Ÿ
  */
 public class Twosum2 {
 

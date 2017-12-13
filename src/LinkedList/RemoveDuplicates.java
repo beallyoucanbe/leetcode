@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /*
- * É¾³ıÁ´±íÖĞËùÓĞÔªËØÏàÍ¬µÄ½Úµã£¬¼´¶à¸öÖµÖ»±£ÁôÒ»¸ö£¬ÀûÓÃË«Ö¸ÕëµÄË¼Ïë¡£Ò»¸öÓÃÀ´±éÀúÁ´±í£¬Ò»¸öÓÃÀ´¼ÇÂ¼µ±Ç°Á´±í
+ * åˆ é™¤é“¾è¡¨ä¸­æ‰€æœ‰å…ƒç´ ç›¸åŒçš„èŠ‚ç‚¹ï¼Œå³å¤šä¸ªå€¼åªä¿ç•™ä¸€ä¸ªï¼Œåˆ©ç”¨åŒæŒ‡é’ˆçš„æ€æƒ³ã€‚ä¸€ä¸ªç”¨æ¥éå†é“¾è¡¨ï¼Œä¸€ä¸ªç”¨æ¥è®°å½•å½“å‰é“¾è¡¨
  */
 public class RemoveDuplicates {
 
@@ -13,7 +13,7 @@ public class RemoveDuplicates {
 		if(head == null)
 			return head;
 		Set set = new HashSet<Integer>();
-		//°ÑµÚÒ»¸öÔªËØ·Å½ø¼¯ºÏ
+		//æŠŠç¬¬ä¸€ä¸ªå…ƒç´ æ”¾è¿›é›†åˆ
 		set.add(head.val);
 		ListNode cur = head;
 		ListNode next = head.next;

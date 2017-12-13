@@ -6,7 +6,7 @@ public class Node {
 
 	char content;
 	boolean isEnd;
-	int count;      //正确理解count的毅意义，它表示所有经过该节点的单词的个数 
+	int count;      //姝ｇ‘鐞嗚Вcount鐨勬瘏鎰忎箟锛屽畠琛ㄧず鎵�鏈夌粡杩囪鑺傜偣鐨勫崟璇嶇殑涓暟 
 	LinkedList<Node> childList;
 	
 	public Node(char c){
@@ -15,7 +15,7 @@ public class Node {
 		isEnd = false;
 		count = 0;
 	}
-	//判断当前节点的子节点是否存在某个字符c
+	//鍒ゆ柇褰撳墠鑺傜偣鐨勫瓙鑺傜偣鏄惁瀛樺湪鏌愪釜瀛楃c
 	public Node subNode(char c){
 		if(childList != null){
 			for(Node eachChild: childList)

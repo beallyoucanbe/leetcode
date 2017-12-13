@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 /**
  * Given a string, find the length of the longest substring T that contains at
- * most 2 distinct characters. For example, Given s = °∞eceba°±, is "ece" which
+ * most 2 distinct characters. For example, Given s = ‚Äúeceba‚Äù, is "ece" which
  * its length is 3.
  * 
  * @author shuoyi.zhao

@@ -8,8 +8,8 @@ import java.util.Map;
  * Given a string which contains only lowercase letters, 
  * remove duplicate letters so that every letter appear once and only once. 
  * You must make sure your result is the smallest in lexicographical order among all possible results.
- * ÄÑµãÊÇÊä³ö½á¹û±ØĞë°´ÕÕ×ÖµäË³ĞòÊä³ö£¬Ê×ÏÈ¿ÉÒÔ¿¼ÂÇÓÃÒ»¸ö26Î»Êı×éÀ´´æ´¢
- * µ«ÊÇ£¬ÄãÈÔÈ»Òª±£Ö¤ËùÓĞµÄ×Ö·ûÔÚÔ­À´×Ö·û´®ÖĞµÄÎ»ÖÃÊÇ²»±äµÄ¡£
+ * éš¾ç‚¹æ˜¯è¾“å‡ºç»“æœå¿…é¡»æŒ‰ç…§å­—å…¸é¡ºåºè¾“å‡ºï¼Œé¦–å…ˆå¯ä»¥è€ƒè™‘ç”¨ä¸€ä¸ª26ä½æ•°ç»„æ¥å­˜å‚¨
+ * ä½†æ˜¯ï¼Œä½ ä»ç„¶è¦ä¿è¯æ‰€æœ‰çš„å­—ç¬¦åœ¨åŸæ¥å­—ç¬¦ä¸²ä¸­çš„ä½ç½®æ˜¯ä¸å˜çš„ã€‚
  */
 
 public class RemoveDuplicateLetters {
@@ -21,18 +21,18 @@ public class RemoveDuplicateLetters {
 		Map<Character, Integer> lastPosMap = new HashMap<Character, Integer>();
 		for (int i = 0; i < s.length(); i++)
 			lastPosMap.put(s.charAt(i), i);
-		// mapµÄ±éÀú·½·¨£¬¿ÉÒÔÒÔ¼üÖµ¶Ô±éÀú£¬Ò²¿ÉÒÔµ¥¶À±éÀú
+		// mapçš„éå†æ–¹æ³•ï¼Œå¯ä»¥ä»¥é”®å€¼å¯¹éå†ï¼Œä¹Ÿå¯ä»¥å•ç‹¬éå†
 		for (Map.Entry<Character, Integer> entry : lastPosMap.entrySet()) {
 			System.out.println(entry.getKey() + "  " + entry.getValue());
 		}
 
-		char[] result = new char[lastPosMap.size()]; // ´æ·Å½á¹ûµÄÊı×é
+		char[] result = new char[lastPosMap.size()]; // å­˜æ”¾ç»“æœçš„æ•°ç»„
 		int begin = 0, end = findMinLastPos(lastPosMap);
 		for (int i = 0; i < result.length; i++) {
 			char minChar = 'z' + 1;
 			for (int k = begin; k <= end; k++) {
-				//ÔÚÕâÀïÒª×öÒ»´ÎÅĞ¶Ï£¬°ü±£Ö¤Ñ¡ÔñµÄ×Ö·ûÊÇÖ®Ç°Ã»ÓĞÑ¡Ôñ¹ıµÄ£¬
-				//ÓÉÓÚÃ¿Ñ¡ÔñÒ»´Î¾Í°Ñ¸Ã×Ö·ûÒÔ¼°¶ÔÓ¦µÄ¼üÖµ¶Ô´ÓmapÖĞÉ¾³ı£¬¹ÊÖ»ĞèÒªÃ¿´Î¶¼ÓëmapÖĞµÄÄÚÈİ×öÒ»´Î±È½Ï¼´¿É
+				//åœ¨è¿™é‡Œè¦åšä¸€æ¬¡åˆ¤æ–­ï¼ŒåŒ…ä¿è¯é€‰æ‹©çš„å­—ç¬¦æ˜¯ä¹‹å‰æ²¡æœ‰é€‰æ‹©è¿‡çš„ï¼Œ
+				//ç”±äºæ¯é€‰æ‹©ä¸€æ¬¡å°±æŠŠè¯¥å­—ç¬¦ä»¥åŠå¯¹åº”çš„é”®å€¼å¯¹ä»mapä¸­åˆ é™¤ï¼Œæ•…åªéœ€è¦æ¯æ¬¡éƒ½ä¸mapä¸­çš„å†…å®¹åšä¸€æ¬¡æ¯”è¾ƒå³å¯
 				if (lastPosMap.containsKey(s.charAt(k)) 
 						&& s.charAt(k) < minChar) {
 					minChar = s.charAt(k);
@@ -51,7 +51,7 @@ public class RemoveDuplicateLetters {
 		return new String(result);
 	}
 
-	private int findMinLastPos(Map<Character, Integer> lastPosMap) { // ·µ»Øµ±Ç°mapÖĞË÷Òı×îĞ¡µÄ×Ö·ûµÄÎ»ÖÃ
+	private int findMinLastPos(Map<Character, Integer> lastPosMap) { // è¿”å›å½“å‰mapä¸­ç´¢å¼•æœ€å°çš„å­—ç¬¦çš„ä½ç½®
 		if (lastPosMap == null || lastPosMap.isEmpty())
 			return -1;
 		int minIndex = Integer.MAX_VALUE;

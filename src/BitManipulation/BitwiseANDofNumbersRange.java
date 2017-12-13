@@ -1,7 +1,7 @@
 package BitManipulation;
 
 public class BitwiseANDofNumbersRange {
-	// ×î¼òµ¥Ö±½ÓµØ°ì·¨£¬µ«ÊÇ×öÁËºÜ¶àÎŞÓÃ¹¦£¬ÔÚÃ¿Ò»Î»Ö»ÒªÓĞÒ»¸ö0³öÏÖ¾Í¶¼ÊÇ0
+	// æœ€ç®€å•ç›´æ¥åœ°åŠæ³•ï¼Œä½†æ˜¯åšäº†å¾ˆå¤šæ— ç”¨åŠŸï¼Œåœ¨æ¯ä¸€ä½åªè¦æœ‰ä¸€ä¸ª0å‡ºç°å°±éƒ½æ˜¯0
 	public int rangeBitwiseAnd(int m, int n) {
 
 		int res = m;

@@ -3,32 +3,32 @@ package LinkedList;
 import java.util.Arrays;
 
 /*
- * Given a singly linked list L: L0¡úL1¡ú¡­¡úLn-1¡úLn,
- * reorder it to: L0¡úLn¡úL1¡úLn-1¡úL2¡úLn-2¡ú¡­
+ * Given a singly linked list L: L0â†’L1â†’â€¦â†’Ln-1â†’Ln,
+ * reorder it to: L0â†’Lnâ†’L1â†’Ln-1â†’L2â†’Ln-2â†’â€¦
  * You must do this in-place without altering the nodes' values.
  */
 /*
- * ½âÌâ·½·¨£ºÊ×ÏÈÀûÓÃ¿ìÂıÖ¸Õë½«µ¥Á´±í·ÖÎªÁ½²¿·Ö£¨×¢ÒâÆæÅ¼ÒÔ¼°×óÓÒµÄÎ»ÖÃ£©£¬È»ºó½«ºó°ë²¿·Ö·­×ª£¬×îºóÒ»Ò»²åÈë¼´¿É
- * ×î¿ªÊ¼Ê¹ÓÃµİ¹éµÄ·½Ê½Ğı×ªµ¥Á´±í£¬µ«ÊÇÊµ¼ÊÔËĞĞÖĞ·¢ÏÖµ±Êı¾İÁ¿¹ı´óÊ±»á³öÏÖ¶ÑÕ»Òç³öµÄ´íÎó£¬ËùÒÔ»¹ÊÇÒªÊ¹ÓÃµü´úµÄ·½Ê½È¥±ÜÃâ
+ * è§£é¢˜æ–¹æ³•ï¼šé¦–å…ˆåˆ©ç”¨å¿«æ…¢æŒ‡é’ˆå°†å•é“¾è¡¨åˆ†ä¸ºä¸¤éƒ¨åˆ†ï¼ˆæ³¨æ„å¥‡å¶ä»¥åŠå·¦å³çš„ä½ç½®ï¼‰ï¼Œç„¶åå°†ååŠéƒ¨åˆ†ç¿»è½¬ï¼Œæœ€åä¸€ä¸€æ’å…¥å³å¯
+ * æœ€å¼€å§‹ä½¿ç”¨é€’å½’çš„æ–¹å¼æ—‹è½¬å•é“¾è¡¨ï¼Œä½†æ˜¯å®é™…è¿è¡Œä¸­å‘ç°å½“æ•°æ®é‡è¿‡å¤§æ—¶ä¼šå‡ºç°å †æ ˆæº¢å‡ºçš„é”™è¯¯ï¼Œæ‰€ä»¥è¿˜æ˜¯è¦ä½¿ç”¨è¿­ä»£çš„æ–¹å¼å»é¿å…
  */
 public class ReorderList {
 
 	public void reorderList(ListNode head) {
 		if (head == null || head.next == null || head.next.next == null)
 			return;
-		ListNode slow = head, fast = head, pre = null; // µÚÒ»²½£ºÀûÓÃ¿ìÂıÖ¸Õë½«µ¥Á´±í´ÓÖĞ¼äÎ»ÖÃ·Ö¿ª³ÉÎªÁ½¸öÁ´±í
+		ListNode slow = head, fast = head, pre = null; // ç¬¬ä¸€æ­¥ï¼šåˆ©ç”¨å¿«æ…¢æŒ‡é’ˆå°†å•é“¾è¡¨ä»ä¸­é—´ä½ç½®åˆ†å¼€æˆä¸ºä¸¤ä¸ªé“¾è¡¨
 		while (fast != null && fast.next != null) {
 			pre = slow;
 			slow = slow.next;
 			fast = fast.next.next;
 		}
 		pre.next = null;
-		ListNode left = head; // leftºÍright¼´Îªµ¥Á´±íµÄ×óÓÒÁ½¸ö²¿·Ö
+		ListNode left = head; // leftå’Œrightå³ä¸ºå•é“¾è¡¨çš„å·¦å³ä¸¤ä¸ªéƒ¨åˆ†
 		ListNode right = slow;
 
-		// µÚ¶ş²¿£¬½«ºó°ë²¿·Ö·­×ª
+		// ç¬¬äºŒéƒ¨ï¼Œå°†ååŠéƒ¨åˆ†ç¿»è½¬
 		right = reverseList2(right);
-		// µÚÈı²¿£º ½«Á½²¿·ÖÒÀ´ÎºÏ²¢
+		// ç¬¬ä¸‰éƒ¨ï¼š å°†ä¸¤éƒ¨åˆ†ä¾æ¬¡åˆå¹¶
 		ListNode lnode = left, rnode = right;
 		head = left;
 		while (rnode != null) {
