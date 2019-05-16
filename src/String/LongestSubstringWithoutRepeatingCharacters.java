@@ -69,7 +69,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
 	public static void main(String[] args) {
 		LongestSubstringWithoutRepeatingCharacters test = new LongestSubstringWithoutRepeatingCharacters();
-		String s = "au";
-		System.out.println(test.lengthOfLongestSubstring2(s));
+		String s = "pwwkew";
+		System.out.println(test.lengthOfLongestSubstring(s));
 	}
 }

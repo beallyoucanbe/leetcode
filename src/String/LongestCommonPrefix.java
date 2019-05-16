@@ -1,6 +1,6 @@
 package String;
 
-/*
+/**
  * Write a function to find the longest common prefix string amongst an array of strings.
  * 寻找字符串数组的最长公共前缀
  * 思想：先找到前两个字符串的公共前缀，而整个数组的公共前缀一定是他的前缀

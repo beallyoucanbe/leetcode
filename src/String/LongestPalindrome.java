@@ -1,7 +1,17 @@
 package String;
 
-/*
+/**
  * 寻找给定字符串的最长回文字符串
+ * 	a	b	c	g	d	e	d	g	f
+ a	TRUE
+ b		TRUE
+ c			TRUE
+ g				TRUE				TRUE
+ d					TRUE		TRUE
+ e						TRUE
+ d							TRUE
+ g								TRUE
+ f									TRUE
  */
 
 public class LongestPalindrome {
@@ -104,7 +114,7 @@ public class LongestPalindrome {
 	public static void main(String[] args) {
 		LongestPalindrome test = new LongestPalindrome();
 		String s = "abcgdedgf";
-		System.out.println(test.longestPalindromeString3(s));
+		System.out.println(test.longestPalindromeString2(s));
 	}
 
 }
