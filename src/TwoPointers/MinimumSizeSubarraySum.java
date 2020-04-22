@@ -1,7 +1,8 @@
 package TwoPointers;
 
 /**
- * Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+ * Given an array of n positive integers and a positive integer s,
+ * find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
 
  Example:
 
@@ -43,6 +44,6 @@ public class MinimumSizeSubarraySum {
 
     public static void main(String[] args){
         MinimumSizeSubarraySum test = new MinimumSizeSubarraySum();
-        System.out.println(test.minSubArrayLen(7, new int[]{2,3,1,2,4,3}));
+        System.out.println(test.minSubArrayLen(167, new int[]{84,-37,32,40,95}));
     }
 }

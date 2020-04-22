@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.Arrays;
 
-/*
+/**
  * Sort a linked list in O(n log n) time using constant space complexity.
  * 时间复杂度为nlog(n)的排序算法首先想到为归并排序和快速排序，而其他如冒泡，选择均为n^2.
  * 这里选用数组的归并排序来实现链表的归并排序，

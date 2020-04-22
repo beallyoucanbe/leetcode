@@ -3,7 +3,7 @@ package LinkedList;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
+/**
  * 删除链表中所有元素相同的节点，即多个值只保留一个，利用双指针的思想。一个用来遍历链表，一个用来记录当前链表
  */
 public class RemoveDuplicates {

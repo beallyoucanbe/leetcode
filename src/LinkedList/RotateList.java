@@ -2,13 +2,13 @@ package LinkedList;
 
 import java.util.Arrays;
 
-/*
+/**
  * Given a list, rotate the list to the right by k places, where k is non-negative.
  * For example:Given 1->2->3->4->5->NULL and k = 2,
  *                   return 4->5->1->2->3->NULL.
  */
 
-/*
+/**
  * 还有一种方法就是先把单链表的收尾相接构成一个环，然后再找到合适的位置断开环即可
  */
 

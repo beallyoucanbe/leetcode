@@ -1,7 +1,6 @@
 package LinkedList;
 
-/*
- * 
+/**
  * 遍历一次即可找到答案的方法
  * 利用双指针，两个指针距离为n,当前面指针指向尾部时，前一个指针指向Nth from the end
  */
