@@ -8,18 +8,18 @@ public class LinkedListCycle2 {
 
 	public ListNode detectCycle(ListNode head) {
 
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return null;
 		ListNode slow = head, fast = head;
 		//只需判断快指针是否为空即可
-		while (fast.next !=null && fast.next.next != null) {
-			slow = slow.next;
-			fast = fast.next.next;
+		while (fast.getNext() !=null && fast.getNext().getNext() != null) {
+			slow = slow.getNext();
+			fast = fast.getNext().getNext();
 			if (slow == fast){ // node1 当前位置为相遇地点
 				fast = head;
 				while(slow != fast){
-					slow = slow.next;
-					fast = fast.next;
+					slow = slow.getNext();
+					fast = fast.getNext();
 				}
 				return slow;
 			}
@@ -28,7 +28,6 @@ public class LinkedListCycle2 {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		
 	}

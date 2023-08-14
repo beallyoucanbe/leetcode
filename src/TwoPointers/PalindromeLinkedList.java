@@ -12,13 +12,13 @@ import java.util.Vector;
  */
 public class PalindromeLinkedList {
 	 public boolean isPalindrome(ListNode head) {
-	        if(head == null || head.next == null)
+	        if(head == null || head.getNext() == null)
 	        	return true;
 	        ListNode node = head;
 	        Vector<Integer> vals = new Vector();
 	        while(node != null){
-	        	vals.add(node.val);
-	            node = node.next;	
+	        	vals.add(node.getVal());
+	            node = node.getNext();
 	        }
 	        
 	        for(int i = 0, j = vals.size() - 1; i <= j; i++, j--){
@@ -29,36 +29,36 @@ public class PalindromeLinkedList {
 	    }
 	 // 第二种方法，不使用额外的空间，先分割，在翻转即可，最后一一比较
 	 public boolean isPalindrome2(ListNode head) {
-	        if(head == null || head.next == null)
+	        if(head == null || head.getNext() == null)
 	        	return true;
 	        ListNode slow = head, fast =  head, pre = null;
-	        while(fast != null && fast.next != null){
+	        while(fast != null && fast.getNext() != null){
 	        	pre = slow;
-	        	slow = slow.next;
-	        	fast = fast.next.next;
+	        	slow = slow.getNext();
+	        	fast = fast.getNext();
 	        }
-	        pre.next = null;
+	        pre.setNext(null);
 	        ListNode left = head;
 	        ListNode right = slow;
 	        
 	        right = reverseList(right);
 	        while(left != null && right != null){
-	        	if(left.val != right.val)
+	        	if(left.getVal() != right.getVal())
 	        		return false;
-	        	left = left.next;
-	        	right = right.next;
+	        	left = left.getNext();
+	        	right = right.getNext();
 	        }     
 	        return true;   
 	    }
 	 private ListNode reverseList(ListNode head){
-		 if(head == null || head.next == null)
+		 if(head == null || head.getNext() == null)
 			 return head;
-		 ListNode second = head.next;
-		 head.next = null;
+		 ListNode second = head.getNext();
+		 head.setNext(null);
 		 while(second != null){
 			 ListNode temp = second;
-			 second = second.next;
-			 temp.next = head;
+			 second = second.getNext();
+			 temp.setNext(head);
 			 head = temp;
 		 } 
 		 return head;

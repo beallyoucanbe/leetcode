@@ -7,12 +7,12 @@ package TwoPointers;
 public class LinkedListCycle {
 
 	public boolean hasCycle(ListNode head) {
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return false;
 		ListNode node1 = head, node2 = head;
-		while (node2 != null && node2.next !=null) {
-			node1 = node1.next;
-			node2 = node2.next.next;
+		while (node2 != null && node2.getNext() !=null) {
+			node1 = node1.getNext();
+			node2 = node2.getNext().getNext();
 			if (node1 == node2)
 				return true;
 		}
@@ -20,7 +20,6 @@ public class LinkedListCycle {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		int[] nums = { 7032, 15013, 6890, 8877, 11344, 320, 13037, 9414, 6817,
 				2509, 3158, 3882, -4438, 10054, -6376, 9356, -807, 8661, 10824,

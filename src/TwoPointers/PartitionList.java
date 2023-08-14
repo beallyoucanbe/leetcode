@@ -15,26 +15,26 @@ public class PartitionList {
 		ListNode node = head;
 		ListNode head1 = null, tail1 = null, head2 = null, tail2 = null;
 		while (node != null) {
-			if (node.val < x) {
+			if (node.getVal() < x) {
 				if (head1 == null) {
-					head1 = tail1 = new ListNode(node.val);
+					head1 = tail1 = new ListNode(node.getVal());
 				} else {
-					tail1.next = new ListNode(node.val);
-					tail1 = tail1.next;
+					tail1.setNext(new ListNode(node.getVal()));
+					tail1 = tail1.getNext();
 				}
 			} else {
 				if (head2 == null) {
-					head2 = tail2 = new ListNode(node.val);
+					head2 = tail2 = new ListNode(node.getVal());
 				} else {
-					tail2.next = new ListNode(node.val);
-					tail2 = tail2.next;
+					tail2.setNext(new ListNode(node.getVal()));
+					tail2 = tail2.getNext();
 				}
 			}
-			node = node.next;
+			node = node.getNext();
 		}
 		if(head1 == null)
 			return head2;
-		tail1.next = head2;
+		tail1.setNext(head2);
 		return head1;
 	}
 
