@@ -26,14 +26,14 @@ public class SumRoottoLeafNumbers {
 	private void sumNumbers(TreeNode root, List<String> list, StringBuilder str){
 		if(root == null)
 			return;
-		str.append(root.val);
-		if(root.left == null && root.right == null){
+		str.append(root.getVal());
+		if(root.getLeft() == null && root.getRight() == null){
 			String nums = str.toString();
 			list.add(nums);
 			str.deleteCharAt(str.length() - 1);
 		}	
-		sumNumbers(root.left, list, str);
-		sumNumbers(root.right, list, str);
+		sumNumbers(root.getLeft(), list, str);
+		sumNumbers(root.getRight(), list, str);
 	}
 	
 	
@@ -51,13 +51,13 @@ public class SumRoottoLeafNumbers {
 	}
 	//这样值传递的迭代不会出现回溯修改的问题，因为每次都会记录当前的值
 	private void sumNumbers2(TreeNode root, int num){
-		num = num * 10 + root.val;
-		if(root.left == null && root.right == null)
+		num = num * 10 + root.getVal();
+		if(root.getLeft() == null && root.getRight() == null)
 			sum += num;
-		if(root.left != null)
-			sumNumbers2(root.left, num);
-		if(root.right != null)
-			sumNumbers2(root.right, num);
+		if(root.getLeft() != null)
+			sumNumbers2(root.getLeft(), num);
+		if(root.getRight() != null)
+			sumNumbers2(root.getRight(), num);
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

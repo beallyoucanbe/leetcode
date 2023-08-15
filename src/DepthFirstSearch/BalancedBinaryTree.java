@@ -13,14 +13,14 @@ public class BalancedBinaryTree {
 
 		if(root == null)
 			return true;
-		if(root.left == null && root.right == null)
+		if(root.getLeft() == null && root.getRight() == null)
 			return true;
-		return Math.abs(depth(root.left) - depth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+		return Math.abs(depth(root.getLeft()) - depth(root.getRight())) <= 1 && isBalanced(root.getLeft()) && isBalanced(root.getRight());
 	}
 	
 	private int depth(TreeNode root){
 		if(root == null)
 			return 0;
-		return Math.max(depth(root.left), depth(root.right)) + 1;
+		return Math.max(depth(root.getLeft()), depth(root.getRight())) + 1;
 	}
 }

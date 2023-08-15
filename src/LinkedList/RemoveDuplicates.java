@@ -14,18 +14,18 @@ public class RemoveDuplicates {
 			return head;
 		Set set = new HashSet<Integer>();
 		//把第一个元素放进集合
-		set.add(head.val);
+		set.add(head.getVal());
 		ListNode cur = head;
-		ListNode next = head.next;
+		ListNode next = head.getNext();
 		while(next != null){
-			if(!set.contains(next.val)){
-				set.add(next.val);
-				cur = cur.next;
-				next = next.next;
+			if(!set.contains(next.getVal())){
+				set.add(next.getVal());
+				cur = cur.getNext();
+				next = next.getNext();
 			}
 			else{
-				cur.next = next.next;
-				next = next.next;
+				cur.setNext(next.getNext());
+				next = next.getNext();
 			}		
 		}
 		return head;

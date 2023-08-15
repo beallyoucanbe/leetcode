@@ -35,13 +35,13 @@ public class PathSum_2 {
 	private void pathSum(TreeNode root, int sum, Stack path, List<List<Integer>> result){
 		if(root == null)
 			return;
-		path.push(root.val);
-		if(root.left == null && root.right == null){
-			if(sum == root.val)
+		path.push(root.getVal());
+		if(root.getLeft() == null && root.getRight() == null){
+			if(sum == root.getVal())
 				result.add((Stack<Integer>)(path.clone()));
 		}
-		pathSum(root.left, sum - root.val, path, result);
-		pathSum(root.right, sum - root.val, path, result);
+		pathSum(root.getLeft(), sum - root.getVal(), path, result);
+		pathSum(root.getRight(), sum - root.getVal(), path, result);
 		path.pop();
 	}
 }

@@ -4,43 +4,43 @@ public class ReverseNodesKGroup {
 
 	public ListNode reverseKGroup(ListNode head, int k) {
 
-		if (head == null || head.next == null || k == 1)
+		if (head == null || head.getNext() == null || k == 1)
 			return head;
 		ListNode newhead = new ListNode(0);
-		newhead.next = head;
+		newhead.setNext(head);
 		ListNode pre = newhead;
-		ListNode start = pre.next;
+		ListNode start = pre.getNext();
 		while (true) {
 			ListNode index = start;
 			for (int i = 1; i < k; i++) {
-				index = index.next;
+				index = index.getNext();
 				if (index == null)
 					break;
 			}
 			if (index == null)
 				break;
 			ListNode tail = index;
-			ListNode next = tail.next;
+			ListNode next = tail.getNext();
 			reverseKGroup(start, tail);
-			pre.next = start;
-			tail.next = next;
+			pre.setNext(start);
+			tail.setNext(next);
 			pre = tail;
-			start = pre.next;
+			start = pre.getNext();
 		}
-		head = newhead.next;
+		head = newhead.getNext();
 		return head;
 	}
 	public void reverseKGroup(ListNode start, ListNode tail) {
 
 		ListNode pre = start;
-		ListNode cur = pre.next;
-		pre.next = null;
+		ListNode cur = pre.getNext();
+		pre.setNext(null);
 		while (cur != tail) {
-              ListNode temp = cur.next;
-              cur.next = pre;
+              ListNode temp = cur.getNext();
+              cur.setNext(pre);
               pre = cur;
               cur = temp;
 		}	
-		tail.next = pre;
+		tail.setNext(pre);
 	}
 }

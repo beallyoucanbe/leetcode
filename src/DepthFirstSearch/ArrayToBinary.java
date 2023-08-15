@@ -7,11 +7,11 @@ package DepthFirstSearch;
  * 引用类型和基本数据类型的使用方法
  */
 
+import Tree.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import Tree.TreeNode;
 
 public class ArrayToBinary {
 
@@ -30,8 +30,8 @@ public class ArrayToBinary {
 		
 		int mid = (left + right) / 2;	
 		TreeNode root = new TreeNode(nums[mid]);		
-		root.left = sortedArrayToBSTnums(nums, left, mid - 1);
-		root.right = sortedArrayToBSTnums(nums, mid + 1, right);
+		root.setLeft(sortedArrayToBSTnums(nums, left, mid - 1));
+		root.setRight(sortedArrayToBSTnums(nums, mid + 1, right));
 		
 		return root;
 	}

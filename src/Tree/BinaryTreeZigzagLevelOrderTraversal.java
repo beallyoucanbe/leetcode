@@ -26,11 +26,11 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 			List<Integer> numList = new ArrayList<Integer>();
 			for(int i = 0; i < size; i++){
 				TreeNode temp = queue.remove();
-				numList.add(temp.val);
-				if(temp.left != null)
-					queue.add(temp.left);
-				if(temp.right != null)
-					queue.add(temp.right);
+				numList.add(temp.getVal());
+				if(temp.getLeft() != null)
+					queue.add(temp.getLeft());
+				if(temp.getRight() != null)
+					queue.add(temp.getRight());
 			}
 			res.add(numList);
 		}

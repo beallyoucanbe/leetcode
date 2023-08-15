@@ -7,22 +7,22 @@ package LinkedList;
 public class SwapNodes {
 
 	public ListNode swapPairs(ListNode head) {
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return head;
 		ListNode newhead = new ListNode(0);
-		newhead.next = head;
+		newhead.setNext( head);
 		ListNode pre = newhead;
-		ListNode cur = pre.next;
-		while (cur != null && cur.next != null) {
+		ListNode cur = pre.getNext();
+		while (cur != null && cur.getNext() != null) {
 
-			ListNode temp = cur.next.next;
-			pre.next = cur.next;
-			cur.next.next = cur;
-			cur.next = temp;
-			cur = cur.next;
-			pre = pre.next.next;
+			ListNode temp = cur.getNext().getNext();
+			pre.setNext(cur.getNext());
+			cur.getNext().setNext(cur);
+			cur.setNext(temp);
+			cur = cur.getNext();
+			pre = pre.getNext().getNext();
 		}
-		head = newhead.next;
+		head = newhead.getNext();
 		return head;
 	}
 	

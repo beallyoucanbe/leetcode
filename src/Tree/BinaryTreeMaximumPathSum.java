@@ -24,11 +24,11 @@ public class BinaryTreeMaximumPathSum {
 	public int maxSum(TreeNode root){
 		if(root == null)
 			return 0;
-		 int leftVal = maxSum(root.left);  //递归求左支路的最大和
-		 int rightVal = maxSum(root.right); //递归求右支路的最大和
+		 int leftVal = maxSum(root.getLeft());  //递归求左支路的最大和
+		 int rightVal = maxSum(root.getRight()); //递归求右支路的最大和
 		 //如果当前局部解（root, root + left, root+ right, root + left + right）
 		 //是最优解，则更新最终结果
-		 int curMax = root.val;
+		 int curMax = root.getVal();
 		 if(leftVal > 0)
 			 curMax += leftVal;
 		 if(rightVal > 0)
@@ -37,7 +37,7 @@ public class BinaryTreeMaximumPathSum {
 			 max = curMax;
 		 
 		 //返回从叶子节点到root的最大路径和（root, root + left, root + right）;
-		 return Math.max(root.val, Math.max(root.val + leftVal, root.val + rightVal));
+		 return Math.max(root.getVal(), Math.max(root.getVal() + leftVal, root.getVal() + rightVal));
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

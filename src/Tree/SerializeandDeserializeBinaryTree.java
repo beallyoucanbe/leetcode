@@ -27,9 +27,9 @@ public class SerializeandDeserializeBinaryTree {
 				if (node == null)   //要知道满二叉树第k层 有2^(k-1)个元素，而这里当出现一个null之后，后面就不会再有子节点了
 					resStr.append("null,");
 				else {
-					resStr.append(node.val + ",");
-					queue.add(node.left);
-					queue.add(node.right);
+					resStr.append(node.getVal() + ",");
+					queue.add(node.getLeft());
+					queue.add(node.getRight());
 				}
 			}
 		}
@@ -60,8 +60,8 @@ public class SerializeandDeserializeBinaryTree {
 		for(int i = 0; i < vals.length; i++){
 			if(nodes[i] == null)
 				continue;
-			nodes[i].left = nodes[2 * (i - nums[i]) + 1];
-			nodes[i].left = nodes[2 * (i - nums[i]) + 2];
+			nodes[i].setLeft(nodes[2 * (i - nums[i]) + 1]);
+			nodes[i].setLeft(nodes[2 * (i - nums[i]) + 2]);
 		}
 		return nodes[0];
 	}
@@ -74,11 +74,11 @@ public class SerializeandDeserializeBinaryTree {
 		TreeNode node4 = new TreeNode(4);
 		TreeNode node5 = new TreeNode(5);
 		TreeNode node6 = new TreeNode(6);
-		node1.left = node2;
-		node1.right = node4;
-		node2.left = node3;
-		node3.right = node6;
-		node4.left = node5;
+		node1.setLeft(node2);
+		node1.setRight(node4);
+		node2.setLeft(node3);
+		node3.setRight(node6);
+		node4.setLeft(node5);
 		// System.out.println(node1.left.right == node6);
 		System.out.println(test.serialize(node1));
 		// System.out.println(ancesto.val);

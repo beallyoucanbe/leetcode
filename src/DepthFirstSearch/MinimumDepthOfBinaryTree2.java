@@ -32,13 +32,13 @@ public class MinimumDepthOfBinaryTree2 {
 	public int minDepth(TreeNode root) {
 		if (root == null)
 			return 0;
-		if (root.left == null && root.right == null)
+		if (root.getLeft() == null && root.getRight() == null)
 			return 1;
 		else {
-			int leftdepth = root.left == null ? Integer.MAX_VALUE
-					: minDepth(root.left);
-			int rightdepth = root.right == null ? Integer.MAX_VALUE
-					: minDepth(root.right);
+			int leftdepth = root.getLeft() == null ? Integer.MAX_VALUE
+					: minDepth(root.getLeft());
+			int rightdepth = root.getRight() == null ? Integer.MAX_VALUE
+					: minDepth(root.getRight());
 			return Math.min(leftdepth, rightdepth) + 1;
 		}
 	}
@@ -54,14 +54,14 @@ public class MinimumDepthOfBinaryTree2 {
 		while(!queue.isEmpty()){
 			TreeNode node = queue.remove();
 			currentlevel--;
-			if(node.left == null & node.right == null)
+			if(node.getLeft() == null & node.getRight() == null)
 				return depth;
-			if(node.left != null){
-				queue.add(node.left);
+			if(node.getLeft() != null){
+				queue.add(node.getLeft());
 				nextlevel++;
 			}
-			if(node.right != null){
-				queue.add(node.right);
+			if(node.getRight() != null){
+				queue.add(node.getRight());
 				nextlevel++;
 			}
 			if(currentlevel == 0){
@@ -88,15 +88,15 @@ public class MinimumDepthOfBinaryTree2 {
 		TreeNode node8 = new TreeNode(2);
 		TreeNode node9 = new TreeNode(5);
 		TreeNode node10 = new TreeNode(1);
-		node1.left = node2;
-		node1.right = node3;
-		node2.left = node4;
-		node3.left = node5;
-		node3.right = node6;
-		node4.left = node7;
-		node4.right = node8;
-		node6.left = node9;
-		node6.right = node10;
+		node1.setLeft(node2);
+		node1.setRight(node3);
+		node2.setLeft(node4);
+		node3.setLeft(node5);
+		node3.setRight(node6);
+		node4.setLeft(node7);
+		node4.setRight(node8);
+		node6.setLeft(node9);
+		node6.setRight(node10);
 
 		int result = test.minDepth(node1);
 		System.out.println("============");

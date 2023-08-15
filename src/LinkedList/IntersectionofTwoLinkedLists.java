@@ -9,27 +9,27 @@ public class IntersectionofTwoLinkedLists {
 		if(headA == null || headB == null)
 			return null;
 		ListNode tailA = headA;
-		while(tailA.next != null)   //找到链表A的尾节点
-			tailA = tailA.next;
+		while(tailA.getNext() != null)   //找到链表A的尾节点
+			tailA = tailA.getNext();
 		//System.out.println(tailA);
-		tailA.next = headB;  // 把链表B接到A的后面 , 构成一个有环链表
+		tailA.setNext(headB);  // 把链表B接到A的后面 , 构成一个有环链表
 		
 		ListNode slow = headA, fast = headA;  //构造两个快慢指针, 判断是否会有焦点
 		do{
-			if(fast.next == null || fast.next.next == null){
+			if(fast.getNext() == null || fast.getNext().getNext() == null){
 				//System.out.println("没有交点");
-				tailA.next = null;
+				tailA.setNext(null);
 				return null;
 			}
-			slow = slow.next;
-			fast = fast.next.next;
+			slow = slow.getNext();
+			fast = fast.getNext().getNext();
 		}while(slow != fast); ///快慢指针会相遇，然后将快指针移动到A的表头		
 		fast = headA;
 		while(slow != fast){
-			slow = slow.next;
-			fast = fast.next;
+			slow = slow.getNext();
+			fast = fast.getNext();
 		}
-		tailA.next = null;
+		tailA.setNext(null);
 		//System.out.println("have intersection  " + slow);
 		return slow;	
 	}

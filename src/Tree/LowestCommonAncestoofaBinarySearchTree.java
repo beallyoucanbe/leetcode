@@ -20,10 +20,10 @@ public class LowestCommonAncestoofaBinarySearchTree {
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 		if(root == null || p == null || q == null)
 			return null;
-		if(Math.max(p.val, q.val) < root.val)
-			return lowestCommonAncestor(root.left, p, q);
-		else if(Math.min(p.val, q.val) > root.val)
-			return lowestCommonAncestor(root.right, p, q);
+		if(Math.max(p.getVal(), q.getVal()) < root.getVal())
+			return lowestCommonAncestor(root.getLeft(), p, q);
+		else if(Math.min(p.getVal(), q.getVal()) > root.getVal())
+			return lowestCommonAncestor(root.getRight(), p, q);
 		else return root;
 	}
 	//最重要的是如何找到以后立刻从递归底层直接结束程序并返回，可以借鉴返回值为boolean的方法
@@ -50,12 +50,12 @@ public class LowestCommonAncestoofaBinarySearchTree {
 		traPath.add(root);
 		if(root == node)
 			return true;
-		if(root.left != null){
-			if(TravelPath(root.left, node, traPath))
+		if(root.getLeft() != null){
+			if(TravelPath(root.getLeft(), node, traPath))
 				return true;
 		}
-		if(root.right != null){
-			if(TravelPath(root.right, node, traPath))
+		if(root.getRight() != null){
+			if(TravelPath(root.getRight(), node, traPath))
 				return true;
 		}
 		traPath.remove(traPath.size() - 1);
@@ -105,11 +105,11 @@ public class LowestCommonAncestoofaBinarySearchTree {
 		TreeNode node4 = new TreeNode(4);
 		TreeNode node5 = new TreeNode(5);
 		TreeNode node6 = new TreeNode(6);
-		node1.left = node2;
-		node1.right = node4;
-		node2.left = node3;
-		node2.right = node6;
-		node4.left = node5;
+		node1.setLeft(node2);
+		node1.setRight(node4);
+		node2.setLeft(node3);
+		node2.setRight(node6);
+		node4.setLeft(node5);
 		// System.out.println(node1.left.right == node6);
 		TreeNode ancesto = test.lowestCommonAncestor2(node1, node3, node5);
 		// System.out.println(ancesto.val);

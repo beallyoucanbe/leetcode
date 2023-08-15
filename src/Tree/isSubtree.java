@@ -13,12 +13,12 @@ public class isSubtree {
 		if(root1 == null)
 			return false;
 		boolean result = false;
-		if(root1.val == root2.val)
+		if(root1.getVal() == root2.getVal())
 			result = ispart(root1, root2);
 		if(!result)
-			result = isSubtree(root1.left, root2);
+			result = isSubtree(root1.getLeft(), root2);
 		if(!result)
-			result = isSubtree(root1.right, root2);
+			result = isSubtree(root1.getRight(), root2);
 		return result;
 	}
 	
@@ -27,8 +27,8 @@ public class isSubtree {
 			return true;
 		if(node1 == null)
 			return false;
-		if(node1.val != node2.val)
+		if(node1.getVal() != node2.getVal())
 			return false;
-		return ispart(node1.left, node2.left) && ispart(node1.right, node2.right);
+		return ispart(node1.getLeft(), node2.getLeft()) && ispart(node1.getRight(), node2.getRight());
 	}
 }

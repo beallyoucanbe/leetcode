@@ -21,9 +21,9 @@ public class BinaryTreeInorderTraversal {
 	private void inorderTraversal(TreeNode node, List<Integer> list) {
 		if (node == null)
 			return;
-		inorderTraversal(node.left, list);
-		list.add(node.val);
-		inorderTraversal(node.right, list);
+		inorderTraversal(node.getLeft(), list);
+		list.add(node.getVal());
+		inorderTraversal(node.getRight(), list);
 	}
 
 	public static void main(String[] args) {

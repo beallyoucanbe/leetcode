@@ -13,37 +13,37 @@ public class MergeTwoSortedLists {
 			return l1;
 		ListNode node1 = l1, node2 = l2, newhead = null, newtail = null;
 		while (node1 != null && node2 != null) {
-			if (node1.val < node2.val) {
+			if (node1.getVal() < node2.getVal()) {
 				if (newhead == null) {
 					newhead = node1;
 					newtail = node1;
-					node1 = node1.next;
+					node1 = node1.getNext();
 				} else {
-					newtail.next = node1;
-					newtail = newtail.next;
-					node1 = node1.next;
+					newtail.setNext(node1);
+					newtail = newtail.getNext();
+					node1 = node1.getNext();
 				}
 			} else {
 				if (newhead == null) {
 					newhead = node2;
 					newtail = node2;
-					node2 = node2.next;
+					node2 = node2.getNext();
 				} else {
-					newtail.next = node2;
-					newtail = newtail.next;
-					node2 = node2.next;
+					newtail.setNext(node2);
+					newtail = newtail.getNext();
+					node2 = node2.getNext();
 				}
 			}
 		}
 		while (node1 != null) {
-			newtail.next = node1;
-			newtail = newtail.next;
-			node1 = node1.next;
+			newtail.setNext(node1);
+			newtail = newtail.getNext();
+			node1 = node1.getNext();
 		}
 		while (node2 != null) {
-			newtail.next = node2;
-			newtail = newtail.next;
-			node2 = node2.next;
+			newtail.setNext(node2);
+			newtail = newtail.getNext();
+			node2 = node2.getNext();
 		}
 		return newhead;
 	}

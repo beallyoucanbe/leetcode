@@ -25,47 +25,47 @@ public class AddTwoNumbers {
 		int carry = 0; // 加法中的进位
 
 		while (p != null && q != null) {
-			int a = p.val, b = q.val;
+			int a = p.getVal(), b = q.getVal();
 			int num = (a + b + carry);
 			carry = num / 10;
 			num = num % 10;
 			ListNode temp = new ListNode(num);
-			sumtail.next = temp;
-			sumtail = sumtail.next;
-			p = p.next;
-			q = q.next;
+			sumtail.setNext(temp);
+			sumtail = sumtail.getNext();
+			p = p.getNext();
+			q = q.getNext();
 		}
 		if (p != null) {
 			while (p != null) {
-				int a = p.val;
+				int a = p.getVal();
 				int num = (a + carry);
 				carry = num / 10;
 				num = num % 10;
 				ListNode temp = new ListNode(num);
-				sumtail.next = temp;
-				sumtail = sumtail.next;
-				p = p.next;
+				sumtail.setNext(temp);
+				sumtail = sumtail.getNext();
+				p = p.getNext();
 			}
 		}
 		if (q != null) {
 			while (q != null) {
-				int b = q.val;
+				int b = q.getVal();
 				int num = (b + carry);
 				carry = num / 10;
 				num = num % 10;
 				ListNode temp = new ListNode(num);
-				sumtail.next = temp;
-				sumtail = sumtail.next;
-				q = q.next;
+				sumtail.setNext(temp);
+				sumtail = sumtail.getNext();
+				q = q.getNext();
 			}
 		}
 		if(carry == 1){
 			ListNode temp = new ListNode(1);
-			sumtail.next = temp;
-			sumtail = sumtail.next;
+			sumtail.setNext(temp);
+			sumtail = sumtail.getNext();
 		}
 		
-		sum = sum.next;
+		sum = sum.getNext();
 		return sum;
 	}
 

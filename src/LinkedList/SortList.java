@@ -13,21 +13,21 @@ public class SortList {
 
 	public ListNode sortList(ListNode head) {
 
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return head;
 		return mergeSort(head);
 	}
 
 	public ListNode mergeSort(ListNode head) {
-		if (head == null || head.next == null)   //如果只有一个元素或为空，则直接返回
+		if (head == null || head.getNext() == null)   //如果只有一个元素或为空，则直接返回
 			return head;
 		ListNode slow = head, fast = head, pre = null;  // 通过快慢指针把单链表分为左右两个单链表
-		while (fast != null && fast.next != null) {
+		while (fast != null && fast.getNext() != null) {
 			pre = slow;
-			slow = slow.next;
-			fast = fast.next.next;
+			slow = slow.getNext();
+			fast = fast.getNext().getNext();
 		}
-		pre.next = null;
+		pre.setNext(null);
 		ListNodeFunction.display(head);
 		ListNode left = mergeSort(head);
 		ListNode right = mergeSort(slow);
@@ -38,20 +38,20 @@ public class SortList {
 		ListNode head = new ListNode(0); // 建立一个临时头节点，最后要记得删除
 		ListNode tail = head;
 		while (left != null && right != null) {
-			if (left.val > right.val) {
-				tail.next = right;
-				right = right.next;
+			if (left.getVal() > right.getVal()) {
+				tail.setNext(right);
+				right = right.getNext();
 			} else {
-				tail.next = left;
-				left = left.next;
+				tail.setNext(left);
+				left = left.getNext();
 			}
-			tail = tail.next;
+			tail = tail.getNext();
 		}
 		if (left != null)
-			tail.next = left;
+			tail.setNext(left);
 		if (right != null)
-			tail.next = right;
-		head = head.next;
+			tail.setNext(right);
+		head = head.getNext();
 		return head;
 	}
 

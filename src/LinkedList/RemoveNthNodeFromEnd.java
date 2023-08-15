@@ -13,17 +13,17 @@ public class RemoveNthNodeFromEnd {
 			return head;
 		ListNode first = head;
 		for(int i = 1; i < n; i++)
-			first = first.next;
+			first = first.getNext();
 		
-		if(first.next == null)
-			return head.next;
-		first = first.next;
+		if(first.getNext() == null)
+			return head.getNext();
+		first = first.getNext();
 		ListNode second = head;
-		while(first.next != null){
-			first = first.next;
-			second = second.next;
+		while(first.getNext() != null){
+			first = first.getNext();
+			second = second.getNext();
 		}
-		second.next = second.next.next;
+		second.setNext(second.getNext().getNext()) ;
 		return head;
 	}
 	

@@ -26,8 +26,8 @@ public class UniqueBinarySearchTrees2 {
 			for(int j = 0; j < leftTree.size(); j++){
 				for(int k = 0; k < rightTree.size(); k++){
 					TreeNode n = new TreeNode(i + 1);
-					n.left = leftTree.get(i);
-					n.right = rightTree.get(k);
+					n.setLeft(leftTree.get(i));
+					n.setRight(rightTree.get(k));
 					res.add(n);
 				}
 			}

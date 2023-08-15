@@ -25,11 +25,11 @@ public class BinaryTreeLevelOrderTraversal {
 			List<Integer> levs = new ArrayList<Integer>();
 			for (int i = 0; i < levLength; i++) {
 				TreeNode node = queue.remove();
-				levs.add(node.val);
-				if (node.left != null)
-					queue.add(node.left);
-				if (node.right != null)
-					queue.add(node.right);
+				levs.add(node.getVal());
+				if (node.getLeft() != null)
+					queue.add(node.getLeft());
+				if (node.getRight() != null)
+					queue.add(node.getRight());
 			}
 			res.add(levs);
 		}

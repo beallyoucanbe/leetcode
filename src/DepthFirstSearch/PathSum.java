@@ -18,8 +18,8 @@ public class PathSum {
 	private boolean dfsFunction(TreeNode node, int sum, int cursum){
 		if(node == null)
 			return false;
-		if(node.left == null && node.right == null)
-			return node.val + cursum == sum;
-		return dfsFunction(node.left, sum, cursum + node.val) || (dfsFunction(node.right, sum, cursum + node.val));
+		if(node.getLeft() == null && node.getRight() == null)
+			return node.getVal() + cursum == sum;
+		return dfsFunction(node.getLeft(), sum, cursum + node.getVal()) || (dfsFunction(node.getRight(), sum, cursum + node.getVal()));
 	}
 }

@@ -16,12 +16,12 @@ public class RotateList {
 
 	public ListNode rotateRight(ListNode head, int k) {
 
-		if (head == null || head.next == null || k == 0)
+		if (head == null || head.getNext() == null || k == 0)
 			return head;
 		int length = 1;
 		ListNode tail = head;
-		while (tail.next != null) {
-			tail = tail.next;
+		while (tail.getNext() != null) {
+			tail = tail.getNext();
 			length++;
 		}
 		k = k % length;
@@ -29,38 +29,38 @@ public class RotateList {
 			return head;
 		for(int i = 0; i < length - k; i++){
 			ListNode temp = head;
-			head = head.next;
-			temp.next = null;
-			tail.next = temp;
-			tail = tail.next;
+			head = head.getNext();
+			temp.setNext(null);
+			tail.setNext(temp);
+			tail = tail.getNext();
 		}
 
 		return head;
 	}
 	
 	public ListNode rotateRight2(ListNode head, int k) {
-		if (head == null || head.next == null || k == 0)
+		if (head == null || head.getNext() == null || k == 0)
 			return head;
 		int length = 1;
 		ListNode tail = head;   //找到链表的节点格数以及尾节点
-		while (tail.next != null) {
-			tail = tail.next;
+		while (tail.getNext() != null) {
+			tail = tail.getNext();
 			length++;
 		}
 		k = k % length;
 		if(k == 0)
 			return head;
-		tail.next = head;  //构成一个环
+		tail.setNext(head);  //构成一个环
 		
 		int step = length - k - 1;
 		ListNode res = head;
 		while(step > 0){
 			step--;
-			res = res.next;
+			res = res.getNext();
 		}
 		
-		head = res.next;
-		res.next = null;
+		head = res.getNext();
+		res.setNext(null);
 		return head;
 	}
 	

@@ -46,19 +46,19 @@ public class LargestBSTSubtree {
 			count = Math.max(count, d);
 			return;
 		}
-		dfs(root.left, count);
-		dfs(root.right, count);
+		dfs(root.getLeft(), count);
+		dfs(root.getRight(), count);
 	}
 	
 	private int countBST(TreeNode root, int min, int max){
 		if(root == null)
 			return 0;
-		if(root.val < min || root.val > max)
+		if(root.getVal() < min || root.getVal() > max)
 			return -1;
-		int left = countBST(root.left, min, root.val);
+		int left = countBST(root.getLeft(), min, root.getVal());
 		if(left == -1)
 			return -1;
-		int right = countBST(root.right, root.val, max);
+		int right = countBST(root.getRight(), root.getVal(), max);
 		if(right == -1)
 			return -1;
 		return left + right + 1;

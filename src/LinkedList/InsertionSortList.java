@@ -27,31 +27,31 @@ public class InsertionSortList {
 
 	public ListNode insertionSortList(ListNode head) {
 
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return head;
 		ListNode newhead = new ListNode(Integer.MIN_VALUE); // 新建一个表头，放入最小值，便于以后的操作
 		while (head != null) {
 			ListNode temp = head;
-			head = head.next;
+			head = head.getNext();
 			insert(newhead, temp);
 		}
-		head = newhead.next;
+		head = newhead.getNext();
 		return head;
 	}
 
 	private void insert(ListNode newhead, ListNode temp) {
 		ListNode p = newhead;
 		ListNode pre = null;
-		int num = temp.val;
+		int num = temp.getVal();
 		while (p != null) {
-			if (p.val <= num) {
+			if (p.getVal() <= num) {
 				pre = p;
-				p = p.next;
+				p = p.getNext();
 			} else
 				break;
 		}
-		temp.next = p;
-		pre.next = temp;
+		temp.setNext(p);
+		pre.setNext(temp);
 	}
 
 	public static void main(String[] args) {

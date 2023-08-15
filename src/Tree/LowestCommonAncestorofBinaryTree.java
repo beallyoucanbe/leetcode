@@ -15,9 +15,9 @@ public class LowestCommonAncestorofBinaryTree {
 		if(root == null || root == p || root == q)
 			return root;
 		//查看左子树是否有目标节点，没有为null
-		TreeNode left = lowestCommonAncestor(root.left, p, q);
+		TreeNode left = lowestCommonAncestor(root.getLeft(), p, q);
 		//同样查看右子树是否有目标节点，没有为null
-		TreeNode right = lowestCommonAncestor(root.right, p, q);
+		TreeNode right = lowestCommonAncestor(root.getRight(), p, q);
 		//都不为空，说明左右子树都有目标节点，公共祖先就是当前节点本身
 		if(left != null && right != null)
 			return root;

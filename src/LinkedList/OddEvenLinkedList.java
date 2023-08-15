@@ -17,40 +17,40 @@ public class OddEvenLinkedList {
 
 	public ListNode oddEvenList(ListNode head) {
 
-		if (head == null || head.next == null || head.next.next == null)
+		if (head == null || head.getNext() == null || head.getNext().getNext() == null)
 			return head;
-		ListNode oddhead = head, oddtail = oddhead, evenhead = head.next, eventail = evenhead;
-		head = head.next.next;
+		ListNode oddhead = head, oddtail = oddhead, evenhead = head.getNext(), eventail = evenhead;
+		head = head.getNext().getNext();
 		boolean flag = true; // 标志位，用来判断是奇数还是偶数
 		while (head != null) { // 这种方法是把
 			if (flag) {
-				oddtail.next = head;
-				oddtail = oddtail.next;
+				oddtail.setNext(head);
+				oddtail = oddtail.getNext();
 
 			} else {
-				eventail.next = head;
-				eventail = eventail.next;
+				eventail.setNext(head);
+				eventail = eventail.getNext();
 			}
-			head = head.next;
+			head = head.getNext();
 			flag = !flag;
 		}
-		oddtail.next = null;
-		eventail.next = null;
-		oddtail.next = evenhead;
+		oddtail.setNext(null);
+		eventail.setNext(null);
+		oddtail.setNext(evenhead);
 		return oddhead;
 	}
 
 	public ListNode oddEvenList2(ListNode head) {
-		if(head == null || head.next == null)
+		if(head == null || head.getNext() == null)
 			return head;
-		ListNode odd = head, even = head.next, evenhead = head.next;
-		while(even != null && even.next != null){  // 为什么要两重非空的保证
-			odd.next = even.next;
-			odd = even.next;
-			even.next = odd.next;
-			even = even.next;
+		ListNode odd = head, even = head.getNext(), evenhead = head.getNext();
+		while(even != null && even.getNext() != null){  // 为什么要两重非空的保证
+			odd.setNext(even.getNext());
+			odd = even.getNext();
+			even.setNext( odd.getNext());
+			even = even.getNext();
 		}
-		odd.next = evenhead;
+		odd.setNext(evenhead);
 		return head;
 	}
 

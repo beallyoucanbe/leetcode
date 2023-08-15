@@ -21,13 +21,13 @@ public class ConvertSortedListtoBinarySearchTree {
 			return null;
 		ListNode p = left;
 		ListNode  q = left;
-		while(q != right && q.next != right){
-			p = p.next;
-			q = q.next.next;
+		while(q != right && q.getNext() != right){
+			p = p.getNext();
+			q = q.getNext().getNext();
 		}
-		TreeNode root = new TreeNode(p.val);
-		root.left = constructTree(left, p);
-		root.right = constructTree(p.next, right);
+		TreeNode root = new TreeNode(p.getVal());
+		root.setLeft(constructTree(left, p));
+		root.setRight(constructTree(p.getNext(), right));
 		return root;
 	}
 	public static void main(String[] args) {

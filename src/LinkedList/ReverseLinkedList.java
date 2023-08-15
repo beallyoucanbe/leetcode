@@ -15,27 +15,27 @@ public class ReverseLinkedList {
 
 	//这种方法一直递归到最后一个，然后再返回
 	public ListNode reverseList(ListNode head){
-		if(head == null || head.next == null)
+		if(head == null || head.getNext() == null)
 			return head;
 		//get second node
-		ListNode second = head.next;
+		ListNode second = head.getNext();
 		//set the first's next to be null
-		head.next = null;
+		head.setNext(null);
 		ListNode rest = reverseList(second);	
-		second.next = head;  //完成以上步棸时，second节点已经被移动到链表的末尾，故只需要将head节点接在末尾即可。
+		second.setNext(head);  //完成以上步棸时，second节点已经被移动到链表的末尾，故只需要将head节点接在末尾即可。
 		return rest;
 	}
 	
 	public ListNode reverseList2(ListNode head){
-		if(head == null && head.next == null)
+		if(head == null && head.getNext() == null)
 			return head;
 		ListNode newhead = head;
-		head = head.next;
-		newhead.next = null;
+		head = head.getNext();
+		newhead.setNext(null);
 		
 		while(head != null){
-			ListNode second = head.next;
-			head.next = newhead;
+			ListNode second = head.getNext();
+			head.setNext(newhead);
 			newhead = head;
 			head = second;
 		}

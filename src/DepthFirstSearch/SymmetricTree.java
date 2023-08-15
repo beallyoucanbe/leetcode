@@ -17,7 +17,7 @@ public class SymmetricTree {
 		if(root == null)
 			return false;
 		else
-			return isSample(root.left, root.right);
+			return isSample(root.getLeft(), root.getRight());
 	}
 	private boolean isSample(TreeNode left, TreeNode right){
 		if(left == null && right == null)
@@ -25,7 +25,7 @@ public class SymmetricTree {
 		else if(left == null || right == null)
 			return false;
 		else
-			return left.val == right.val && isSample(left.left, right.right) && isSample(left.right, right.left);
+			return left.getVal() == right.getVal() && isSample(left.getLeft(), right.getRight()) && isSample(left.getRight(), right.getLeft());
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

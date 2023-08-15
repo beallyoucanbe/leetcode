@@ -10,36 +10,36 @@ package LinkedList;
 public class RemoveDuplicates2 {
 
 	public ListNode deleteDuplicates(ListNode head) {
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return head;
 		//构造一个新的虚拟头结点，。处理方便，防止会有删除第一个即表头的可能
 		ListNode newhead = new ListNode(Integer.MIN_VALUE);
-		newhead.next = head;
+		newhead.setNext(head);
 
 		ListNode pre = newhead;
-		ListNode cur = pre.next;
-		ListNode next = cur.next;
+		ListNode cur = pre.getNext();
+		ListNode next = cur.getNext();
 		
 		boolean flag = false; //标志位,判断是否有重复
 		while(next != null){		
-			if(cur.val != next.val){
+			if(cur.getVal() != next.getVal()){
 				if(flag){ //如果有重复的，就跳过
-					pre.next = next;
+					pre.setNext(next);
 					flag = false; //回复flag
 				}else
 					pre = cur;
 				cur = next;
-				next = next.next;
+				next = next.getNext();
 			}
-			else if(cur.val == next.val){
+			else if(cur.getVal() == next.getVal()){
 				flag =true;
-				next = next.next;
+				next = next.getNext();
 			}
 		}
 		//扫尾工作，针对例如{1， 1}的情况再判断一次
 //		if(flag)
 //			pre.next = next;
-		return newhead.next;
+		return newhead.getNext();
 	}
 
 	public static void main(String[] args) {

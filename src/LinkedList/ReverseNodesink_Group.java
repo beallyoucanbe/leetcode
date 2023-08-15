@@ -28,37 +28,37 @@ public class ReverseNodesink_Group {
 
 	public ListNode reverseKGroup(ListNode head, int k) {
 
-		if(head == null || head.next == null || k <= 1)
+		if(head == null || head.getNext() == null || k <= 1)
 			return head;
 		ListNode newhead = new ListNode(0);
-		newhead.next  = head;
+		newhead.setNext(head);
 		ListNode pre = newhead;
 		ListNode left = head;
 		ListNode right = left;
 		while(right != null){
 			for(int i = 1; i < k; i++){
-				right = right.next;
+				right = right.getNext();
 				if(right == null)
 					break;
 			}
 			if(right == null)
 				break;
-			pre.next = reverse(left, right);
+			pre.setNext(reverse(left, right));
 			pre = left;
-			left = right = left.next;
+			left = right = left.getNext();
 		}
-		return newhead.next;
+		return newhead.getNext();
 	}
 	public ListNode reverse(ListNode left, ListNode right){
 		ListNode newhead = new ListNode(0);
-		newhead.next = left;
-		while(newhead.next != right){
-			ListNode tmp = left.next;
-			left.next = tmp.next;
-			tmp.next = newhead.next;
-			newhead.next = tmp;
+		newhead.setNext(left);
+		while(newhead.getNext() != right){
+			ListNode tmp = left.getNext();
+			left.setNext(tmp.getNext());
+			tmp.setNext(newhead.getNext());
+			newhead.setNext(tmp);
 		}
-		return newhead.next;
+		return newhead.getNext();
 	}
 	public static void main(String[] args) {
 		ReverseNodesink_Group test = new ReverseNodesink_Group();

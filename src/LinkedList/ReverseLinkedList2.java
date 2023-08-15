@@ -11,32 +11,32 @@ public class ReverseLinkedList2 {
 		if(head == null || m == n)
 			return head;
 		ListNode dummyhead = new ListNode(0);
-		dummyhead.next = head;
+		dummyhead.setNext(head);
 		ListNode before = dummyhead;  //用一个变量来表示第m-1个节点。
 		for(int i = 0; i < m - 1; i++){
-			before = before.next;
+			before = before.getNext();
 			if(before == null)
 				return head;
 		}
 		
-		ListNode mNode = before.next;  //start表示第m个节点，保留记录该节点，以便和后面的链表相连接
+		ListNode mNode = before.getNext();  //start表示第m个节点，保留记录该节点，以便和后面的链表相连接
 		
 		ListNode newhead = mNode; 
-		ListNode next = mNode.next;
-		newhead.next = null;
+		ListNode next = mNode.getNext();
+		newhead.setNext(null);
 		
 		for(int i = m; i < n; i++){
-			ListNode temp = next.next;
-			next.next = newhead;
+			ListNode temp = next.getNext();
+			next.setNext(newhead);
 			newhead = next;
 			next = temp;
 		}
 		//循环结束之后，nextnode即为下一个节点
 		
-		before.next = newhead;
-		mNode.next = next;
+		before.setNext(newhead);
+		mNode.setNext(next);
 		
-		return dummyhead.next;
+		return dummyhead.getNext();
 	}
 	public static void main(String[] args){
 		ReverseLinkedList2 test = new ReverseLinkedList2();

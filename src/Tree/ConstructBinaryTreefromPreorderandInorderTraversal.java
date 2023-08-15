@@ -40,9 +40,9 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
 			i++;
 		}
 		// 建立子树的左子树
-		root.left = dfs(preorder, start + 1, inorder, end - i - 1, length - i - 1);
+		root.setLeft(dfs(preorder, start + 1, inorder, end - i - 1, length - i - 1));
 		// 建立子树的右子树
-		root.right = dfs(preorder, end - i + 1, inorder, end, i);
+		root.setRight(dfs(preorder, end - i + 1, inorder, end, i));
 		//root.right = dfs(preorder, start + length - i, inorder, end, i);
 
 		return root;

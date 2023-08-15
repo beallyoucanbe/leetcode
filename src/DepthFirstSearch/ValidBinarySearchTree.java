@@ -28,8 +28,8 @@ public class ValidBinarySearchTree {
 	private boolean isValidBST(TreeNode root, double min, double max){
 		if(root == null)
 			return true;
-		if(root.val <= min || root.val >= max)
+		if(root.getVal() <= min || root.getVal() >= max)
 			return false;
-		return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
+		return isValidBST(root.getLeft(), min, root.getVal()) && isValidBST(root.getRight(), root.getVal(), max);
 	}
 }

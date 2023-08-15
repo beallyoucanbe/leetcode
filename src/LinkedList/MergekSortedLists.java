@@ -30,22 +30,22 @@ public class MergekSortedLists {
 
 	private ListNode merge(ListNode l1, ListNode l2) {
 		ListNode dummy = new ListNode(0);
-		dummy.next = l1;
+		dummy.setNext(l1);
 		ListNode cur = dummy;
 		while (l1 != null && l2 != null) {
-			if (l1.val < l2.val) {
-				l1 = l1.next;
+			if (l1.getVal() < l2.getVal()) {
+				l1 = l1.getNext();
 			} else {
-				ListNode next = l2.next;
-				cur.next = l2;
-				l2.next = l1;
+				ListNode next = l2.getNext();
+				cur.setNext(l2);
+				l2.setNext(l1);
 				l2 = next;
 			}
-			cur = cur.next;
+			cur = cur.getNext();
 		}
 		if (l2 != null)
-			cur.next = l2;
-		return dummy.next;
+			cur.setNext(l2);
+		return dummy.getNext();
 	}
 
 	public ListNode mergeKLists2(ListNode[] lists) {
@@ -53,7 +53,7 @@ public class MergekSortedLists {
 		PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>(
 				new Comparator<ListNode>() {
 					public int compare(ListNode o1, ListNode o2) {
-						return o1.val - o2.val;
+						return o1.getVal() - o2.getVal();
 					}
 				});
 
@@ -73,11 +73,11 @@ public class MergekSortedLists {
 					head = item;
 					tail = head;
 				} else {
-					tail.next = item;
-					tail = tail.next;
+					tail.setNext(item);
+					tail = tail.getNext();
 				}
 			}
-			item = item.next;
+			item = item.getNext();
 			if (item != null) {
 				heap.add(item);
 			}

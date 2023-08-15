@@ -22,17 +22,17 @@ public class RemoveLinkedListElements {
 	public ListNode removeElements(ListNode head, int val) {
 		if (head == null)
 			return head;
-		while (head.val == val)
-			head = head.next;     //会出现空指针的可能
+		while (head.getVal() == val)
+			head = head.getNext();     //会出现空指针的可能
 		ListNode cur = head;
-		ListNode next = head.next;  
+		ListNode next = head.getNext();
 		while (next != null) {
-			if (next.val == val) {
-				cur.next = next.next;
-				next = next.next;
+			if (next.getVal() == val) {
+				cur.setNext(next.getNext());
+				next = next.getNext();
 			} else {
-				next = next.next;
-				cur = cur.next;
+				next = next.getNext();
+				cur = cur.getNext();
 			}
 		}
 		return head;
@@ -42,18 +42,18 @@ public class RemoveLinkedListElements {
 		if (head == null)
 			return head;
 		ListNode cur = head;
-		ListNode next = head.next;
+		ListNode next = head.getNext();
 		while (next != null) {
-			if (next.val == val) {
-				cur.next = next.next;
-				next = next.next;
+			if (next.getVal() == val) {
+				cur.setNext(next.getNext());
+				next = next.getNext();
 			} else {
-				next = next.next;
-				cur = cur.next;
+				next = next.getNext();
+				cur = cur.getNext();
 			}
 		}
-		if(head.val == val)
-			head = head.next;
+		if(head.getVal() == val)
+			head = head.getNext();
 		return head;
 	}
 	
@@ -61,19 +61,19 @@ public class RemoveLinkedListElements {
 		if (head == null)
 			return head;
 		ListNode temp = new ListNode(0);
-		temp.next = head;
+		temp.setNext(head);
 		ListNode cur = temp;
-		ListNode next = temp.next;
+		ListNode next = temp.getNext();
 		while (next != null) {
-			if (next.val == val) {
-				cur.next = next.next;
-				next = next.next;
+			if (next.getVal() == val) {
+				cur.setNext(next.getNext());
+				next = next.getNext();
 			} else {
-				next = next.next;
-				cur = cur.next;
+				next = next.getNext();
+				cur = cur.getNext();
 			}
 		}
-		head = temp.next;
+		head = temp.getNext();
 		return head;
 	}
 	

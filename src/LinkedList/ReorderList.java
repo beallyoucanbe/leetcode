@@ -14,15 +14,15 @@ import java.util.Arrays;
 public class ReorderList {
 
 	public void reorderList(ListNode head) {
-		if (head == null || head.next == null || head.next.next == null)
+		if (head == null || head.getNext() == null || head.getNext().getNext() == null)
 			return;
 		ListNode slow = head, fast = head, pre = null; // 第一步：利用快慢指针将单链表从中间位置分开成为两个链表
-		while (fast != null && fast.next != null) {
+		while (fast != null && fast.getNext() != null) {
 			pre = slow;
-			slow = slow.next;
-			fast = fast.next.next;
+			slow = slow.getNext();
+			fast = fast.getNext().getNext();
 		}
-		pre.next = null;
+		pre.setNext(null);
 		ListNode left = head; // left和right即为单链表的左右两个部分
 		ListNode right = slow;
 
@@ -32,40 +32,40 @@ public class ReorderList {
 		ListNode lnode = left, rnode = right;
 		head = left;
 		while (rnode != null) {
-			if ((lnode.next != null && rnode.next != null) || (lnode.next == null && rnode.next == null)) {
+			if ((lnode.getNext() != null && rnode.getNext() != null) || (lnode.getNext() == null && rnode.getNext() == null)) {
 				ListNode temp = rnode;
-				rnode = rnode.next;
-				ListNode second = lnode.next;
-				lnode.next = temp;
-				temp.next = second;
+				rnode = rnode.getNext();
+				ListNode second = lnode.getNext();
+				lnode.setNext(temp);
+				temp.setNext(second);
 				lnode = second;
 			}
 			else{
-				lnode.next = rnode;
+				lnode.setNext(rnode);
 				break;
 			}
 		}
 	}
 
 	public ListNode reverseList(ListNode head) {
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return head;
-		ListNode second = head.next;
-		head.next = null;
+		ListNode second = head.getNext();
+		head.setNext(null);
 		ListNode res = reverseList(second);
-		second.next = head;
+		second.setNext(head);
 		return res;
 	}
 	
 	public ListNode reverseList2(ListNode head) {
-		if (head == null || head.next == null)
+		if (head == null || head.getNext() == null)
 			return head;
-		ListNode second = head.next;
-		head.next = null;
+		ListNode second = head.getNext();
+		head.setNext(null);
 		while(second != null){
 			ListNode temp = second;
-			second = second.next;
-			temp.next = head;
+			second = second.getNext();
+			temp.setNext(head);
 			head = temp;
 		}
 		return head;

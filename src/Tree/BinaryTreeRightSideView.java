@@ -31,11 +31,11 @@ public class BinaryTreeRightSideView {
 			for (int i = 0; i < queueLength; i++) {
 				TreeNode node = queue.remove();
 				if (i == queueLength - 1)
-					list.add(node.val);
-				if (node.left != null)
-					queue.add(node.left);
-				if (node.right != null)
-					queue.add(node.right);
+					list.add(node.getVal());
+				if (node.getLeft() != null)
+					queue.add(node.getLeft());
+				if (node.getRight() != null)
+					queue.add(node.getRight());
 			}
 		}
 	}
@@ -47,9 +47,9 @@ public class BinaryTreeRightSideView {
 		TreeNode node2 = new TreeNode(2);
 		TreeNode node3 = new TreeNode(3);
 		TreeNode node4 = new TreeNode(4);
-		node1.left = node2;
-		node1.right = node3;
-		node2.left = node4;
+		node1.setLeft(node2);
+		node1.setRight(node3);
+		node2.setLeft(node4);
 		// System.out.println(node1.left.right == node6);
 		List<Integer> res = test.rightSideView(node1);
 		// System.out.println(ancesto.val);
