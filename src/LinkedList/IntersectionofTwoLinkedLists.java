@@ -2,6 +2,7 @@ package LinkedList;
 /*
  * Write a program to find the node at which the intersection of two singly linked lists begins.
  * 用判断有环链表的方法去解决，先把其中一个链表接到另一个链表的结尾处，然后判断这个链表的环的起始位置
+ * 计算两个链表的长度，假如链表a 长度为10， 链表b 长度为15， 那么链表b 先走5步， 然后a，b 各自走一步，比价是否相等
  */
 public class IntersectionofTwoLinkedLists {
 

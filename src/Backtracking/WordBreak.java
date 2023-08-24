@@ -52,14 +52,34 @@ public class WordBreak {
 
 	public static void main(String[] args) {
 		WordBreak test = new WordBreak();
-		String s = "leetcode";
+		String s = "leetcodeyour";
 		Set<String> wordDict = new HashSet<String>();
-		String[] words = { "leet", "coode", "what", "your", "name" };
+		String[] words = { "leet", "codee", "what", "your", "name" };
 		for (String word : words)
 			wordDict.add(word);
-		if (test.wordBreak(s, wordDict))
+		if (test.wordBreak2(s, wordDict))
 			System.out.println("true");
 		else
 			System.out.println("false");
 	}
+
+	public boolean wordBreak2(String s, Set<String> wordDict) {
+
+		if(s == null || s.length() == 0 || wordDict == null || wordDict.size() == 0)
+			return true;
+		StringBuilder cur = new StringBuilder();
+		for (int i = 0; i < s.length(); i++) {
+			cur.append(s.charAt(i));
+			if (wordDict.contains(cur.toString())) {
+				System.out.println(cur);
+				String ttt = s.substring(cur.length(), s.length());
+				if (wordBreak2(ttt, wordDict))
+					return true;
+			}
+		}
+		return false;
+	}
+
+
+
 }

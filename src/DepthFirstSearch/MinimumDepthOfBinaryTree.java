@@ -5,6 +5,7 @@ import Tree.TreeNode;
 /*
  * 考虑好如何返回最小深度 int
  * 之前的方法是把mindepth作为类的成员变量，这样就可以在每个方法及递归中及时改变
+ * 按层遍历，遍历到第一个叶子节点即可
  */
 
 public class MinimumDepthOfBinaryTree {

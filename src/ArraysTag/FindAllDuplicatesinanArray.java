@@ -9,7 +9,10 @@ package ArraysTag;
  Output:
  [2,3]
  */
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 /**
  * Created by zhaosy-c on 2017/8/19.
@@ -47,11 +50,27 @@ public class FindAllDuplicatesinanArray {
         return res;
     }
 
+
+    public List<Integer> findDuplicates2(int[] nums) {
+        List<Integer> res = new ArrayList<>();
+        for (int i =0; i < nums.length; i++) {
+
+            while (nums[i] != i + 1){
+                int temp = nums[i];
+                nums[i] = nums[nums[i] - 1];
+                nums[temp - 1] = temp;
+            }
+        }
+
+        System.out.println(Arrays.toString(nums));
+        return res;
+    }
+
     public static void main(String[] args) {
         FindAllDuplicatesinanArray test = new FindAllDuplicatesinanArray();
         int[] nums = {4,3,2,7,8,2,3,1};
         List<Integer> res = new ArrayList<>();
-        res = test.findDuplicates(nums);
+        res = test.findDuplicates2(nums);
         System.out.println(res);
     }
 

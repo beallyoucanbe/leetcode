@@ -19,6 +19,7 @@ public class RemoveDuplicateLetters {
 		if (s == null || s.length() <= 1)
 			return s;
 		Map<Character, Integer> lastPosMap = new HashMap<Character, Integer>();
+		//  先找到每个字符出现的最大位置
 		for (int i = 0; i < s.length(); i++)
 			lastPosMap.put(s.charAt(i), i);
 		// map的遍历方法，可以以键值对遍历，也可以单独遍历

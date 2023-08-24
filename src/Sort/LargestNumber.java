@@ -37,7 +37,7 @@ public class LargestNumber {
 		public int compare(String str1, String str2){  
 			String leftright = str1 + str2;
 			String rightleft = str2 + str1;
-			//这一步的比较该如何去做，
+			//这一步的比较该如何去做， 303， 330
 			//思考，当两个字符串都很长时，就无法使用这种直接把字符串转换成为int的方法
 			//这里就提供了如何比较两个很大的由字符串组成的整数的大小，首先，当长度不同时，肯定是长度长的大
 			//当长度相同时，就可以按照比较字符串的方式去比较
